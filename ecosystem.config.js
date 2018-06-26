@@ -28,7 +28,7 @@ module.exports = {
 			ref: 'origin/master',
 			repo: 'https://github.com/ymz-studio/cshunWebsite.git',
 			path: '/home/wsq/cshun-website',
-			'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production'
+			'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production && npm build'
 		}
 	}
 };
