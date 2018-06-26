@@ -1,10 +1,12 @@
 <template>
   <v-carousel class="slide">
     <v-carousel-item v-for="(item,i) in items" :src="item.src" :key="i">
-      <v-layout column align-center>
-        <h1 :style="{color:item.color}">{{item.title}}</h1>
-        <v-btn nuxt outline flat :to="item.url" :style="{color:item.color}">了解详情</v-btn>
-      </v-layout>
+      <v-container fill-height>
+        <v-layout column justify-center align-center>
+          <h1 :style="{color:item.color}">{{item.title}}</h1>
+          <v-btn nuxt outline flat :to="item.url" :style="{color:item.color}">了解详情</v-btn>
+        </v-layout>
+      </v-container>
     </v-carousel-item>
   </v-carousel>
 </template>

@@ -25,8 +25,8 @@
     <v-content>
       <nuxt></nuxt>
     </v-content>
-    <v-footer app class="footer" dark>
-      <v-layout justify-center class="pa-3" align-center>
+    <v-footer class="footer pa-3" dark height="50">
+      <v-layout justify-center align-center>
         ‘助顺邮我’科技扶贫在线平台 @ 2018 BUPT
         <v-btn flat class="footer-btn">联系我们</v-btn>
       </v-layout>
@@ -51,7 +51,7 @@
 }
 
 .footer {
-  color: #bcbcbc;
+  color: #efefef;
 }
 
 .footer-btn {
@@ -59,8 +59,6 @@
   padding: 0;
   color: #bcbcbc;
 }
-
-
 </style>
 
 <script>
@@ -100,7 +98,7 @@ export default {
   methods: {
     ...mapMutations(['setDevice', 'setSideBar']),
     onResize() {
-      this.setDevice(window.innerWidth < 600)
+      this.setDevice(window.innerWidth < 820)
     },
   },
   mounted() {
