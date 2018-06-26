@@ -11,3 +11,9 @@ npm-debug.log
 dist
 
 .idea
+
+package-lock.json
+
+.vscode
+*.log
+.editorconfig
