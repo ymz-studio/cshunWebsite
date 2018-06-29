@@ -8,7 +8,7 @@
             <v-subheader>用户信息</v-subheader>
             <v-container>
                 <h1>{{user.name}}</h1>
-                <v-layout class="mb-2">
+                <v-layout class="mb-1" wrap>
                     <span v-for="(item,i) in user.role" :key="i" class="tag">
                         {{item}}
                     </span>
@@ -31,15 +31,15 @@
                     <span class="pl-2">{{item.title}}</span>
                 </v-layout>
             </v-btn>
-            <v-footer fixed color="white">
-                <v-layout align-center justify-center>
-                    <span style="color:#bcbcbc">2018 &copy; 北京邮电大学 计算机学院</span>
-                </v-layout>
-            </v-footer>
         </v-navigation-drawer>
         <v-content>
             <nuxt></nuxt>
         </v-content>
+        <v-footer app inset>
+            <v-layout align-center justify-center>
+                <span style="color:#bcbcbc">2018 &copy; 北京邮电大学 计算机学院</span>
+            </v-layout>
+        </v-footer>
     </v-app>
 </template>
 
@@ -110,7 +110,12 @@ export default {
 
 <style scoped>
 .tag{
-    padding: 0.3em;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
     border: 1px solid #555;
+    margin-right: 0.5em;
+}
+.tag:last-child{
+    margin-right: 0;
 }
 </style>

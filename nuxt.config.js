@@ -49,10 +49,10 @@ module.exports = {
 		clientConfigs: {
 			default: {
 				// required
-				httpEndpoint: 'http://api.mywsq.cn:4000',
+				httpEndpoint: 'http://localhost:4000',
 				// You can use `wss` for secure connection (recommended in production)
 				// Use `null` to disable subscriptions
-				wsEndpoint: 'ws://api.mywsq.cn:4000', // optional
+				wsEndpoint: 'ws://localhost:4000', // optional
 				// LocalStorage token
 				// Enable Automatic Query persisting with Apollo Engine
 				persisting: true, // Optional

@@ -5,6 +5,10 @@ import moment from 'moment';
 Vue.component('half-container', halfContainer);
 moment.locale('zh-CN');
 
+Vue.prototype.$yearDateTime = (timestamp) => {
+	return moment(timestamp).format('YYYY 年 Mo Do  a hh:mm');
+};
+
 Vue.prototype.$dateTime = (timestamp) => {
 	return moment(timestamp).format('Mo Do  a hh:mm');
 };

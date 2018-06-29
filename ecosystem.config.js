@@ -7,8 +7,7 @@ module.exports = {
 		// First application
 		{
 			name: 'cshun-website',
-			script: 'npm',
-			args: 'start',
+			script: 'server/index.js',
 			env: {
 				COMMON_VARIABLE: 'true'
 			},
