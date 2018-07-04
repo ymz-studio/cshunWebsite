@@ -16,10 +16,10 @@ export default {
   data() {
     return {
       items: [
-        { src: '/index-background-1.jpg', title: '精彩贵州 吉祥长顺', color: '#000', url: '/about' },
-        { src: '/index-background-2.jpg', title: '无添加农产品 纯天然美味', color: '#fff', url: '/products' },
-        { src: '/index-background-3.jpg', title: '自然风光 无限美好', color: '#fff', url: '/spots' },
-        { src: '/index-background-4.jpg', title: '专家咨询 答疑解惑', color: '#fff', url: '/consultant' }
+        { src: require('assets/index/background-1.jpg'), title: '精彩贵州 吉祥长顺', color: '#000', url: '/about' },
+        { src: require('assets/index/background-2.jpg'), title: '无添加农产品 纯天然美味', color: '#fff', url: '/products' },
+        { src: require('assets/index/background-3.jpg'), title: '自然风光 无限美好', color: '#fff', url: '/spots' },
+        { src: require('assets/index/background-4.jpg'), title: '专家咨询 答疑解惑', color: '#fff', url: '/consultant' }
       ]
     }
   },
