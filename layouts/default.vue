@@ -27,7 +27,7 @@
     </v-content>
     <v-footer class="footer pa-3" dark height="50">
       <v-layout justify-center align-center>
-        ‘助顺邮我’科技扶贫在线平台 @ 2018 BUPT
+        ‘助顺邮我’科技扶贫在线平台 &copy; 2018 BUPT
         <v-btn flat class="footer-btn">联系我们</v-btn>
       </v-layout>
     </v-footer>
@@ -70,10 +70,10 @@ export default {
       route: [
         { path: '/', title: '首页' },
         { path: '/about', title: '关于长顺' },
-        { path: '/policy', title: '扶贫政策' },
         { path: '/products', title: '农产品介绍' },
         { path: '/spots', title: '旅游景点' },
         { path: '/consultant', title: '专家咨询' },
+        { path: '/policy', title: '扶贫政策' },
         { path: '/business', title: '产销对接' }
 
 
