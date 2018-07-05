@@ -1,5 +1,4 @@
 const pkg = require('./package');
-
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
@@ -34,7 +33,7 @@ module.exports = {
 	/*
   ** Plugins to load before mounting the App
   */
-	plugins: [ '@/plugins/vuetify', '@/plugins/common' ],
+	plugins: [ '@/plugins/vuetify', '@/plugins/common','@/plugins/graphql-upload-client' ],
 
 	/*
   ** Nuxt.js modules
@@ -45,14 +44,15 @@ module.exports = {
 		'@nuxtjs/apollo'
 	],
 	apollo: {
+		includeNodeModules: true,
 		// required
 		clientConfigs: {
 			default: {
 				// required
-				httpEndpoint: 'http://api.mywsq.cn:4000',
+				httpEndpoint: process.env.HTTP_ENDPOINT,
 				// You can use `wss` for secure connection (recommended in production)
 				// Use `null` to disable subscriptions
-				wsEndpoint: 'ws://api.mywsq.cn:4000', // optional
+				wsEndpoint: process.env.WS_ENDPOINT, // optional
 				// LocalStorage token
 				// Enable Automatic Query persisting with Apollo Engine
 				persisting: true, // Optional

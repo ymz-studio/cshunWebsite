@@ -1,11 +1,6 @@
 <template>
     <div>
-        <v-parallax :src="require('assets/about/background-1.jpg')" class="hero">
-            <v-layout column justify-center align-center>
-                <h1>关于长顺</h1>
-                <h2>为您提供最新, 最全面的长顺相关信息</h2>
-            </v-layout>
-        </v-parallax>
+        <hero :src="require('assets/about/background-1.jpg')" title="关于长顺" subTitle="为您提供最新, 最全面的长顺相关信息"></hero>
         <half-container>
             <span slot="title">概况简介</span>
             <img class="smart-img" slot="left" src="~assets/about/pic.jpg">
@@ -41,7 +36,12 @@
 
 <script>
 import { mapState } from "vuex";
+import Hero from '@/components/hero.vue'
+
 export default {
+    components: {
+        Hero
+    },
     data() {
         return {
             grid: [
@@ -59,8 +59,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.hero {
-    min-height: 60vh;
-    width: 100vw;
-}
+
 </style>

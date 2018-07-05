@@ -27,7 +27,7 @@
     </v-content>
     <v-footer class="footer pa-3" dark height="50">
       <v-layout justify-center align-center>
-        ‘助顺邮我’科技扶贫在线平台 &copy; 2018 BUPT
+          &copy; 2018 北京邮电大学 计算机学院
         <v-btn flat class="footer-btn">联系我们</v-btn>
       </v-layout>
     </v-footer>
