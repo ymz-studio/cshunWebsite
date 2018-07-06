@@ -6,9 +6,9 @@
 	"private": true,
 	"scripts": {
 		"dev": "dotenv cross-env NODE_ENV=development nodemon  server/index.js --watch server",
-		"build": "nuxt build",
+		"build": "dotenv nuxt build",
 		"start": "dotenv cross-env NODE_ENV=production  server/index.js",
-		"generate": "nuxt generate"
+		"generate": "dotenv nuxt generate"
 	},
 	"dependencies": {
 		"@nuxtjs/apollo": "^4.0.0-beta.4",
