@@ -7,7 +7,9 @@ module.exports = {
 		// First application
 		{
 			name: 'cshun-website',
-			script: 'server/index.js',
+			cwd: '/home/wsq/cshun-website',
+			script: 'yarn',
+			args: 'start',
 			env: {
 				COMMON_VARIABLE: 'true'
 			},
@@ -27,7 +29,7 @@ module.exports = {
 			ref: 'origin/master',
 			repo: 'https://github.com/ymz-studio/cshunWebsite.git',
 			path: '/home/wsq/cshun-website',
-			'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production && npm run build'
+			'post-deploy': 'yarn install && pm2 reload ecosystem.config.js --env production && yarn run build'
 		}
 	}
 };
