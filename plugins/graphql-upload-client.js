@@ -4,8 +4,9 @@ import ApolloClient from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import gql from 'graphql-tag';
 
+
 export const client = new ApolloClient({
-	link: createUploadLink({ uri: 'http://localhost:4000' }),
+	link: createUploadLink({ uri: process.env.HTTP_ENDPOINT }),
 	cache: new InMemoryCache(),
 	ssrMode: true
 });

@@ -1,6 +1,6 @@
 <template>
   <v-carousel class="slide">
-    <v-carousel-item v-for="(item,i) in items" :src="item.src" :key="i">
+    <v-carousel-item v-for="(item,i) in items" :src="item.src" :key="i" reverse-transition="fade" transition="fade">
       <v-container fill-height>
         <v-layout column justify-center align-center>
           <h1 :style="{color:item.color}">{{item.title}}</h1>
@@ -30,4 +30,6 @@ export default {
 .slide {
   height: 100%;
 }
+
+
 </style>

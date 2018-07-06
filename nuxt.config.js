@@ -3,7 +3,10 @@ const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
 	mode: 'universal',
-
+	env: {
+		HTTP_ENDPOINT: process.env.HTTP_ENDPOINT || '/graphql',
+		WS_ENDPOINT: process.env.WS_ENDPOINT || '/graphql'
+	},
 	/*
   ** Headers of the page
   */
@@ -12,8 +15,7 @@ module.exports = {
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
-      
+			{ hid: 'description', name: 'description', content: pkg.description }
 		],
 		link: [
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
@@ -29,15 +31,11 @@ module.exports = {
   ** Global CSS
   */
 	css: [ 'vuetify/src/stylus/main.styl', '~/assets/app.stylus' ],
-
 	/*
   ** Plugins to load before mounting the App
   */
-	plugins: [ '@/plugins/vuetify', '@/plugins/common','@/plugins/graphql-upload-client' ],
+	plugins: [ '@/plugins/vuetify', '@/plugins/common', '@/plugins/graphql-upload-client' ],
 
-	/*
-  ** Nuxt.js modules
-  */
 	modules: [
 		// Doc: https://github.com/nuxt-community/axios-module#usage
 		'@nuxtjs/axios',
@@ -55,7 +53,7 @@ module.exports = {
 				wsEndpoint: process.env.WS_ENDPOINT, // optional
 				// LocalStorage token
 				// Enable Automatic Query persisting with Apollo Engine
-				persisting: true, // Optional
+				persisting: true // Optional
 				// // Use websockets for everything (no HTTP)
 				// // You need to pass a `wsEndpoint` for this to work
 				// websocketsOnly: false // Optional
