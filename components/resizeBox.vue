@@ -23,8 +23,11 @@ export default {
         }
     },
     mounted() {
-        this.setHeight()
         window.addEventListener('resize', this.setHeight)
+        this.$nextTick(() => {
+            this.setHeight()
+            this.$refs.box.style.height = this.curHeight
+        })
     },
     beforeDestroy() {
         window.removeEventListener('resize', this.setHeight)

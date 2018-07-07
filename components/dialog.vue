@@ -9,9 +9,9 @@
                 <slot></slot>
             </v-card-text>
             <v-card-actions>
-                <v-layout justify-end :column="isMobile" class="ma-0" align-center>
+                <v-layout justify-end :column="isMobile" class="ma-0" :class="{'px-3':isMobile}" align-center>
                     <v-btn outline color="primary" :block="isMobile" :class="{'mb-2':isMobile}" @click="dialog=false">取消</v-btn>
-                    <v-btn color="primary" :block="isMobile" @click="$emit('submit')">保存</v-btn>
+                    <v-btn color="primary" :block="isMobile" @click="$emit('submit')" :loading="loading">保存</v-btn>
                 </v-layout>
             </v-card-actions>
         </v-card>
@@ -30,6 +30,10 @@ export default {
             type: Boolean,
             required: true
         },
+        loading: {
+            type: Boolean,
+            default: false
+        }
     },
     computed: {
         ...mapState(['isMobile']),

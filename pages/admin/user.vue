@@ -7,7 +7,9 @@
                     <tr @click="name=props.item.name;role=props.item.role;isCreate = false;dialog = true;editID = props.item.id" class="item">
                         <td>{{ props.item.name }}</td>
                         <td class="role-list">
-                            <span v-for="(item,i) in props.item.role" :key="i">{{item}}</span>
+                            <v-layout wrap style="padding-top:0.5em">
+                                <span v-for="(item,i) in props.item.role" :key="i">{{$roleMap[item]}}</span>
+                            </v-layout>
                         </td>
                         <td v-if="!isMobile">{{props.item.lastLoginAt? $fromNow(props.item.lastLoginAt) :'从未登录' }}</td>
                         <td v-if="!isMobile">{{ $yearDateTime(props.item.createdAt) }}</td>
@@ -21,7 +23,7 @@
         <v-layout justify-end class="mt-2">
             <v-btn open-on-hover color="primary" :block="isMobile" @click="isCreate = true; dialog = true">新增</v-btn>
         </v-layout>
-        <my-dialog v-model="dialog" :title="isCreate ? '新增用户':'更新用户信息' " @submit="submit">
+        <my-dialog v-model="dialog" :title="isCreate ? '新增用户':'更新用户信息' " @submit="submit" :loading="loading>0">
             <v-form ref="form">
                 <v-text-field v-model="name" :rules="nameRule" label="请输入用户名"></v-text-field>
                 <v-text-field v-if="isCreate" type="password" v-model="password" :rules="passwordRule" label="请输入密码"></v-text-field>
@@ -31,15 +33,15 @@
                 </v-layout>
                 <v-layout :wrap="true" class="mt-3" column>
                     <v-flex wrap>
-                        <v-checkbox v-model="role" :rules="roleRule" label="ADMIN" value="ADMIN"></v-checkbox>
+                        <v-checkbox v-model="role" :rules="roleRule" label="超级管理员" value="ADMIN"></v-checkbox>
                     </v-flex>
                     <v-flex wrap>
-                        <v-checkbox v-for="item in 4" :key="item" hide-details :rules="roleRule" v-model="role" :label="`SUB_ADMIN_${item}`" :value="`SUB_ADMIN_${item}`"></v-checkbox>
+                        <v-checkbox v-for="item in 4" :key="item" hide-details :rules="roleRule" v-model="role" :label="$roleMap[`SUB_ADMIN_${item}`]" :value="`SUB_ADMIN_${item}`"></v-checkbox>
                     </v-flex>
                 </v-layout>
             </v-form>
             <v-divider/>
-            <v-btn class="my-3" color="error" @click="del">删除此用户</v-btn>
+            <v-btn v-if="!isCreate" class="my-3" color="error" @click="del">删除此用户</v-btn>
         </my-dialog>
     </v-container>
 </template>
@@ -55,17 +57,17 @@ export default {
             users: [],
             headers: [
                 { text: '用户名', value: 'name' },
-                { text: "权限", value: 'role' },
+                { text: "可管理模块", value: 'role' },
                 { text: '上次登录', value: 'lastLoginAt' },
                 { text: '注册时间', value: 'createdAt' }
             ],
             mobileHeaders: [
                 { text: '用户名', value: 'name' },
-                { text: "权限", value: 'role' },
+                { text: "可管理模块", value: 'role' },
             ],
             name: "",
             nameRule: [
-                v => /[a-zA-Z0-9_]{3,16}/.test(v) || "用户名应为3-16位字符"
+                v => v.length >= 3 && v.length <= 16 || "用户名应为3-16位字符"
             ],
             password: "",
             passwordRule: [
@@ -74,7 +76,7 @@ export default {
             role: [],
             roleRule: [
                 v => this.role && this.role.length > 0 || "用户权限不能为空",
-                v => (this.role && this.role.includes('ADMIN') && this.role.length === 1) || this.role && !this.role.includes('ADMIN') || "ADMIN不能与其他权限并存"
+                v => (this.role && this.role.includes('ADMIN') && this.role.length === 1) || this.role && !this.role.includes('ADMIN') || "超级管理不能与其他权限并存"
             ],
             resetPassword: false,
             editID: "",
@@ -206,6 +208,7 @@ export default {
         padding: 0.5em;
         border: 1px solid #000;
         margin-right: 0.5em;
+        margin-bottom: 0.5em;
     }
 
     span:last-child {

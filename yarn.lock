@@ -183,6 +183,12 @@
   version "0.5.4"
   resolved "http://registry.npm.taobao.org/@types/zen-observable/download/@types/zen-observable-0.5.4.tgz#b863a4191e525206819e008097ebf0fb2e3a1cdc"
 
+"@xkeshi/vue-qrcode@^1.0.0":
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/@xkeshi/vue-qrcode/download/@xkeshi/vue-qrcode-1.0.0.tgz#e86e612bad5ffdf9b7956dff1ea3a48c35cd420d"
+  dependencies:
+    qrious "^4.0.2"
+
 abbrev@1:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/abbrev/download/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -5053,6 +5059,10 @@ punycode@^2.1.0:
 q@^1.1.2:
   version "1.5.1"
   resolved "http://registry.npm.taobao.org/q/download/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
+
+qrious@^4.0.2:
+  version "4.0.2"
+  resolved "http://registry.npm.taobao.org/qrious/download/qrious-4.0.2.tgz#09c4d4079d2b961617f62c69cff3b9bb66a39693"
 
 qs@6.5.1:
   version "6.5.1"

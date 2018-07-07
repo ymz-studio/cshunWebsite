@@ -50,7 +50,7 @@ export default {
             loading: 0,
             username: "",
             usernameRule: [
-                v => /[a-zA-Z0-9_]{3,16}/.test(v) || "用户名应为3-16位字符"
+                v => v.length >= 3 && v.length <= 16 || "用户名应为3-16位字符"
             ],
             password: "",
             passwordRule: [

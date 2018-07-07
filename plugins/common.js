@@ -33,3 +33,11 @@ Vue.prototype.$hasRole = (userRole, RoleList) => {
 	}
 	return false;
 };
+
+Vue.prototype.$roleMap = {
+	ADMIN: '超级管理员',
+	SUB_ADMIN_1: '商家管理',
+	SUB_ADMIN_2: '政策文章',
+	SUB_ADMIN_3: '专家解答',
+	SUB_ADMIN_4: '旅游资源'
+};

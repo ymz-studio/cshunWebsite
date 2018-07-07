@@ -8,7 +8,7 @@ module.exports = {
 		{
 			name: 'cshun-website',
 			cwd: '/home/wsq/cshun-website',
-			script: 'yarn',
+			script: 'npm',
 			args: 'start',
 			env: {
 				COMMON_VARIABLE: 'true'
