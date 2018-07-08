@@ -4,7 +4,7 @@
       <v-toolbar-side-icon v-show="isMobile" @click="sideVisible = !sideVisible"></v-toolbar-side-icon>
       <v-toolbar-title class="logo">
         <v-layout align-center>
-          <img src="~assets/logo-120*120.png" class="mr-2">
+          <img src="~assets/logo-120x120.png" class="mr-2">
           <span>长顺科技扶贫在线平台</span>
         </v-layout>
       </v-toolbar-title>
