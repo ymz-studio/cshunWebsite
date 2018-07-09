@@ -15,7 +15,7 @@
           <v-layout wrap align-center justify-center :key="item.name" class="py-4" :reverse="item.reverse && !isMobile">
             <v-flex md6 xs12>
               <h2 class="text-xs-center mytitle fw-500">{{item.name}}</h2>
-              <h3 class="text-xs-center fw-500">{{item.description}}</h3>
+              <h3 class="text-xs-center my-h3 fw-500">{{item.description}}</h3>
             </v-flex>
             <v-flex md6 xs12>
               <v-layout align-center justify-center>
@@ -157,7 +157,7 @@ export default {
   font-size: 3rem;
   text-align: center;
 }
-h3{
+.my-h3{
   font-size: 1.5rem;
 }
 .fw-500 {
