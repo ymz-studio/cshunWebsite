@@ -29,7 +29,7 @@
     <v-container class="has-border" fluid>
       <v-container class="pt-4">
         <v-layout justify-center column align-center>
-          <h2>24小时不间断直播</h2>
+          <h2 class="mytitle fw-500">24小时不间断直播</h2>
           <resize-box class="stream my-4"></resize-box>
         </v-layout>
       </v-container>
@@ -37,7 +37,7 @@
     <v-container class="bg-w" fluid>
       <v-container class="pt-4">
         <v-layout justify-center column align-center v-if="businesses.length>0">
-          <h2>精选商家 品质无忧</h2>
+          <h2 class="mytitle fw-500">精选商家 品质无忧</h2>
           <resize-box class="mt-4">
             <v-carousel style="height:100%;" class="slide">
               <v-carousel-item v-for="item in businesses" :key="item.id" :src="item.img.url" transition="fade" reverse-transition="fade">
@@ -155,6 +155,7 @@ export default {
 }
 .mytitle{
   font-size: 3rem;
+  text-align: center;
 }
 h3{
   font-size: 1.5rem;
