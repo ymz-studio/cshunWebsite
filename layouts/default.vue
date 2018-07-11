@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-toolbar app>
+    <v-toolbar app class="nav">
       <v-toolbar-side-icon v-show="isMobile" @click="sideVisible = !sideVisible"></v-toolbar-side-icon>
       <v-toolbar-title class="logo">
         <v-layout align-center>
@@ -39,6 +39,10 @@
     width: 2em;
     height: 2em;
   }
+}
+
+.nav{
+  z-index:10000;
 }
 
 .btn-nav {
