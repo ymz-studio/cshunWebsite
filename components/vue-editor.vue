@@ -1,5 +1,5 @@
 <template>
-  <div id="vue-editor" class="container">
+  <div id="vue-editor">
     <div class="quill-editor" :content="value" @change="onContentChange($event)" v-quill:myQuillEditor="editorOption">
     </div>
   </div>
