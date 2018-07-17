@@ -17,17 +17,19 @@
             <v-card-text>
               <v-data-table :items="posts" :headers="headers" style="width:100%;">
                 <template slot="items" slot-scope="props">
-                  <td class="text-xs-center">{{ props.item.title }}</td>
-                  <td class="text-xs-center">{{ props.item.category }}</td>
-                  <td class="text-xs-center">{{ props.item.author }}</td>
-                  <td class="justify-center layout px-0" v-if="!isMobile">
-                    <v-icon small class="mr-2" @click="editArticle(props.item)">
-                      edit
-                    </v-icon>
-                    <v-icon small @click="deleteArticle(props.item)">
-                      delete
-                    </v-icon>
-                  </td>
+                  <tr @click="readArticle(props.item)">
+                    <td class="text-xs-center">{{ props.item.title }}</td>
+                    <td class="text-xs-center">{{ props.item.category }}</td>
+                    <td class="text-xs-center">{{ props.item.author }}</td>
+                    <td class="justify-center layout px-0" v-if="!isMobile">
+                      <v-icon small class="mr-2" @click="editArticle(props.item)">
+                        edit
+                      </v-icon>
+                      <v-icon small @click="deleteArticle(props.item)">
+                        delete
+                      </v-icon>
+                    </td>
+                  </tr>
                 </template>
               </v-data-table>
             </v-card-text>
@@ -35,12 +37,13 @@
         </v-flex>
       </v-layout>
     </v-container>
-    <v-navigation-drawer :value="editing.status" stateless :hide-overlay="false" right fixed temporary :width="700">
+    <!-- PC端编辑文章抽屉 -->
+    <v-navigation-drawer :value="editing.status" stateless :hide-overlay="false" right fixed temporary :width="700" v-if="!isMobile">
       <v-toolbar flat>
         <v-list>
           <v-list-tile>
             <v-list-tile-title class="title">
-              编辑文章
+              阅读文章
             </v-list-tile-title>
           </v-list-tile>
         </v-list>
@@ -57,6 +60,34 @@
         <v-flex xs12>
           <!-- content -->
           <VueEditor v-model="editing.targetItem.content" />
+        </v-flex>
+        <v-flex xs4 offset-xs8>
+          <v-btn flat color="blue" @click="saveEdit">保存</v-btn>
+          <v-btn flat color="error" @click="cancelEdit">取消</v-btn>
+        </v-flex>
+      </v-layout>
+    </v-navigation-drawer>
+    <!-- 手机端阅读文章抽屉 -->
+    <v-navigation-drawer :value="reading.status" stateless :hide-overlay="false" right fixed temporary :width="700" v-if="isMobile">
+      <v-toolbar flat>
+        <v-list>
+          <v-list-tile>
+            <v-list-tile-title class="title">
+              阅读文章
+            </v-list-tile-title>
+          </v-list-tile>
+        </v-list>
+      </v-toolbar>
+      <v-divider></v-divider>
+      <v-layout wrap class="px-3 py-3">
+        <v-flex xs12>
+          <!-- meta data -->
+          <h2 class="text-xs-center">{{reading.title}}</h2>
+          <h3 class="text-xs-center">作者：{{reading.author}}</h3>
+        </v-flex>
+        <p>{{reading.content}}</p>
+        <v-flex xs4 offset-xs8>
+          <v-btn color="primary" @click="reading.status = false">返回</v-btn>
         </v-flex>
       </v-layout>
     </v-navigation-drawer>
@@ -81,7 +112,11 @@ export default {
           content: "",
           author: "",
           category: ""
-        }
+        },
+        backUpItem: {}
+      },
+      reading:{
+        status:false
       },
       headers: [
         {
@@ -111,7 +146,23 @@ export default {
       this.editing.targetItem.author = item.author;
       this.editing.targetItem.category = item.category;
       this.editing.targetItem.content = item.content;
+      this.editing.backUpItem = item;
       this.editing.status = true;
+    },
+    deleteArticle() {},
+    readArticle(item) {
+      if (this.isMobile) {
+        this.reading.title = item.title;
+        this.reading.author = item.author;
+        this.reading.content = item.content;
+        this.reading.status = true
+      }
+    },
+    saveEdit() {},
+    cancelEdit() {
+      if (confirm("将丢弃所有更改，确实取消？")) {
+        this.editing.status = false;
+      }
     }
   },
   apollo: {
