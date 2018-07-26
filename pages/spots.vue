@@ -64,13 +64,12 @@
         <h2 class="text-xs-center">必吃美食</h2>
       </v-layout>
       <v-layout wrap>
-        <v-flex v-for="n in 6" :key="n" xs12 sm6 md4 class="px-2 py-2">
+        <v-flex v-for="item in foods" :key="item.id" xs12 sm6 md4 class="px-2 py-2">
           <v-card>
-            <v-card-media src="https://cdn.vuetifyjs.com/images/cards/desert.jpg" height="200px"></v-card-media>
+            <v-card-media v-if="item.img" :src="item.img.url" height="200px"></v-card-media>
             <v-card-title primary-title>
               <div>
-                <h3 class="headline mb-0">美食名字</h3>
-                <div>简短的美食介绍</div>
+                <h3 class="headline mb-0">{{item.name}}</h3>
               </div>
             </v-card-title>
           </v-card>
@@ -85,28 +84,34 @@
           <h2 class="text-xs-center">酒店信息</h2>
         </v-layout>
         <v-layout justify-center align-center wrap>
-          <v-flex v-for="n in 6" :key="n" xs12 sm6 md4 class="px-2 py-2">
+          <v-flex v-for="(item, n) in hotels" :key="item.id" xs12 sm6 md4 class="px-2 py-2">
             <v-card>
               <v-card-media :src="require('assets/spots/hotel.jpg')" height="200px"></v-card-media>
               <v-card-title primary-title>
                 <div>
-                  <h3 class="headline mb-0">酒店名字</h3>
+                  <h3 class="headline mb-0">{{item.name}}</h3>
                 </div>
               </v-card-title>
               <v-card-text class="hotel-content">
-                <p>地址：长顺..</p>
-                <p>联系方式：12345677889</p>
-                <p>评价：★★★★</p>
+                <p>地址：{{item.address}}</p>
+                <p>网址：{{item.url}}</p>
+                <p>评价：{{item.score}}</p>
                 <v-chip v-for="x in 2" :key="x" class="hotel-content-chip">
                   <v-avatar>
                     <v-icon style="color:white;">stars</v-icon>
                   </v-avatar>
                   大床房：￥{{(x + 1)*200}}
                 </v-chip>
+                <v-chip v-for="house in item.houses" :key="house.id" class="hotel-content-chip">
+                  <v-avatar>
+                    <v-icon style="color:white;">stars</v-icon>
+                  </v-avatar>
+                  {{house.name}}：￥{{house.price}}
+                </v-chip>
               </v-card-text>
               <v-divider/>
               <v-card-actions>
-                <v-btn flat color="purple" @click="hotel_focus = true">了解详情</v-btn>
+                <v-btn flat color="purple" @click="hotel_viewDetail(n)">了解详情</v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -114,10 +119,10 @@
           <v-dialog v-model="hotel_focus" width="60%">
             <v-card tile>
               <v-card-title>
-                <h3>酒店名称</h3>
+                <h3>{{hotels[hotel_detail_index].name}}</h3>
               </v-card-title>
               <v-card-text>
-                <p>酒店介绍</p>
+                <p>{{hotels[hotel_detail_index].introduction}}</p>
               </v-card-text>
             </v-card>
           </v-dialog>
@@ -131,6 +136,7 @@
 import { mapState } from "vuex";
 import resizeBox from "@/components/resizeBox";
 import MyDialog from "@/components/dialog";
+import gql from "graphql-tag";
 export default {
   components: {
     resizeBox,
@@ -209,7 +215,7 @@ export default {
       ],
       spot_focus: false,
       spot_index: 0,
-      foods: [{ id: "", name: "", description: "", img: "" }],
+      foods: [{ id: "", name: "", img: { url: "" } }],
       hotels: [
         {
           id: "",
@@ -222,10 +228,11 @@ export default {
             }
           ],
           url: "",
-          introduce: ""
+          introduction: ""
         }
       ],
-      hotel_focus: false
+      hotel_focus: false,
+      hotel_detail_index: 0
     };
   },
   computed: {
@@ -234,7 +241,51 @@ export default {
   methods: {
     slideChanged(e) {
       this.slideIndex = e;
+    },
+    hotel_viewDetail(n) {
+      this.hotel_detail_index = n;
+      this.hotel_focus = true;
     }
+  },
+  apollo: {
+    foods: {
+      query: gql`
+        {
+          foods {
+            id
+            name
+            img {
+              url
+            }
+          }
+        }
+      `
+    },
+    hotels: {
+      query: gql`
+        {
+          hotels {
+            id
+            name
+            address
+            url
+            img {
+              url
+            }
+            introduction
+            score
+            houses {
+              id
+              name
+              price
+            }
+          }
+        }
+      `
+    }
+  },
+  mounted() {
+    console.log(this.hotels);
   }
 };
 </script>
