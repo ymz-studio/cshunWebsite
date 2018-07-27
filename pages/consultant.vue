@@ -7,7 +7,7 @@
         <h2 class="text-xs-center">著名专家</h2>
         <v-layout wrap>
           <template v-for="n in 8">
-            <v-flex :key="n" xs6 md3 class="px-2 py-2">
+            <v-flex :key="n" xs12 md4 class="px-2 py-2">
               <v-card>
                 <v-card-media src="https://cdn.vuetifyjs.com/images/cards/desert.jpg" height="200px"></v-card-media>
 
