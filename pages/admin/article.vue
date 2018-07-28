@@ -15,21 +15,21 @@
         <v-flex xs12>
           <v-card>
             <v-card-text>
-              <v-data-table :items="posts" :headers="headers" style="width:100%;" :rows-per-page-text="'每页显示行数'"
+              <v-data-table :items="posts.edges" :headers="headers" style="width:100%;" :rows-per-page-text="'每页显示行数'"
                 :rows-per-page-items="rows_per_page" :no-data-text="'暂时没有文章'" :pagination.sync="pagination"
-                :loading="$apollo.queries.posts.loading">
+                :total-items="posts.aggregate.count" :loading="$apollo.queries.posts.loading">
                 <template slot="items" slot-scope="props">
-                  <tr @click="readArticle(props.item)">
-                    <td class="text-xs-center">{{ props.item.title }}</td>
+                  <tr @click="readArticle(props.item.node)">
+                    <td class="text-xs-center">{{ props.item.node.title }}</td>
                     <td class="text-xs-center">
-                      {{ convert_category(props.item.category) }}
+                      {{ convert_category(props.item.node.category) }}
                     </td>
-                    <td class="text-xs-center">{{ props.item.author }}</td>
+                    <td class="text-xs-center">{{ props.item.node.author }}</td>
                     <td class="justify-center layout px-0" v-if="!isMobile">
-                      <v-icon small class="mr-2" @click="editArticle(props.item)">
+                      <v-icon small class="mr-2" @click="editArticle(props.item.node)">
                         edit
                       </v-icon>
-                      <v-icon small @click="deleteArticle(props.item)">
+                      <v-icon small @click="deleteArticle(props.item.node)">
                         delete
                       </v-icon>
                     </td>
@@ -60,7 +60,8 @@
           <v-form v-model="post_rule.valid">
             <v-text-field v-model="editing.targetItem.title" :rules="post_rule.title" label="标题"></v-text-field>
             <v-text-field v-model="editing.targetItem.author" :rules="post_rule.author" label="作者"></v-text-field>
-            <v-select :items="category_schema" label="分类" item-text="name" item-value="value" v-model="editing.targetItem.category"></v-select>
+            <v-select :items="category_schema" label="分类" item-text="name" item-value="value"
+              v-model="editing.targetItem.category"></v-select>
           </v-form>
         </v-flex>
         <v-flex xs12>
@@ -134,31 +135,38 @@ export default {
         {
           text: "文章标题",
           align: "center",
-          sortable: false,
+          sortable: true,
           value: "title"
         },
         {
           text: "分类",
           align: "center",
-          sortable: false,
+          sortable: true,
           value: "category"
         },
         {
           text: "作者",
           align: "center",
-          sortable: false,
+          sortable: true,
           value: "author"
         }
       ],
-      posts: [
-        {
-          id: "",
-          title: "",
-          author: "",
-          content: "",
-          updatedAt: ""
-        }
-      ],
+      posts: {
+        aggregate: {
+          count: 0
+        },
+        edges: [
+          {
+            node: {
+              id: "",
+              title: "",
+              category: "",
+              author: "",
+              content: ""
+            }
+          }
+        ]
+      },
       post_rule: {
         title: [v => !!v || "需要标题"],
         author: [v => !!v || "需要作者"],
@@ -237,7 +245,7 @@ export default {
             variables: {
               newPost: {
                 title: this.editing.targetItem.title,
-                category: this.editing.targetItem.title,
+                category: this.editing.targetItem.category,
                 author: this.editing.targetItem.author,
                 content: this.editing.targetItem.content
               }
@@ -299,34 +307,55 @@ export default {
       }
     },
     fetchData() {
+      let myOrder = null;
+      if (this.pagination.sortBy == "title") {
+        myOrder = this.pagination.descending ? "title_DESC" : "title_ASC";
+      } else if (this.pagination.sortBy == "category") {
+        myOrder = this.pagination.descending ? "category_DESC" : "category_ASC";
+      } else if (this.pagination.sortBy == "author") {
+        myOrder = this.pagination.descending ? "author_DESC" : "author_ASC";
+      }
       this.$apollo.queries.posts.refetch({
         first: this.pagination.rowsPerPage,
-        skip: (this.pagination.page - 1) * this.pagination.rowsPerPage
+        skip: (this.pagination.page - 1) * this.pagination.rowsPerPage,
+        order: myOrder
       });
     },
     convert_category(item) {
       let result = this.category_schema.find(({ value }) => {
         return value == item;
       });
-      return result.name;
+      if (result) {
+        return result.name;
+      } else {
+        console.log(item);
+      }
     }
   },
   watch: {
     pagination() {
       console.log(this.pagination);
       this.fetchData();
+      this.pagination.totalItems = 10;
     }
   },
   apollo: {
     posts: {
       query: gql`
-        query ListPosts($first: Int!, $skip: Int!) {
-          posts(first: $first, skip: $skip) {
-            id
-            title
-            content
-            category
-            author
+        query ListPosts($first: Int!, $skip: Int!, $order: PostOrderByInput) {
+          posts(skip: $skip, first: $first, orderBy: $order) {
+            aggregate {
+              count
+            }
+            edges {
+              node {
+                id
+                title
+                category
+                author
+                content
+              }
+            }
           }
         }
       `,
