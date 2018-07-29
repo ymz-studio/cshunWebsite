@@ -34,7 +34,7 @@
                 问题分类{{n}}:
               </v-subheader>
               <template v-for="n in 3">
-                <v-list-tile :key="n" @click="">
+                <v-list-tile :key="n" @click="open_question">
                   <v-list-tile-content>
                     <v-list-tile-title v-html="'问题标题'"></v-list-tile-title>
                     <v-list-tile-sub-title>
@@ -107,25 +107,30 @@ export default {
         content: ""
       },
       question_rule: {
-        title: [v => !!v || "Title is required"],
-        content: [v => !!v || "Content is required"]
+        title: [v => !!v || "需要标题"],
+        content: [v => !!v || "需要内容"]
       },
       headers: [
         { text: "标题", value: "title" },
-        { text: "日期", value: "date", align:'right' }
+        { text: "日期", value: "date", align: "right" }
       ],
-      posts:[
-        {title:"编译原理", date:"2018-07-05"},
-        {title:"CSAPP", date:"2018-07-16"},
-        {title:"编译器设计", date:"2018-12-16"},
-        {title:"编译原理", date:"2018-07-05"},
-        {title:"CSAPP", date:"2018-07-16"},
-        {title:"编译器设计", date:"2018-12-16"},
-        {title:"编译原理", date:"2018-07-05"},
-        {title:"CSAPP", date:"2018-07-16"},
-        {title:"编译器设计", date:"2018-12-16"},
+      posts: [
+        { title: "编译原理", date: "2018-07-05" },
+        { title: "CSAPP", date: "2018-07-16" },
+        { title: "编译器设计", date: "2018-12-16" },
+        { title: "编译原理", date: "2018-07-05" },
+        { title: "CSAPP", date: "2018-07-16" },
+        { title: "编译器设计", date: "2018-12-16" },
+        { title: "编译原理", date: "2018-07-05" },
+        { title: "CSAPP", date: "2018-07-16" },
+        { title: "编译器设计", date: "2018-12-16" }
       ]
     };
+  },
+  methods:{
+    open_question(){
+      return;
+    }
   }
 };
 </script>
