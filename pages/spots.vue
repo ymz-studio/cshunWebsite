@@ -63,7 +63,7 @@
         <h2 class="text-xs-center">必吃美食</h2>
       </v-layout>
       <v-layout wrap>
-        <v-flex v-for="n in 6" :key="n" xs12 sm6 md4>
+        <v-flex v-for="item in foods" :key="item.id" xs12 sm6 md4>
           <v-card>
             <v-card-media v-if="item.img" :src="item.img.url" height="200px"></v-card-media>
             <v-card-title primary-title>
@@ -82,7 +82,7 @@
         <v-layout justify-center align-center>
           <h2 class="text-xs-center">酒店信息</h2>
         </v-layout>
-        <v-layout justify-center align-center wrap>
+        <v-layout align-center wrap>
           <v-flex v-for="(item, n) in hotels" :key="item.id" xs12 sm6 md4 class="px-2 py-2">
             <v-card>
               <v-card-media :src="require('assets/spots/hotel.jpg')" height="200px"></v-card-media>
