@@ -1,49 +1,32 @@
 <template>
   <div>
     <v-container>
-      <v-layout wrap column>
-        <v-flex xs12>
-          <v-toolbar color="white" dense prominent>
-            <v-toolbar-title>文章列表</v-toolbar-title>
-            <v-divider class="mx-2" inset vertical></v-divider>
-            <v-spacer></v-spacer>
-            <v-toolbar-items v-if="!isMobile">
-              <v-btn flat @click="createArticle">新建文章</v-btn>
-            </v-toolbar-items>
-          </v-toolbar>
-        </v-flex>
-        <v-flex xs12>
-          <v-card>
-            <v-card-text>
-              <v-data-table :items="posts.edges" :headers="headers" style="width:100%;" :rows-per-page-text="'每页显示行数'"
-                :rows-per-page-items="rows_per_page" :no-data-text="'暂时没有文章'" :pagination.sync="pagination"
-                :total-items="posts.aggregate.count" :loading="$apollo.queries.posts.loading">
-                <template slot="items" slot-scope="props">
-                  <tr @click="readArticle(props.item.node)">
-                    <td class="text-xs-center">{{ props.item.node.title }}</td>
-                    <td class="text-xs-center">
-                      {{ convert_category(props.item.node.category) }}
-                    </td>
-                    <td class="text-xs-center">{{ props.item.node.author }}</td>
-                    <td class="justify-center layout px-0" v-if="!isMobile">
-                      <v-icon small class="mr-2" @click="editArticle(props.item.node)">
-                        edit
-                      </v-icon>
-                      <v-icon small @click="deleteArticle(props.item.node)">
-                        delete
-                      </v-icon>
-                    </td>
-                  </tr>
-                </template>
-              </v-data-table>
-            </v-card-text>
-          </v-card>
-        </v-flex>
-      </v-layout>
+      <v-subheader>文章列表</v-subheader>
+      <v-card>
+        <v-data-table :items="posts.edges" :headers="headers" :rows-per-page-text="'每页显示行数'" :rows-per-page-items="rows_per_page" :no-data-text="'暂时没有文章'" :pagination.sync="pagination" :total-items="posts.aggregate.count" :loading="$apollo.queries.posts.loading">
+          <template slot="items" slot-scope="props">
+            <tr @click="readArticle(props.item.node)">
+              <td>{{ props.item.node.title }}</td>
+              <td>
+                {{ convert_category(props.item.node.category) }}
+              </td>
+              <td>{{ props.item.node.author }}</td>
+              <td class="justify-center layout px-0" v-if="!isMobile">
+                <v-icon small class="mr-2" @click="editArticle(props.item.node)">
+                  edit
+                </v-icon>
+                <v-icon small @click="deleteArticle(props.item.node)">
+                  delete
+                </v-icon>
+              </td>
+            </tr>
+          </template>
+        </v-data-table>
+      </v-card>
+
     </v-container>
     <!-- PC端编辑文章抽屉 -->
-    <v-navigation-drawer :value="editing.status" stateless :hide-overlay="false" right
-      fixed temporary :width="700" v-if="!isMobile">
+    <v-navigation-drawer :value="editing.status" stateless :hide-overlay="false" right fixed temporary :width="700" v-if="!isMobile">
       <v-toolbar flat>
         <v-list>
           <v-list-tile>
@@ -60,8 +43,7 @@
           <v-form v-model="post_rule.valid">
             <v-text-field v-model="editing.targetItem.title" :rules="post_rule.title" label="标题"></v-text-field>
             <v-text-field v-model="editing.targetItem.author" :rules="post_rule.author" label="作者"></v-text-field>
-            <v-select :items="category_schema" label="分类" item-text="name" item-value="value"
-              v-model="editing.targetItem.category"></v-select>
+            <v-select :items="category_schema" label="分类" item-text="name" item-value="value" v-model="editing.targetItem.category"></v-select>
           </v-form>
         </v-flex>
         <v-flex xs12>
@@ -75,8 +57,7 @@
       </v-layout>
     </v-navigation-drawer>
     <!-- 手机端阅读文章抽屉 -->
-    <v-navigation-drawer :value="reading.status" stateless :hide-overlay="false" right
-      fixed temporary :width="700" v-if="isMobile">
+    <v-navigation-drawer :value="reading.status" stateless :hide-overlay="false" right fixed temporary :width="700" v-if="isMobile">
       <v-toolbar flat>
         <v-list>
           <v-list-tile>
@@ -134,20 +115,14 @@ export default {
       headers: [
         {
           text: "文章标题",
-          align: "center",
-          sortable: true,
           value: "title"
         },
         {
           text: "分类",
-          align: "center",
-          sortable: true,
           value: "category"
         },
         {
           text: "作者",
-          align: "center",
-          sortable: true,
           value: "author"
         }
       ],
@@ -174,7 +149,7 @@ export default {
       },
       save_progress: false,
       pagination: {},
-      rows_per_page: [5, 10, 25]
+      rows_per_page: [20, 50, 100]
     };
   },
   methods: {
@@ -353,7 +328,6 @@ export default {
                 title
                 category
                 author
-                content
               }
             }
           }
@@ -362,7 +336,7 @@ export default {
       //reactive params
       variables() {
         return {
-          first: 5,
+          first: 20,
           skip: 0
         };
       }
