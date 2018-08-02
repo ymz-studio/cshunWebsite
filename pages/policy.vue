@@ -1,26 +1,25 @@
 <template>
   <div>
     <!-- news -->
-    <v-container class="my-4">
-      <v-layout justify-center align-center>
-        <resizeBox>
-          <v-carousel style="height:100%" class="slide" @input="newsChanged($event)">
-            <v-carousel-item v-for="item in news" :key="item.title" :src="item.img" transition="fade" reverse-transition="fade">
-            </v-carousel-item>
-          </v-carousel>
-        </resizeBox>
-      </v-layout>
-      <!-- news title -->
-      <v-layout wrap align-center :justify-center="isMobile" class="px-4 py-4">
-        <v-flex xs12 sm1 class="news-header text-xs-center" :class="isMobile ? 'bdd' : 'bdr' ">
-          <h2>滚动新闻</h2>
-        </v-flex>
-        <v-flex xs12 sm8 class="news-meta px-4 py-2">
-          <h2 class="text-sm-left text-xs-center">{{news[newsIndex].title}}</h2>
-          <p class="text-sm-left text-xs-center">{{news[newsIndex].sub_title}}</p>
-        </v-flex>
-      </v-layout>
-    </v-container>
+    <v-layout justify-center align-center>
+      <resizeBox :rate="20/9">
+        <v-carousel style="height:100%" class="slide" @input="newsChanged($event)">
+          <v-carousel-item v-for="item in news" :key="item.title" :src="item.img" transition="fade" reverse-transition="fade">
+            <v-layout column align-center justify-center class='bottom-info' v-if="!isMobile">
+              <h2>{{item.title}}</h2>
+              <h3>{{item.sub_title}}</h3>
+            </v-layout>
+          </v-carousel-item>
+        </v-carousel>
+      </resizeBox>
+    </v-layout>
+    <!-- news title -->
+    <v-layout column align-center v-if="isMobile" class="py-3">
+      <a>
+        <h2>{{news[newsIndex].title}}</h2>
+      </a>
+      <h3>{{news[newsIndex].sub_title}}</h3>
+    </v-layout>
     <!-- posts -->
     <v-container fluid class="bg-grey has-border">
       <v-container>
@@ -258,5 +257,12 @@ export default {
 
 .post-date {
   width: inherit;
+}
+.bottom-info {
+  height: 100%;
+  color: #fff;
+  padding: 50px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 </style>

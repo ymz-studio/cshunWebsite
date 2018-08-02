@@ -1,25 +1,23 @@
 <template>
   <div>
     <!-- slides -->
-    <v-container class="my-4">
-      <v-layout justify-center align-center>
-        <resizeBox>
-          <v-carousel style="height:100%" class="slide" @input="slideChanged($event)">
-            <v-carousel-item v-for="item in slides" :key="item.name" :src="item.src" transition="fade" reverse-transition="fade">
-              <v-layout justify-center column align-center class="slide-info" v-if="!isMobile">
-                <h3>{{item.name}}</h3>
-                <p class="px-4">{{item.description}}</p>
-              </v-layout>
-            </v-carousel-item>
-          </v-carousel>
-        </resizeBox>
-      </v-layout>
-      <!-- backup descirption -->
-      <v-layout column justify-center align-center class="px-4 py-4" v-if="isMobile">
-        <h3 class="text-xs-center">{{slides[slideIndex].name}}</h3>
-        <p class="text-xs-center">{{slides[slideIndex].description}}</p>
-      </v-layout>
-    </v-container>
+    <v-layout justify-center align-center>
+      <resizeBox :rate="19/9">
+        <v-carousel style="height:100%" class="slide" @input="slideChanged($event)">
+          <v-carousel-item v-for="item in slides" :key="item.name" :src="item.src" transition="fade" reverse-transition="fade">
+            <v-layout justify-center column align-center class="slide-info" v-if="!isMobile">
+              <h3>{{item.name}}</h3>
+              <p class="px-4">{{item.description}}</p>
+            </v-layout>
+          </v-carousel-item>
+        </v-carousel>
+      </resizeBox>
+    </v-layout>
+    <!-- backup descirption -->
+    <v-layout column justify-center align-center class="px-4 py-4" v-if="isMobile">
+      <h3 class="text-xs-center">{{slides[slideIndex].name}}</h3>
+      <p class="text-xs-center">{{slides[slideIndex].description}}</p>
+    </v-layout>
 
     <!-- spots -->
     <v-container fluid class="bg-grey has-border">
@@ -29,7 +27,8 @@
       <v-layout justify-center align-center wrap>
         <template v-for="(item, index) in spots">
           <v-flex xs12 sm6 class="px-1 py-1" :key="item.name" @click.stop="spot_focus = true; spot_index = index">
-            <div class="travel-card" :style="{backgroundImage:`url(${item.url});`}">
+            <div class="travel-card">
+              <img :src="item.url" class="travel-img">
               <v-layout column justify-end align-end wrap class="travel-card-content">
                 <h1 :class="item.class">DAY {{index + 1}}</h1>
                 <h2 :class="item.class">{{item.name}}</h2>
@@ -59,12 +58,12 @@
     </v-container>
 
     <!-- foods -->
-    <v-container :fluid="isMobile">
+    <v-container :fluid="isMobile" grid-list-xl>
       <v-layout justify-center align-center>
         <h2 class="text-xs-center">必吃美食</h2>
       </v-layout>
       <v-layout wrap>
-        <v-flex v-for="item in foods" :key="item.id" xs12 sm6 md4 class="px-2 py-2">
+        <v-flex v-for="item in foods" :key="item.id" xs12 sm6 md4>
           <v-card>
             <v-card-media v-if="item.img" :src="item.img.url" height="200px"></v-card-media>
             <v-card-title primary-title>
@@ -78,12 +77,12 @@
     </v-container>
 
     <!-- hotels -->
-    <v-container class="bg-grey has-border" fluid>
-      <v-container :fluid="isMobile">
+    <div class="bg-grey has-border" fluid>
+      <v-container :fluid="isMobile" grid-list-xl>
         <v-layout justify-center align-center>
           <h2 class="text-xs-center">酒店信息</h2>
         </v-layout>
-        <v-layout justify-center align-center wrap>
+        <v-layout align-center wrap>
           <v-flex v-for="(item, n) in hotels" :key="item.id" xs12 sm6 md4 class="px-2 py-2">
             <v-card>
               <v-card-media :src="require('assets/spots/hotel.jpg')" height="200px"></v-card-media>
@@ -128,7 +127,7 @@
           </v-dialog>
         </v-layout>
       </v-container>
-    </v-container>
+    </div>
   </div>
 </template>
 
@@ -162,7 +161,7 @@ export default {
           description:
             "甲秀楼在贵州省贵阳市城南的南明河上，以河中一块巨石为基而建。始建于明，后楼毁重建，改名“来凤阁”。",
           src: require("assets/spots/jiaxiulou.jpg")
-        }
+        },
       ],
       slideIndex: 0,
       spots: [
@@ -330,6 +329,8 @@ export default {
   background-position: center;
   border-radius: 2px;
   box-shadow: 0 0 2px grey;
+  overflow: hidden;
+  cursor: pointer;
 }
 .travel-card:hover {
   box-shadow: 0 0 10px grey;
@@ -341,6 +342,13 @@ export default {
   right: 0;
   text-shadow: 0 0 4px #555;
   width: 100%;
+}
+.travel-img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 100%;
 }
 .travel-card-content h1 {
   font-weight: 300;

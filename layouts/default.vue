@@ -27,7 +27,7 @@
     </v-content>
     <v-footer class="footer pa-3" dark height="50">
       <v-layout justify-center align-center>
-          &copy; 2018 北京邮电大学 计算机学院
+        &copy; 2018 北京邮电大学 计算机学院
         <v-btn flat class="footer-btn">联系我们</v-btn>
       </v-layout>
     </v-footer>
@@ -41,8 +41,8 @@
   }
 }
 
-.nav{
-  z-index:10000;
+.nav {
+  z-index: 10000;
 }
 
 .btn-nav {
@@ -78,10 +78,6 @@ export default {
         { path: '/spots', title: '旅游景点' },
         { path: '/consultant', title: '专家咨询' },
         { path: '/policy', title: '扶贫政策' },
-        { path: '/business', title: '产销对接' }
-
-
-
       ]
     }
   },
