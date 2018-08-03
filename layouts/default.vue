@@ -5,7 +5,7 @@
       <v-toolbar-title class="logo">
         <v-layout align-center>
           <img src="~assets/logo-120x120.png" class="mr-2">
-          <span>长顺科技扶贫在线平台</span>
+          <span>长顺扶贫信息在线平台</span>
         </v-layout>
       </v-toolbar-title>
       <v-spacer/>
