@@ -6352,9 +6352,9 @@ vue@^2.5.13:
   version "2.5.16"
   resolved "http://registry.npm.taobao.org/vue/download/vue-2.5.16.tgz#07edb75e8412aaeed871ebafa99f4672584a0085"
 
-vuetify@^1.0.19:
-  version "1.0.19"
-  resolved "http://registry.npm.taobao.org/vuetify/download/vuetify-1.0.19.tgz#fb6d123dd1c217795fc2333e912c0ecbed2ed69e"
+vuetify@^1.1.9:
+  version "1.1.9"
+  resolved "http://registry.npm.taobao.org/vuetify/download/vuetify-1.1.9.tgz#3eb497cc89d318ee6865bbebd081f5830f83f8ba"
 
 vuex@^3.0.1:
   version "3.0.1"
