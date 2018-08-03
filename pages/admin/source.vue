@@ -4,7 +4,7 @@
         <v-card>
             <v-data-table :headers="isMobile ? mobileHeaders.food : headers.food" :loading="loading>0" :items="foods" hide-actions>
                 <template slot="items" slot-scope="props">
-                    <tr @click="setForm(props.item); isCreate = false;dialog.food = true;editID=props.item.id" style="cursor:pointer">
+                    <tr @click="setFoodForm(props.item); isCreate = false;dialog.food = true;editID=props.item.id" style="cursor:pointer">
                         <td>{{ props.item.name }}</td>
                     </tr>
                 </template>
@@ -22,7 +22,7 @@
         <v-card>
             <v-data-table :headers="isMobile ? mobileHeaders.hotel : headers.hotel" :loading="loading>0" :items="hotels" hide-actions>
                 <template slot="items" slot-scope="props">
-                    <tr @click="setForm(props.item); isCreate = false;dialog.hotel = true;editID=props.item.id" style="cursor:pointer">
+                    <tr @click="setHotelForm(props.item); isCreate = false;dialog.hotel = true;editID=props.item.id" style="cursor:pointer">
                         <td>{{ props.item.name }}</td>
                         <td v-if="!isMobile">{{ props.item.score }}</td>
                         <td  v-if="!isMobile">{{ props.item.address }}</td>
@@ -70,7 +70,7 @@
                     </v-layout>
                 </v-layout>
             </v-form>
-            <v-btn v-if="!isCreate" class="my-3" color="error" @click="del">删除美食</v-btn>
+            <v-btn v-if="!isCreate" class="my-3" color="error" @click="delFood">删除美食</v-btn>
         </my-dialog>
 
         <my-dialog :title="isCreate ? '添加酒店' : '更新酒店信息'" v-model="dialog.hotel" @submit="submit_hotel" :loading="this.loading>0">
@@ -126,7 +126,7 @@
                     </v-layout>
                 </v-layout>
             </v-form>
-            <v-btn v-if="!isCreate" class="my-3" color="error" @click="del">删除此酒店</v-btn>
+            <v-btn v-if="!isCreate" class="my-3" color="error" @click="delHotel">删除此酒店</v-btn>
         </my-dialog>
     </v-container>
 </template>
@@ -166,22 +166,31 @@ export default {
 			editID: "",
 			name: "",
 			introduction: "",
-			houses: [],
+			_houses: [],
+			get houses() {
+				return this._houses;
+			},
+			set houses(payload) {
+        console.log(payload)
+				if (typeof payload === "string") {
+					this._houses = JSON.parse(payload);
+				} else this._houses = payload;
+			},
 			address: "",
 			score: 0,
 			fieldRules: {
 				hotel: {
 					name: [
-						v => v.length > 0 || "酒店名不能为空",
-						v => (v.length > 0 && v.length <= 15) || "酒店名不超过15个字符"
+						v => (v && v.length > 0) || "酒店名不能为空",
+						v => (v && v.length > 0 && v.length <= 15) || "酒店名不超过15个字符"
 					],
-					address: [v => v.length > 0 || "地址不能为空"],
-					introduction: [v => v.length > 0 || "介绍不能为空"]
+					address: [v => (v && v.length > 0) || "地址不能为空"],
+					introduction: [v => (v && v.length > 0) || "介绍不能为空"]
 				},
 				food: {
 					name: [
-						v => v.length > 0 || "美食不能为空",
-						v => (v.length > 0 && v.length <= 15) || "美食名不超过15个字符"
+						v => (v && v.length > 0) || "美食不能为空",
+						v => (v && v.length > 0 && v.length <= 15) || "美食名不超过15个字符"
 					]
 				},
 				house: {
@@ -195,7 +204,7 @@ export default {
 			},
 			url: "",
 			urlRules: [
-				v => v.length > 0 || "店铺链接不能为空",
+				v => (v && v.length > 0) || "店铺链接不能为空",
 				v =>
 					/^http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- ./?%&=]*)?$/.test(v) ||
 					"店铺链接不合法"
@@ -213,20 +222,29 @@ export default {
 	},
 	methods: {
 		...mapMutations(["snackBarOpen"]),
-		setForm(item) {
+		setFoodForm(item) {
 			this.name = item.name;
 			this.url = item.url;
 			this.file = item.img;
 		},
+		setHotelForm(item) {
+			this.name = item.name;
+      this.address = item.address;
+      this.houses = JSON.parse(item.houses);
+      this.introduction = item.introduction;
+			this.score = item.score;
+			this.url = item.url;
+			this.file = item.img;
+		},
 		addHouse() {
-      if (this.$refs.house_form.validate()){
-			this.houses.push({
-				name: this.$refs.houseAddName.internalValue,
-				price: this.$refs.houseAddPrice.internalValue
-      });
-      this.$refs.houseAddName.internalValue= "";
-      this.$refs.houseAddPrice.internalValue = 0;
-      }
+			if (this.$refs.house_form.validate()) {
+				this.houses.push({
+					name: this.$refs.houseAddName.internalValue,
+					price: this.$refs.houseAddPrice.internalValue
+				});
+				this.$refs.houseAddName.internalValue = "";
+				this.$refs.houseAddPrice.internalValue = 0;
+			}
 		},
 		rmHouse(index) {
 			this.houses.splice(index, 1);
@@ -246,7 +264,7 @@ export default {
                     }`
 					: gql`
                     mutation{
-                        updateBusiness(where:{id:"${this.editID}"},data:{
+                        updateFood(where:{id:"${this.editID}"},data:{
                             name:"${this.name}",
                             img:{connect:{
                             id:"${this.file.id}"
@@ -263,22 +281,22 @@ export default {
 					this.snackBarOpen({ title: "提交失败", text: e.toString() });
 				} finally {
 					this.loading--;
-					this.dialog = false;
+					this.dialog.food = false;
 				}
 			}
 		},
 		async submit_hotel() {
-      console.log(this.$refs.hotel_form.validate());
+			console.log(this.$refs.hotel_form.validate());
 			if (this.$refs.hotel_form.validate() && this.file) {
 				this.loading++;
 				const mutation = this.isCreate
 					? gql`
-                    mutation{
+                    mutation($houses: String!){
                         createHotel(data:{
                             name:"${this.name}",
                             address:"${this.address}",
                             introduction:"${this.introduction}",
-                            houses: [House!]!
+                            houses: $houses,
                             score:${this.score},
                             url:"${this.url}",
                             img:{connect:{
@@ -287,52 +305,86 @@ export default {
                         }){id}
                     }`
 					: gql`
-                    mutation{
-                        updateBusiness(where:{id:"${this.editID}"},data:{
+                    mutation($houses: String!){
+                        updateHotel(where:{id:"${this.editID}"},data:{
                             name:"${this.name}",
+                            address:"${this.address}",
+                            introduction:"${this.introduction}",
+                            houses: $houses,
+                            score:${this.score},
+                            url:"${this.url}",
                             img:{connect:{
                             id:"${this.file.id}"
-                            }}}){id}
+                          }}
+                        }){id}
                     }`;
 				try {
-					await this.$apollo.mutate({ mutation });
+					await this.$apollo.mutate({
+						mutation,
+						variables: { houses: JSON.stringify(this.houses) }
+					});
 					this.snackBarOpen({
 						title: "成功",
-						text: `美食: ${this.name} 操作成功`
+						text: `酒店: ${this.name} 操作成功`
 					});
-					this.$apollo.queries.businesses.refetch();
+					this.$apollo.queries.hotels.refetch();
 				} catch (e) {
 					this.snackBarOpen({ title: "提交失败", text: e.toString() });
 				} finally {
 					this.loading--;
-					this.dialog = false;
+					this.dialog.hotel = false;
 				}
 			}
 		},
 		reset() {
 			this.name = "";
 			this.url = "";
+			this.address = "";
+			this.introduction = "";
+			this.score = 0;
+			this.houses = [];
 			this.file = null;
 		},
-		async del() {
+		async delFood() {
 			if (confirm("此操作不可恢复,是否继续进行?")) {
 				const mutation = gql`
                 mutation{
-                deleteBusiness(where:{id:"${this.editID}"}){id}
+                deleteFood(where:{id:"${this.editID}"}){id}
                 }`;
 				this.loading++;
 				try {
 					await this.$apollo.mutate({ mutation });
 					this.snackBarOpen({
 						title: "成功",
-						text: `店铺: ${this.name} 删除成功`
+						text: `美食: ${this.name} 删除成功`
+					});
+					this.$apollo.queries.foods.refetch();
+				} catch (e) {
+					this.snackBarOpen({ title: "提交失败", text: e.toString() });
+				} finally {
+					this.loading--;
+					this.dialog.food = false;
+				}
+			}
+		},		async delHotel() {
+			if (confirm("此操作不可恢复,是否继续进行?")) {
+				const mutation = gql`
+                mutation{
+                deleteHotel(where:{id:"${this.editID}"}){id}
+                }`;
+				this.loading++;
+				try {
+					await this.$apollo.mutate({ mutation });
+					this.snackBarOpen({
+						title: "成功",
+						text: `酒店: ${this.name} 删除成功`
 					});
 					this.$apollo.queries.businesses.refetch();
 				} catch (e) {
 					this.snackBarOpen({ title: "提交失败", text: e.toString() });
 				} finally {
 					this.loading--;
-					this.dialog = false;
+					this.dialog.hotel = false;
 				}
 			}
 		}
@@ -366,20 +418,19 @@ export default {
 		foods: {
 			query: gql`
 				{
-					query {
-						foods {
+					foods {
+						id
+						name
+						img {
 							id
-							name
-							img {
-								id
-								url
-							}
+							url
 						}
 					}
 				}
 			`,
 			loadingKey: "loading",
 			result(value) {
+				console.log(value);
 				if (!value) {
 					this.foods = [];
 				}
