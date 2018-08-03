@@ -3,16 +3,15 @@
     <v-container>
       <v-subheader>文章列表</v-subheader>
       <v-card>
-        <v-data-table :items="posts.edges" :headers="headers" :rows-per-page-text="'每页显示行数'" :rows-per-page-items="rows_per_page" :no-data-text="'暂时没有文章'" :pagination.sync="pagination" :total-items="posts.aggregate.count" :loading="$apollo.queries.posts.loading">
+        <v-data-table :items="posts.edges" :headers="headers" :rows-per-page-text="'每页显示行数'"
+          :rows-per-page-items="rows_per_page" :no-data-text="'暂时没有文章'" :pagination.sync="pagination"
+          :total-items="posts.aggregate.count" :loading="$apollo.queries.posts.loading">
           <template slot="items" slot-scope="props">
             <tr @click="readArticle(props.item.node)">
               <td>{{ props.item.node.title }}</td>
-              <td>
-                {{ convert_category(props.item.node.category) }}
-              </td>
               <td>{{ props.item.node.author }}</td>
               <td class="justify-center layout px-0" v-if="!isMobile">
-                <v-icon small class="mr-2" @click="editArticle(props.item.node)">
+                <v-icon small @click="editArticle(props.item.node)" class="mr-2">
                   edit
                 </v-icon>
                 <v-icon small @click="deleteArticle(props.item.node)">
@@ -23,10 +22,13 @@
           </template>
         </v-data-table>
       </v-card>
-
+      <v-layout justify-end class="mt-2">
+        <v-btn open-on-hover v-if="!isMobile" color="primary" @click="createArticle">新增文章</v-btn>
+      </v-layout>
     </v-container>
     <!-- PC端编辑文章抽屉 -->
-    <v-navigation-drawer :value="editing.status" stateless :hide-overlay="false" right fixed temporary :width="700" v-if="!isMobile">
+    <v-navigation-drawer :value="editing.status" stateless :hide-overlay="false" right
+      fixed temporary :width="700" v-if="!isMobile" id="dwr">
       <v-toolbar flat>
         <v-list>
           <v-list-tile>
@@ -43,7 +45,6 @@
           <v-form v-model="post_rule.valid">
             <v-text-field v-model="editing.targetItem.title" :rules="post_rule.title" label="标题"></v-text-field>
             <v-text-field v-model="editing.targetItem.author" :rules="post_rule.author" label="作者"></v-text-field>
-            <v-select :items="category_schema" label="分类" item-text="name" item-value="value" v-model="editing.targetItem.category"></v-select>
           </v-form>
         </v-flex>
         <v-flex xs12>
@@ -51,13 +52,15 @@
           <VueEditor v-model="editing.targetItem.content" />
         </v-flex>
         <v-flex xs4 offset-xs8>
-          <v-btn flat color="blue" @click="saveEdit" :loading="save_progress" :disabled="!post_rule.valid">保存</v-btn>
+          <v-btn flat color="blue" @click="saveEdit" :loading="save_progress || $apollo.queries.post_content.loading"
+            :disabled="!post_rule.valid">保存</v-btn>
           <v-btn flat color="error" @click="cancelEdit">取消</v-btn>
         </v-flex>
       </v-layout>
     </v-navigation-drawer>
     <!-- 手机端阅读文章抽屉 -->
-    <v-navigation-drawer :value="reading.status" stateless :hide-overlay="false" right fixed temporary :width="700" v-if="isMobile">
+    <v-navigation-drawer :value="reading.status" stateless :hide-overlay="false" right
+      fixed temporary :width="700" v-if="isMobile">
       <v-toolbar flat>
         <v-list>
           <v-list-tile>
@@ -93,11 +96,6 @@ export default {
   },
   data() {
     return {
-      category_schema: [
-        { name: "政策文章", value: "POLICY" },
-        { name: "热点新闻", value: "NEWS" },
-        { name: "工作计划", value: "TREND" }
-      ],
       editing: {
         status: false,
         method: "edit",
@@ -116,10 +114,6 @@ export default {
         {
           text: "文章标题",
           value: "title"
-        },
-        {
-          text: "分类",
-          value: "category"
         },
         {
           text: "作者",
@@ -142,6 +136,8 @@ export default {
           }
         ]
       },
+      post_content: "",
+      post_id: "",
       post_rule: {
         title: [v => !!v || "需要标题"],
         author: [v => !!v || "需要作者"],
@@ -162,10 +158,26 @@ export default {
       this.editing.status = true;
     },
     editArticle(item) {
+      this.editing.status = true;
+      document.getElementById("dwr").scrollTop = 0;
+      this.$apollo.queries.post_content
+        .refetch({
+          where: {
+            id: item.id
+          }
+        })
+        .then(({ data }) => {
+          this.editArticle2(item, data.post_content.edges[0].node.content);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    editArticle2(item, content) {
       this.editing.targetItem.title = item.title;
       this.editing.targetItem.author = item.author;
       this.editing.targetItem.category = item.category;
-      this.editing.targetItem.content = item.content;
+      this.editing.targetItem.content = content;
       this.editing.backUpItem = item;
       this.editing.status = true;
     },
@@ -189,7 +201,6 @@ export default {
           }
         })
         .then(data => {
-          console.log(data);
           this.fetchData();
         })
         .catch(err => {
@@ -220,7 +231,7 @@ export default {
             variables: {
               newPost: {
                 title: this.editing.targetItem.title,
-                category: this.editing.targetItem.category,
+                category: "POLICY",
                 author: this.editing.targetItem.author,
                 content: this.editing.targetItem.content
               }
@@ -285,8 +296,6 @@ export default {
       let myOrder = null;
       if (this.pagination.sortBy == "title") {
         myOrder = this.pagination.descending ? "title_DESC" : "title_ASC";
-      } else if (this.pagination.sortBy == "category") {
-        myOrder = this.pagination.descending ? "category_DESC" : "category_ASC";
       } else if (this.pagination.sortBy == "author") {
         myOrder = this.pagination.descending ? "author_DESC" : "author_ASC";
       }
@@ -317,8 +326,13 @@ export default {
   apollo: {
     posts: {
       query: gql`
-        query ListPosts($first: Int!, $skip: Int!, $order: PostOrderByInput) {
-          posts(skip: $skip, first: $first, orderBy: $order) {
+        query ListPosts(
+          $first: Int!
+          $skip: Int!
+          $order: PostOrderByInput
+          $where: PostWhereInput!
+        ) {
+          posts(skip: $skip, first: $first, orderBy: $order, where: $where) {
             aggregate {
               count
             }
@@ -337,7 +351,30 @@ export default {
       variables() {
         return {
           first: 20,
-          skip: 0
+          skip: 0,
+          where: {
+            category: "POLICY"
+          }
+        };
+      }
+    },
+    post_content: {
+      query: gql`
+        query GetConent($where: PostWhereInput!) {
+          post_content: posts(where: $where) {
+            edges {
+              node {
+                content
+              }
+            }
+          }
+        }
+      `,
+      variables() {
+        return {
+          where: {
+            id: this.post_id || ""
+          }
         };
       }
     }
