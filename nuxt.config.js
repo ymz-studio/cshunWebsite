@@ -11,7 +11,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: '助顺邮我',
+    title: '长顺扶贫信息在线平台',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
