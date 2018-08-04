@@ -4,7 +4,8 @@
     <v-layout justify-center align-center>
       <resizeBox :rate="19/9">
         <v-carousel style="height:100%" class="slide" @input="slideChanged($event)">
-          <v-carousel-item v-for="item in slides" :key="item.name" :src="item.src" transition="fade" reverse-transition="fade">
+          <v-carousel-item v-for="item in slides" :key="item.name" :src="item.src" transition="fade"
+            reverse-transition="fade">
             <v-layout justify-center column align-center class="slide-info" v-if="!isMobile">
               <h3>{{item.name}}</h3>
               <p class="px-4">{{item.description}}</p>
@@ -85,7 +86,8 @@
         <v-layout align-center wrap>
           <v-flex v-for="(item, n) in hotels" :key="item.id" xs12 sm6 md4 class="px-2 py-2">
             <v-card>
-              <v-card-media :src="require('assets/spots/hotel.jpg')" height="200px"></v-card-media>
+              <v-card-media :src="item.img ? item.img.url : require('assets/spots/hotel.jpg')"
+                height="200px"></v-card-media>
               <v-card-title primary-title>
                 <div>
                   <h3 class="headline mb-0">{{item.name}}</h3>
@@ -94,13 +96,9 @@
               <v-card-text class="hotel-content">
                 <p>地址：{{item.address}}</p>
                 <p>网址：{{item.url}}</p>
-                <p>评价：{{item.score}}</p>
-                <v-chip v-for="x in 2" :key="x" class="hotel-content-chip">
-                  <v-avatar>
-                    <v-icon style="color:white;">stars</v-icon>
-                  </v-avatar>
-                  大床房：￥{{(x + 1)*200}}
-                </v-chip>
+                <p>评价：
+                  <span v-for="n in item.score" :key="n">★</span>
+                </p>
                 <v-chip v-for="house in item.houses" :key="house.id" class="hotel-content-chip">
                   <v-avatar>
                     <v-icon style="color:white;">stars</v-icon>
@@ -161,7 +159,7 @@ export default {
           description:
             "甲秀楼在贵州省贵阳市城南的南明河上，以河中一块巨石为基而建。始建于明，后楼毁重建，改名“来凤阁”。",
           src: require("assets/spots/jiaxiulou.jpg")
-        },
+        }
       ],
       slideIndex: 0,
       spots: [
@@ -273,14 +271,18 @@ export default {
             }
             introduction
             score
-            houses {
-              id
-              name
-              price
-            }
+            houses
           }
         }
-      `
+      `,
+      update(data) {
+        return data.hotels.map(hotel => {
+          return {
+            ...hotel,
+            houses: hotel.houses == "" ? {} : JSON.parse(hotel.houses)
+          };
+        });
+      }
     }
   },
   mounted() {
@@ -343,12 +345,13 @@ export default {
   text-shadow: 0 0 4px #555;
   width: 100%;
 }
-.travel-img{
+.travel-img {
   position: absolute;
   top: 0;
   left: 0;
-  width: auto;
+  width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 .travel-card-content h1 {
   font-weight: 300;
