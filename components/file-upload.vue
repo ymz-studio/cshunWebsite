@@ -7,7 +7,7 @@
                 <slot v-else></slot>
             </v-layout>
         </label>
-        <input type="file" name="file" id="file" style="display:none" :accept="accept" @change="onUpload">
+        <input ref="referenceUpload" type="file" name="file" id="file" style="display:none" :accept="accept" @change="onUpload">
     </div>
 </template>
 
@@ -24,11 +24,13 @@ export default {
     data() {
         return {
             loading: 0,
+            switcher:true
         }
     },
     methods: {
         ...mapMutations(['snackBarOpen']),
         async onUpload({ target: { validity, files: [file] } }) {
+            this.$refs.referenceUpload.value = null;//reset input value
             if (validity.valid && file) {
                 this.loading += 1
                 try {
