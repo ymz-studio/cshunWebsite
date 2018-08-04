@@ -88,7 +88,7 @@
       </v-container>
     </v-container>
     <!-- article dialog -->
-    <v-dialog v-model="show_post.focus" :fullscreen="isMobile">
+    <v-dialog v-model="show_post.focus" :fullscreen="isMobile" width="70%">
       <v-card tile v-if="current_post.edges[0]">
         <v-toolbar flat class="card-bar">
           <v-btn icon @click="show_post.focus = false">
