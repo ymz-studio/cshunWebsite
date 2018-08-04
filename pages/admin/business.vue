@@ -113,7 +113,7 @@ export default {
                         }){id}
                     }`: gql`
                     mutation{
-                        updateBusiness(where:{id:"${this.editID}"},data:{ 
+                        updateBusiness(where:{id:"${this.editID}"},data:{
                             name:"${this.name}",
                             url:"${this.url}",
                             img:{connect:{
