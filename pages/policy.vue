@@ -7,8 +7,8 @@
           <v-carousel-item v-for="(item, index) in news.edges" v-if="index<=3" :key="item.node.id"
             transition="fade" reverse-transition="fade">
             <v-layout column align-center justify-center class='bottom-info' v-if="!isMobile">
-              <h1>{{item.node.title}}</h1>
-              <h3>{{item.node.createdAt.substring(0, 10)}}</h3>
+              <h1 style="color:#F64547;">{{item.node.title}}</h1>
+              <h3 style="color:#333;">{{item.node.createdAt.substring(0, 10)}}</h3>
             </v-layout>
           </v-carousel-item>
         </v-carousel>
@@ -78,7 +78,7 @@
           </v-tab-item>
         </v-tabs>
         <!-- post dialog -->
-        <v-dialog v-model="current_post.focus" :fullscreen="isMobile">
+        <v-dialog v-model="current_post.focus" :fullscreen="isMobile" width="70%">
           <v-card tile v-if="current_post_data.edges[0]">
             <v-toolbar flat class="card-bar">
               <v-btn icon @click="current_post.focus = false">
@@ -92,7 +92,7 @@
               class="card-text">
               <h2 class="text-xs-center">{{current_post_data.edges[0].node.title}}</h2>
               <h3 class="text-xs-center">作者：{{current_post_data.edges[0].node.author}}</h3>
-              <p>{{current_post_data.edges[0].node.createdAt.substring(0, 10)}}</p>
+              <p class="text-xs-center">{{current_post_data.edges[0].node.createdAt.substring(0, 10)}}</p>
               <div v-html="current_post_data.edges[0].node.content"></div>
             </v-card-text>
             <v-card-text v-else>
@@ -331,6 +331,9 @@ export default {
         };
       }
     }
+  },
+  mounted(){
+    this.newsIndex++;
   }
 };
 </script>
@@ -361,7 +364,6 @@ export default {
   font-size: 18px;
   margin: 0;
 }
-
 .bg-grey {
   background-color: whitesmoke;
 }

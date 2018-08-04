@@ -56,9 +56,11 @@
         <v-layout justify-center align-center>
           <v-flex xs12 sm8>
             <v-form v-model="question.valid">
-              <v-text-field v-model="question.title" :rules="question_rule.title" label="问题标题" required></v-text-field>
-              <v-text-field v-model="question.content" :rules="question_rule.content" label="问题内容" required></v-text-field>
-              <v-btn :disabled="!question.valid" color="primary">提交问题</v-btn>
+              <v-text-field v-model="question.title" :rules="question_rule.title" label="问题标题"
+                required></v-text-field>
+              <v-text-field v-model="question.content" :rules="question_rule.content" label="问题内容"
+                required></v-text-field>
+              <v-btn :disabled="!question.valid" color="primary" @click="createQA">提交问题</v-btn>
               <v-btn flat color="primary" @click="question.title = question.content = ''">清除内容</v-btn>
             </v-form>
           </v-flex>
@@ -68,22 +70,46 @@
     <!-- atricle -->
     <v-container fluid class="bg-white">
       <v-container>
-        <h2 class="text-xs-center">相关文章</h2>
+        <h2 class="text-xs-center py-4">通用农业技术</h2>
         <v-layout column>
-          <v-flex v-for="t in 3" :key="t" class="py-4">
-            <v-subheader>
-              文章分类{{t}}:
-            </v-subheader>
-            <v-data-table :headers="headers" :items="posts" hide-actions class="elevation-1">
+          <v-flex xs12>
+            <v-data-table :headers="headers" :items="posts.edges" hide-actions class="elevation-1"
+              :rows-per-page-text="'每页显示行数'" :no-data-text="'暂时没有文章'">
               <template slot="items" slot-scope="props">
-                <td>{{ props.item.title }}</td>
-                <td class="text-xs-right">{{ props.item.date }}</td>
+                <tr @click="openPost(props.item)">
+                  <td>{{ props.item.node.title }}</td>
+                  <td>{{ props.item.node.author }}</td>
+                  <td class="text-xs-right">{{ props.item.node.createdAt.substring(0, 10) }}</td>
+                </tr>
               </template>
             </v-data-table>
           </v-flex>
         </v-layout>
       </v-container>
     </v-container>
+    <!-- article dialog -->
+    <v-dialog v-model="show_post.focus" :fullscreen="isMobile" width="70%">
+      <v-card tile v-if="current_post.edges[0]">
+        <v-toolbar flat class="card-bar">
+          <v-btn icon @click="show_post.focus = false">
+            <v-icon>arrow_back</v-icon>
+          </v-btn>
+          <v-toolbar-title>{{current_post.edges[0].node.title}}</v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-btn flat :loading="$apollo.queries.current_post.loading"></v-btn>
+        </v-toolbar>
+        <v-card-text v-if="current_post.edges[0] && !$apollo.queries.current_post.loading"
+          class="card-text">
+          <h2 class="text-xs-center">{{current_post.edges[0].node.title}}</h2>
+          <h3 class="text-xs-center">作者：{{current_post.edges[0].node.author}}</h3>
+          <p class="text-xs-center">{{current_post.edges[0].node.createdAt.substring(0, 10)}}</p>
+          <div v-html="current_post.edges[0].node.content"></div>
+        </v-card-text>
+        <v-card-text v-else>
+          正在加载文章内容
+        </v-card-text>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -91,6 +117,7 @@
 import { mapState } from "vuex";
 import Hero from "@/components/hero";
 import FileUpload from "@/components/file-upload";
+import gql from "graphql-tag";
 export default {
   components: {
     Hero,
@@ -111,25 +138,126 @@ export default {
         content: [v => !!v || "需要内容"]
       },
       headers: [
-        { text: "标题", value: "title" },
-        { text: "日期", value: "date", align: "right" }
+        {
+          text: "文章标题",
+          value: "title",
+          sortable:false
+        },
+        {
+          text: "作者",
+          value: "author",
+          sortable:false
+        },
+        {
+          text: "日期",
+          value: "createdAt",
+          sortable:false
+        }
       ],
-      posts: [
-        { title: "编译原理", date: "2018-07-05" },
-        { title: "CSAPP", date: "2018-07-16" },
-        { title: "编译器设计", date: "2018-12-16" },
-        { title: "编译原理", date: "2018-07-05" },
-        { title: "CSAPP", date: "2018-07-16" },
-        { title: "编译器设计", date: "2018-12-16" },
-        { title: "编译原理", date: "2018-07-05" },
-        { title: "CSAPP", date: "2018-07-16" },
-        { title: "编译器设计", date: "2018-12-16" }
-      ]
+      posts: {},
+      current_post: {
+        edges: [
+          {
+            node: {
+              title: "",
+              author: "",
+              content: ""
+            }
+          }
+        ]
+      },
+      show_post: {
+        focus: false,
+        id: ""
+      }
     };
   },
-  methods:{
-    open_question(){
+  methods: {
+    open_question() {
       return;
+    },
+    openPost(item){
+      this.show_post.id = item.node.id;
+      this.show_post.focus = true;
+    },
+    createQA() {
+      this.$apollo
+        .mutate({
+          mutation: gql`
+            mutation CreateQuestion($data: QuestionCreateInput!) {
+              createQuestion(data: $data) {
+                id
+              }
+            }
+          `,
+          variables: {
+            data: {
+              title: this.question.title,
+              content: this.question.content
+            }
+          }
+        })
+        .then(data => {
+          this.question.title = "";
+          this.question.content = "";
+          alert("提交问题成功");
+        })
+        .catch(err => {
+          alert("创建问题失败");
+          console.log(err);
+        });
+    }
+  },
+  apollo: {
+    posts: {
+      query: gql`
+        query ListPost($where: PostWhereInput!) {
+          posts(where: $where) {
+            aggregate {
+              count
+            }
+            edges {
+              node {
+                id
+                title
+                category
+                author
+                createdAt
+              }
+            }
+          }
+        }
+      `,
+      variables() {
+        return {
+          where: {
+            category: "AGRICULTURAL_TECH"
+          }
+        };
+      }
+    },
+    current_post: {
+      query: gql`
+        query GetPost($where: PostWhereInput!) {
+          current_post: posts(where: $where) {
+            edges {
+              node {
+                title
+                author
+                createdAt
+                content
+              }
+            }
+          }
+        }
+      `,
+      variables() {
+        return {
+          where: {
+            id: this.show_post.id || ""
+          }
+        };
+      }
     }
   }
 };
@@ -145,5 +273,15 @@ export default {
 .has-border {
   border-top: 2px solid rgba(0, 0, 0, 0.1);
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-bar {
+  position: fixed;
+}
+.card-text {
+  padding-top: 60px;
+}
+.card-text img {
+  max-width: 100%;
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
   <div>
     <v-container>
-      <v-subheader>文章列表</v-subheader>
       <v-card>
         <v-card-title>
+          <v-subheader>文章列表</v-subheader>
           <v-spacer></v-spacer>
           <v-select :items="category_schema" label="选择分类" item-text="name" item-value="value"
             v-model="search"></v-select>

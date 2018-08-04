@@ -267,7 +267,7 @@ export default {
 						title: "成功",
 						text: `美食: ${this.name} 操作成功`
 					});
-					this.$apollo.queries.businesses.refetch();
+					this.$apollo.queries.foods.refetch();
 				} catch (e) {
 					this.snackBarOpen({ title: "提交失败", text: e.toString() });
 				} finally {
@@ -370,7 +370,7 @@ export default {
 						title: "成功",
 						text: `酒店: ${this.name} 删除成功`
 					});
-					this.$apollo.queries.businesses.refetch();
+					this.$apollo.queries.hotels.refetch();
 				} catch (e) {
 					this.snackBarOpen({ title: "提交失败", text: e.toString() });
 				} finally {
