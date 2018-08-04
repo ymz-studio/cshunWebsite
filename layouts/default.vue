@@ -42,7 +42,7 @@
 }
 
 .nav {
-  z-index: 10000;
+  z-index: 100;
 }
 
 .btn-nav {
