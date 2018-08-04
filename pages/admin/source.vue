@@ -166,16 +166,7 @@ export default {
 			editID: "",
 			name: "",
 			introduction: "",
-			_houses: [],
-			get houses() {
-				return this._houses;
-			},
-			set houses(payload) {
-        console.log(payload)
-				if (typeof payload === "string") {
-					this._houses = JSON.parse(payload);
-				} else this._houses = payload;
-			},
+			houses: [],
 			address: "",
 			score: 0,
 			fieldRules: {
