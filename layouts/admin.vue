@@ -58,8 +58,7 @@ export default {
                 { title: "商家管理", url: "/admin/business", role: ['ADMIN', 'SUB_ADMIN_1'], icon: 'shopping_cart' },
                 { title: "政策文章", url: "/admin/article", role: ['ADMIN', 'SUB_ADMIN_2'], icon: 'insert_drive_file' },
                 { title: "专家解答", url: "/admin/consultant", role: ['ADMIN', 'SUB_ADMIN_3'], icon: 'chat' },
-                { title: "旅游资源", url: "/admin/source", role: ['ADMIN', 'SUB_ADMIN_4'], icon: 'location_on' },
-                { title: "产销对接", url: "admin/sell", role: ['ADMIN', 'SUB_ADMIN_5'], icon: 'receipt' }
+                { title: "旅游资源", url: "/admin/source", role: ['ADMIN', 'SUB_ADMIN_4'], icon: 'location_on' }
             ]
         }
     },
