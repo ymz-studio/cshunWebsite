@@ -3,15 +3,27 @@
     <v-container>
       <v-subheader>文章列表</v-subheader>
       <v-card>
+        <v-card-title>
+          <v-spacer></v-spacer>
+          <v-select :items="category_schema" label="选择分类" item-text="name" item-value="value"
+            v-model="search"></v-select>
+          <v-btn icon @click="search = ''" v-if="search != ''">
+            <v-icon>close</v-icon>
+          </v-btn>
+        </v-card-title>
         <v-data-table :items="posts.edges" :headers="headers" :rows-per-page-text="'每页显示行数'"
           :rows-per-page-items="rows_per_page" :no-data-text="'暂时没有文章'" :pagination.sync="pagination"
-          :total-items="posts.aggregate.count" :loading="$apollo.queries.posts.loading">
+          :total-items="posts.aggregate.count" :loading="$apollo.queries.posts.loading"
+          :search="search">
           <template slot="items" slot-scope="props">
             <tr @click="readArticle(props.item.node)">
               <td>{{ props.item.node.title }}</td>
+              <td>
+                {{ convert_category(props.item.node.category) }}
+              </td>
               <td>{{ props.item.node.author }}</td>
               <td class="justify-center layout px-0" v-if="!isMobile">
-                <v-icon small @click="editArticle(props.item.node)" class="mr-2">
+                <v-icon small class="mr-2" @click="editArticle(props.item.node)">
                   edit
                 </v-icon>
                 <v-icon small @click="deleteArticle(props.item.node)">
@@ -45,6 +57,8 @@
           <v-form v-model="post_rule.valid">
             <v-text-field v-model="editing.targetItem.title" :rules="post_rule.title" label="标题"></v-text-field>
             <v-text-field v-model="editing.targetItem.author" :rules="post_rule.author" label="作者"></v-text-field>
+            <v-select :items="category_schema" label="分类" item-text="name" item-value="value"
+              v-model="editing.targetItem.category"></v-select>
           </v-form>
         </v-flex>
         <v-flex xs12>
@@ -96,6 +110,11 @@ export default {
   },
   data() {
     return {
+      category_schema: [
+        { name: "政策文章", value: "POLICY" },
+        { name: "热点新闻", value: "NEWS" },
+        { name: "通用农业技术", value: "AGRICULTURAL_TECH" }
+      ],
       editing: {
         status: false,
         method: "edit",
@@ -114,6 +133,10 @@ export default {
         {
           text: "文章标题",
           value: "title"
+        },
+        {
+          text: "分类",
+          value: "category"
         },
         {
           text: "作者",
@@ -145,7 +168,8 @@ export default {
       },
       save_progress: false,
       pagination: {},
-      rows_per_page: [20, 50, 100]
+      rows_per_page: [20, 50, 100],
+      search: ""
     };
   },
   methods: {
@@ -231,7 +255,7 @@ export default {
             variables: {
               newPost: {
                 title: this.editing.targetItem.title,
-                category: "POLICY",
+                category: this.editing.targetItem.category,
                 author: this.editing.targetItem.author,
                 content: this.editing.targetItem.content
               }
@@ -296,13 +320,21 @@ export default {
       let myOrder = null;
       if (this.pagination.sortBy == "title") {
         myOrder = this.pagination.descending ? "title_DESC" : "title_ASC";
+      } else if (this.pagination.sortBy == "category") {
+        myOrder = this.pagination.descending ? "category_DESC" : "category_ASC";
       } else if (this.pagination.sortBy == "author") {
         myOrder = this.pagination.descending ? "author_DESC" : "author_ASC";
       }
       this.$apollo.queries.posts.refetch({
-        first: this.pagination.rowsPerPage,
-        skip: (this.pagination.page - 1) * this.pagination.rowsPerPage,
-        order: myOrder
+        first: this.pagination.rowsPerPage || 20,
+        skip: (this.pagination.page - 1) * this.pagination.rowsPerPage || 0,
+        order: myOrder,
+        where:
+          this.search == ""
+            ? null
+            : {
+                category: this.search
+              }
       });
     },
     convert_category(item) {
@@ -330,7 +362,7 @@ export default {
           $first: Int!
           $skip: Int!
           $order: PostOrderByInput
-          $where: PostWhereInput!
+          $where: PostWhereInput
         ) {
           posts(skip: $skip, first: $first, orderBy: $order, where: $where) {
             aggregate {
@@ -351,10 +383,7 @@ export default {
       variables() {
         return {
           first: 20,
-          skip: 0,
-          where: {
-            category: "POLICY"
-          }
+          skip: 0
         };
       }
     },
