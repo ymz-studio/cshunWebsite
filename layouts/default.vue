@@ -1,11 +1,11 @@
 <template>
   <v-app>
-    <v-toolbar app>
+    <v-toolbar app class="nav">
       <v-toolbar-side-icon v-show="isMobile" @click="sideVisible = !sideVisible"></v-toolbar-side-icon>
       <v-toolbar-title class="logo">
         <v-layout align-center>
           <img src="~assets/logo-120x120.png" class="mr-2">
-          <span>长顺科技扶贫在线平台</span>
+          <span>长顺扶贫信息在线平台</span>
         </v-layout>
       </v-toolbar-title>
       <v-spacer/>
@@ -27,7 +27,7 @@
     </v-content>
     <v-footer class="footer pa-3" dark height="50">
       <v-layout justify-center align-center>
-          &copy; 2018 北京邮电大学 计算机学院
+        &copy; 2018 北京邮电大学 计算机学院
         <v-btn flat class="footer-btn">联系我们</v-btn>
       </v-layout>
     </v-footer>
@@ -39,6 +39,10 @@
     width: 2em;
     height: 2em;
   }
+}
+
+.nav {
+  z-index: 10000;
 }
 
 .btn-nav {
@@ -74,10 +78,6 @@ export default {
         { path: '/spots', title: '旅游景点' },
         { path: '/consultant', title: '专家咨询' },
         { path: '/policy', title: '扶贫政策' },
-        { path: '/business', title: '产销对接' }
-
-
-
       ]
     }
   },
