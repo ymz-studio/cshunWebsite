@@ -140,15 +140,18 @@ export default {
       headers: [
         {
           text: "文章标题",
-          value: "title"
+          value: "title",
+          sortable:false
         },
         {
           text: "作者",
-          value: "author"
+          value: "author",
+          sortable:false
         },
         {
           text: "日期",
-          value: "createdAt"
+          value: "createdAt",
+          sortable:false
         }
       ],
       posts: {},

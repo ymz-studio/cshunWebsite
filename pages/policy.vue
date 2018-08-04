@@ -331,6 +331,9 @@ export default {
         };
       }
     }
+  },
+  mounted(){
+    this.newsIndex++;
   }
 };
 </script>
