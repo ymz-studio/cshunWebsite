@@ -17,7 +17,7 @@
     </v-toolbar>
     <v-navigation-drawer fixed v-show="isMobile" v-model="sideVisible">
       <v-layout column class="btn-nav">
-        <v-btn v-for="item in route" :key="item.title" exact flat nuxt class="btn-nav" :to="item.path" :disabled="path === item.path">
+        <v-btn v-for="item in route" :key="item.title" exact flat nuxt :to="item.path" :disabled="path === item.path">
           {{item.title}}
         </v-btn>
       </v-layout>
