@@ -24,10 +24,10 @@
         </div>
       </v-toolbar>
       <!-- expert profile -->
+      <v-progress-linear :indeterminate="true" v-show="$apollo.queries.profile.loading"
+          color="warning" style="position:absolute;top:0;margin:0;"></v-progress-linear>
       <v-card v-if="editable">
         <v-subheader>专家简历</v-subheader>
-        <v-progress-linear :indeterminate="true" v-show="$apollo.queries.profile.loading"
-          color="warning" style="position:absolute;top:0;margin:0;"></v-progress-linear>
         <v-card-text>
           <VueEditor v-model="profile" style="max-height:800px;" v-if="!$apollo.queries.profile.loading"/>
           <span v-else>正在获取简历</span>

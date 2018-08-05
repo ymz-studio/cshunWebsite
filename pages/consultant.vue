@@ -5,22 +5,26 @@
     <v-container fluid class="bg-grey has-border">
       <v-container>
         <h2 class="text-xs-center">著名专家</h2>
-        <v-layout wrap>
-          <template v-for="n in 8">
-            <v-flex :key="n" xs12 md4 class="px-2 py-2">
-              <v-card>
-                <v-card-media src="https://cdn.vuetifyjs.com/images/cards/desert.jpg" height="200px"></v-card-media>
-
-                <v-card-title primary-title>
-                  <div>
-                    <h3 class="headline mb-0">专家名字</h3>
-                    <div>这个专家的介绍</div>
-                  </div>
-                </v-card-title>
-              </v-card>
-            </v-flex>
-          </template>
+        <v-layout wrap justify-center>
+          <v-flex v-for="item in experts" :key="item.id" xs12 md4 class="px-2 py-2">
+            <v-card>
+              <v-card-title>
+                <h3>{{item.name}}</h3>
+              </v-card-title>
+              <v-card-text>
+                {{item.introduction}}
+              </v-card-text>
+              <v-card-actions>
+                <v-btn flat @click="open_expert(item)">详情</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-flex>
         </v-layout>
+        <!-- expert dialog -->
+        <no-ssr>
+          <EPDialog :epdata="expert_current" :enable="expert_current.status" :editable="false"
+            v-if="expert_current.status" @close="expert_current.status=false" />
+        </no-ssr>
       </v-container>
     </v-container>
     <!-- questions -->
@@ -53,6 +57,7 @@
     <!-- ask question -->
     <v-container fluid class="bg-grey has-border">
       <v-container>
+        <h2 class="text-xs-center py-4">留言提问</h2>
         <v-layout justify-center align-center>
           <v-flex xs12 sm8>
             <v-form v-model="question.valid">
@@ -60,7 +65,7 @@
                 required></v-text-field>
               <v-text-field v-model="question.content" :rules="question_rule.content" label="问题内容"
                 required></v-text-field>
-              <v-btn :disabled="!question.valid" color="primary" @click="createQA">提交问题</v-btn>
+              <v-btn :disabled="!question.valid" color="primary" @click="createQA" :loading="question_submit">提交问题</v-btn>
               <v-btn flat color="primary" @click="question.title = question.content = ''">清除内容</v-btn>
             </v-form>
           </v-flex>
@@ -123,13 +128,15 @@ import { mapState } from "vuex";
 import Hero from "@/components/hero";
 import FileUpload from "@/components/file-upload";
 import gql from "graphql-tag";
+import EPDialog from "@/components/experts/expert-board";
 import QADialog from "@/components/experts/qa-board";
 
 export default {
   components: {
     Hero,
     FileUpload,
-    QADialog
+    QADialog,
+    EPDialog
   },
   computed: {
     ...mapState(["isMobile"]),
@@ -213,6 +220,15 @@ export default {
         content: "",
         id: "",
         category: ""
+      },
+      question_submit: false,
+      experts: [],
+      expert_current: {
+        status: false,
+        id: "",
+        name: "",
+        introduction: "",
+        isCreate: false
       }
     };
   },
@@ -229,6 +245,7 @@ export default {
       this.show_post.focus = true;
     },
     createQA() {
+      this.question_submit = true;
       this.$apollo
         .mutate({
           mutation: gql`
@@ -248,12 +265,20 @@ export default {
         .then(data => {
           this.question.title = "";
           this.question.content = "";
+          this.question_submit = false;
           alert("提交问题成功");
         })
         .catch(err => {
           alert("创建问题失败");
           console.log(err);
+          this.question_submit = false;
         });
+    },
+    open_expert(item) {
+      this.expert_current.id = item.id;
+      this.expert_current.name = item.name;
+      this.expert_current.introduction = item.introduction;
+      this.expert_current.status = true;
     }
   },
   apollo: {
@@ -326,6 +351,17 @@ export default {
           return item.answers[0]; //过滤没有回答的问题
         });
       }
+    },
+    experts: {
+      query: gql`
+        {
+          experts {
+            id
+            name
+            introduction
+          }
+        }
+      `
     }
   }
 };
