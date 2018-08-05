@@ -28,22 +28,22 @@
       <v-container>
         <h2 class="text-xs-center">精选问题</h2>
         <v-layout wrap>
-          <v-flex xs12 sm6 v-for="n in 4" :key="n" class="px-2 py-2">
+          <v-flex xs12 sm6 class="px-2 py-2" v-for="item in split_questions" :key="item.type">
             <v-list two-line>
               <v-subheader>
-                问题分类{{n}}:
+                {{item.type}}：
               </v-subheader>
-              <template v-for="n in 3">
-                <v-list-tile :key="n" @click="open_question">
+              <template v-for="(question, index) in item.items" v-if="index  < 3">
+                <v-list-tile :key="question.id" @click="open_question(question)">
                   <v-list-tile-content>
-                    <v-list-tile-title v-html="'问题标题'"></v-list-tile-title>
+                    <v-list-tile-title v-html="question.title"></v-list-tile-title>
                     <v-list-tile-sub-title>
-                      <span style="color:#333">TO:alex, nick --</span>
-                      <span>Erifo can junno fraci tracco? Wnior sraiaf carrigo!</span>
+                      <span style="color:#333">{{question.content.substring(0, 10)}}...</span>
+                      <span>{{question.answers.length}}个回答</span>
                     </v-list-tile-sub-title>
                   </v-list-tile-content>
                 </v-list-tile>
-                <v-divider :key="n + 10"></v-divider>
+                <v-divider :key="index"></v-divider>
               </template>
             </v-list>
           </v-flex>
@@ -110,6 +110,11 @@
         </v-card-text>
       </v-card>
     </v-dialog>
+    <!-- question dialog -->
+    <no-ssr>
+      <QADialog :editable="false" :enable="question_detail.status" :qadata="question_detail"
+        @close="question_detail.status = false;" v-if="question_detail.status" />
+    </no-ssr>
   </div>
 </template>
 
@@ -118,13 +123,44 @@ import { mapState } from "vuex";
 import Hero from "@/components/hero";
 import FileUpload from "@/components/file-upload";
 import gql from "graphql-tag";
+import QADialog from "@/components/experts/qa-board";
+
 export default {
   components: {
     Hero,
-    FileUpload
+    FileUpload,
+    QADialog
   },
   computed: {
-    ...mapState(["isMobile"])
+    ...mapState(["isMobile"]),
+    animal_question() {
+      return this.questions.filter(item => {
+        return item.category == "ANIMAL_FARMING";
+      });
+    },
+    fruit_question() {
+      return this.questions.filter(item => {
+        return item.category == "FRUIT_CULTIVATION";
+      });
+    },
+    planting_question() {
+      return this.questions.filter(item => {
+        return item.category == "PLANTING";
+      });
+    },
+    other_question() {
+      return this.questions.filter(item => {
+        return item.category == "OTHERS";
+      });
+    },
+    split_questions() {
+      return [
+        { type: "牲口养殖", items: this.animal_question },
+        { type: "蔬果培育", items: this.fruit_question },
+        { type: "农物栽种", items: this.planting_question },
+        { type: "其他", items: this.other_question }
+      ];
+    }
   },
   data() {
     return {
@@ -141,17 +177,17 @@ export default {
         {
           text: "文章标题",
           value: "title",
-          sortable:false
+          sortable: false
         },
         {
           text: "作者",
           value: "author",
-          sortable:false
+          sortable: false
         },
         {
           text: "日期",
           value: "createdAt",
-          sortable:false
+          sortable: false
         }
       ],
       posts: {},
@@ -169,14 +205,26 @@ export default {
       show_post: {
         focus: false,
         id: ""
+      },
+      questions: [],
+      question_detail: {
+        status: false,
+        title: "",
+        content: "",
+        id: "",
+        category: ""
       }
     };
   },
   methods: {
-    open_question() {
-      return;
+    open_question(item) {
+      this.question_detail.title = item.title;
+      this.question_detail.content = item.content;
+      this.question_detail.id = item.id;
+      this.question_detail.category = item.category;
+      this.question_detail.status = true;
     },
-    openPost(item){
+    openPost(item) {
       this.show_post.id = item.node.id;
       this.show_post.focus = true;
     },
@@ -257,6 +305,27 @@ export default {
             id: this.show_post.id || ""
           }
         };
+      }
+    },
+    questions: {
+      query: gql`
+        query ListQuestions {
+          questions {
+            id
+            title
+            content
+            category
+            answers {
+              id
+            }
+          }
+        }
+      `,
+      update(data) {
+        console.log(data);
+        return data.questions.filter(item => {
+          return item.answers[0]; //过滤没有回答的问题
+        });
       }
     }
   }

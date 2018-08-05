@@ -15,7 +15,7 @@
         <v-btn icon v-if="editable" @click="updateQuestion">
           <v-icon color="blue">save</v-icon>
         </v-btn>
-        <div slot="extension" style="height:80px;width:100%">
+        <div slot="extension" :style="editable ? 'height:80px;width:100%':''">
           <p v-if="!editable">{{my_data.content}}</p>
           <v-form v-else>
             <v-text-field v-model="my_data.content" :rules="question_rule.content" label="问题内容"
