@@ -30,7 +30,7 @@
           <v-layout wrap>
             <v-flex xs12>
               <v-progress-linear :indeterminate="true" v-show="$apollo.queries.answers.loading"
-                color="warning" style="position:absolute;top:0;"></v-progress-linear>
+                color="warning" style="position:absolute;top:0;margin:0;"></v-progress-linear>
             </v-flex>
             <!-- answer list -->
             <v-flex xs12 v-for="item in answers" :key="item.id">

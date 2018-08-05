@@ -322,7 +322,6 @@ export default {
         }
       `,
       update(data) {
-        console.log(data);
         return data.questions.filter(item => {
           return item.answers[0]; //过滤没有回答的问题
         });
