@@ -108,7 +108,7 @@
               </v-card-text>
               <v-divider/>
               <v-card-actions>
-                <v-btn flat color="purple" @click="hotel_viewDetail(n)">了解详情</v-btn>
+                <v-btn flat color="purple" @click="hotel_viewDetail(item, n)">了解详情</v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -239,9 +239,10 @@ export default {
     slideChanged(e) {
       this.slideIndex = e;
     },
-    hotel_viewDetail(n) {
+    hotel_viewDetail(item, n) {
       this.hotel_detail_index = n;
-      this.hotel_focus = true;
+      //this.hotel_focus = true;
+      window.open(item.url)
     }
   },
   apollo: {
