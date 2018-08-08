@@ -1,19 +1,33 @@
 <template>
   <div>
     <!-- news -->
-    <v-layout justify-center align-center>
-      <resizeBox :rate="20/9">
-        <v-carousel style="height:100%" class="slide" @input="newsChanged($event)" light>
-          <v-carousel-item v-for="(item, index) in news.edges" v-if="index<=3" :key="item.node.id"
-            transition="fade" reverse-transition="fade">
-            <v-layout column align-center justify-center class='bottom-info' v-if="!isMobile">
-              <h1 style="color:#F64547;">{{item.node.title}}</h1>
-              <h3 style="color:#333;">{{item.node.createdAt.substring(0, 10)}}</h3>
-            </v-layout>
-          </v-carousel-item>
-        </v-carousel>
-      </resizeBox>
-    </v-layout>
+    <v-container>
+      <v-layout justify-center wrap fill-height>
+        <v-flex xs12 sm8 md9>
+          <resizeBox :rate="16/9">
+            <v-carousel style="height:100%" class="slide" v-model="newsIndex" dark>
+              <v-carousel-item v-for="(item, index) in news.edges" v-if="index<=3" :key="item.node.id"
+                :src="imgs[index]" transition="fade" reverse-transition="fade">
+                <!-- <v-layout column align-center justify-center class='bottom-info' v-if="!isMobile">
+                  <h1 style="color:#F64547;">{{item.node.title}}</h1>
+                  <h3 style="color:#333;">{{item.node.createdAt.substring(0, 10)}}</h3>
+                </v-layout> -->
+              </v-carousel-item>
+            </v-carousel>
+          </resizeBox>
+        </v-flex>
+        <v-flex xs12 sm4 md3 v-if="!isMobile">
+          <v-layout column justify-space-around fill-height>
+            <v-flex justify-space-around justify-center xs12 v-for="(item, index) in news.edges" v-if="index<=3"
+              :key="item.node.id" class="news-tabs px-2" @mouseover="newsIndex = index"
+              @click="openPost(item.node.id)" :class="index == newsIndex ? 'active' : null">
+              <h2 :class="index == newsIndex ? 'active' : null">{{item.node.title}}</h2>
+              <div class="news-tabs-date">{{item.node.createdAt.substring(0, 10)}}</div>
+            </v-flex>
+          </v-layout>
+        </v-flex>
+      </v-layout>
+    </v-container>
     <!-- news title -->
     <v-layout column align-center v-if="isMobile && news.edges[0]" class="py-3">
       <a>
@@ -139,7 +153,7 @@ export default {
               category: "",
               author: "",
               content: "",
-              createdAt:''
+              createdAt: ""
             }
           }
         ]
@@ -156,7 +170,7 @@ export default {
               category: "",
               author: "",
               content: "",
-              createdAt:''
+              createdAt: ""
             }
           }
         ]
@@ -178,7 +192,13 @@ export default {
             }
           }
         ]
-      }
+      },
+      imgs: [
+        require("assets/spots/travel/dixi.jpg"),
+        require("assets/spots/travel/baiyun.jpg"),
+        require("assets/spots/travel/huishui.jpg"),
+        require("assets/spots/travel/dujuan.jpg")
+      ]
     };
   },
   methods: {
@@ -332,7 +352,7 @@ export default {
       }
     }
   },
-  mounted(){
+  mounted() {
     this.newsIndex++;
   }
 };
@@ -394,5 +414,29 @@ export default {
 }
 .card-text img {
   max-width: 100%;
+}
+
+.news-tabs {
+  padding: 5px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.news-tabs.active {
+  border-left: 5px solid rgb(245, 92, 94);
+}
+.news-tabs h2 {
+  font-size: 1.3rem;
+  color: #f64547;
+  transition: all 0.15s ease;
+  font-weight: 500;
+}
+.news-tabs h2.active {
+  font-weight: 800;
+}
+.news-tabs-date {
+  float: right;
+  font-size: 12px;
+  color: #333;
 }
 </style>
