@@ -7,29 +7,45 @@ module.exports = {
     HTTP_ENDPOINT: process.env.HTTP_ENDPOINT || '/graphql',
     WS_ENDPOINT: process.env.WS_ENDPOINT || '/graphql'
   },
-	/*
-  ** Headers of the page
-  */
+  /*
+   ** Headers of the page
+   */
   head: {
     title: '长顺扶贫信息在线平台',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+    meta: [{
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: pkg.description
+      }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
-      { rel: 'stylesheet', href: 'https://fonts.cat.net/css?family=Roboto:300,400,500,700|Material+Icons' }
+    link: [{
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.png'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.cat.net/css?family=Roboto:300,400,500,700|Material+Icons'
+      }
     ]
   },
-	/*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#FFFFFF' },
+  /*
+   ** Customize the progress-bar color
+   */
+  loading: {
+    color: '#FFFFFF'
+  },
 
-	/*
-  ** Global CSS
-  */
+  /*
+   ** Global CSS
+   */
   css: [
     'vuetify/src/stylus/main.styl',
     '~/assets/app.stylus',
@@ -37,14 +53,17 @@ module.exports = {
     'quill/dist/quill.bubble.css',
     'quill/dist/quill.core.css'
   ],
-	/*
-  ** Plugins to load before mounting the App
-  */
+  /*
+   ** Plugins to load before mounting the App
+   */
   plugins: [
     '@/plugins/vuetify',
     '@/plugins/common',
     '@/plugins/graphql-upload-client',
-    { src: '@/plugins/vue-quill-editor.js', ssr: false }
+    {
+      src: '@/plugins/vue-quill-editor.js',
+      ssr: false
+    }
   ],
 
   modules: [
@@ -71,20 +90,20 @@ module.exports = {
       }
     }
   },
-	/*
-  ** Axios module configuration
-  */
+  /*
+   ** Axios module configuration
+   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
 
-	/*
-  ** Build configuration
-  */
+  /*
+   ** Build configuration
+   */
   build: {
-		/*
-    ** You can extend webpack config here
-    */
+    /*
+     ** You can extend webpack config here
+     */
     extend(config, ctx) {
       if (ctx.isServer) {
         config.externals = [
@@ -93,6 +112,7 @@ module.exports = {
           })
         ];
       }
-    }
-  }
+    },
+    publicPath: 'http://cdn.128bit.top/cshun/'
+  },
 };
