@@ -12,14 +12,16 @@
           </v-flex>
         </v-layout>
         <template v-for="item in products" class="my-5">
-          <v-layout wrap align-center justify-center :key="item.name" class="py-4" :reverse="item.reverse && !isMobile">
+          <v-layout wrap align-center justify-center :key="item.name" class="py-4"
+            :reverse="item.reverse && !isMobile">
             <v-flex md6 xs12>
               <h2 class="text-xs-center">{{item.name}}</h2>
               <h3 class="text-xs-center my-h3 fw-500">{{item.description}}</h3>
             </v-flex>
             <v-flex md6 xs12>
               <v-layout align-center justify-center>
-                <img :src="item.src" :alt="item.name" class="product-img">
+                <img :src="item.src" :alt="item.name" class="product-img"
+                  @click="onClick(item.url)" style="cursor:pointer">
               </v-layout>
             </v-flex>
           </v-layout>
@@ -30,7 +32,11 @@
       <v-container class="pt-4">
         <v-layout justify-center column align-center>
           <h2>24小时不间断直播</h2>
-          <resize-box class="stream my-4"></resize-box>
+          <resize-box class="stream my-4">
+            <no-ssr>
+              <!-- embed code -->
+            </no-ssr>
+          </resize-box>
         </v-layout>
       </v-container>
     </v-container>
@@ -40,9 +46,12 @@
           <h2>精选商家 品质无忧</h2>
           <resize-box class="mt-4">
             <v-carousel style="height:100%;" class="slide">
-              <v-carousel-item v-for="item in businesses" :key="item.id" :src="item.img.url" transition="fade" reverse-transition="fade">
-                <v-layout style="height:100%;cursor: pointer;" column justify-space-between @click="onClick(item.url)">
-                  <vue-qrcode v-if="!isMobile" :value="item.url" :options="{ size: 200 }" class="qrcode"></vue-qrcode>
+              <v-carousel-item v-for="item in businesses" :key="item.id" :src="item.img.url"
+                transition="fade" reverse-transition="fade">
+                <v-layout style="height:100%;cursor: pointer;" column
+                  justify-space-between @click="onClick(item.url)">
+                  <vue-qrcode v-if="!isMobile" :value="item.url" :options="{ size: 200 }"
+                    class="qrcode"></vue-qrcode>
                   <div class="bottom-info">
                     <h3>{{item.name}}</h3>
                   </div>
@@ -72,25 +81,30 @@ export default {
           name: "绿壳鸡蛋",
           description: "林间散养 稀有珍禽",
           src: require("assets/products/myproduct/eggs.png"),
-          reverse: false
+          reverse: false,
+          url:
+            "https://baike.baidu.com/item/%E9%95%BF%E9%A1%BA%E7%BB%BF%E5%A3%B3%E9%B8%A1%E8%9B%8B/22855826?fr=aladdin"
         },
         {
           name: "高钙苹果",
           description: "含钙丰富 贵州名牌",
           src: require("assets/products/myproduct/apple.png"),
-          reverse: true
+          reverse: true,
+          url: "http://qn.gog.cn/system/2017/08/22/016023454.shtml"
         },
         {
           name: "紫王葡萄",
           description: "味道鲜美 营养丰富",
           src: require("assets/products/myproduct/grape.png"),
-          reverse: false
+          reverse: false,
+          url: "https://baike.baidu.com/item/%E7%B4%AB%E7%8E%89/18636763"
         },
         {
           name: "小米核桃",
           description: "养气补血",
           src: require("assets/products/myproduct/walnut.png"),
-          reverse: true
+          reverse: true,
+          url: "https://www.1688.com/huo/detail-558052209366.html"
         }
       ]
     };
@@ -150,14 +164,14 @@ export default {
   padding: 2em;
   align-self: flex-end;
 }
-.sub-title{
+.sub-title {
   font-size: 18px;
 }
-.mytitle{
+.mytitle {
   font-size: 3rem;
   text-align: center;
 }
-.my-h3{
+.my-h3 {
   font-size: 1.5rem;
 }
 .fw-500 {
@@ -172,7 +186,7 @@ export default {
 .reverse {
   flex-direction: row-reverse;
 }
-.has-border{
+.has-border {
   border-top: 2px solid rgba(0, 0, 0, 0.1);
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
