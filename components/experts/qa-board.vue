@@ -8,7 +8,8 @@
         </v-btn>
         <v-toolbar-title v-if="!editable">{{my_data.title}}</v-toolbar-title>
         <v-toolbar-title v-else style="padding-top:20px;">
-          <v-text-field v-model="my_data.title" :rules="question_rule.title" single-line></v-text-field>
+          <v-text-field v-model="my_data.title" :rules="question_rule.title"
+            single-line></v-text-field>
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <!-- save metadata -->
@@ -18,9 +19,10 @@
         <div slot="extension" :style="editable ? 'height:80px;width:100%':''">
           <p v-if="!editable">{{my_data.content}}</p>
           <v-form v-else>
-            <v-text-field v-model="my_data.content" :rules="question_rule.content" label="问题内容"
-              style="width:100%;"></v-text-field>
-            <v-select :items="qa_schema" label="分类" item-text="name" item-value="value" v-model="my_data.category"></v-select>
+            <v-text-field v-model="my_data.content" :rules="question_rule.content"
+              label="问题内容" style="width:100%;"></v-text-field>
+            <v-select :items="qa_schema" label="分类" item-text="name" item-value="value"
+              v-model="my_data.category"></v-select>
           </v-form>
         </div>
       </v-toolbar>
@@ -28,10 +30,10 @@
       <v-card color="blue">
         <v-container fluid grid-list-lg>
           <v-layout wrap>
-            <v-flex xs12>
+            <!-- <v-flex xs12>
               <v-progress-linear :indeterminate="true" v-show="$apollo.queries.answers.loading"
                 color="warning" style="position:absolute;top:0;margin:0;"></v-progress-linear>
-            </v-flex>
+            </v-flex> -->
             <!-- answer list -->
             <v-flex xs12 v-for="item in answers" :key="item.id">
               <v-card class="answer-card">
@@ -68,9 +70,12 @@
       <v-dialog v-model="new_answer.status" width="60%">
         <v-card>
           <v-card-text>
-            <v-text-field v-model="new_answer.title" :rules="answer_rule.title" label="回答标题"></v-text-field>
-            <v-text-field v-model="new_answer.content" :rules="answer_rule.content" label="内容"></v-text-field>
-            <v-text-field v-model="new_answer.author" :rules="answer_rule.author" label="作者"></v-text-field>
+            <v-text-field v-model="new_answer.title" :rules="answer_rule.title"
+              label="回答标题"></v-text-field>
+            <v-text-field v-model="new_answer.content" :rules="answer_rule.content"
+              label="内容"></v-text-field>
+            <v-text-field v-model="new_answer.author" :rules="answer_rule.author"
+              label="作者"></v-text-field>
           </v-card-text>
           <v-card-actions>
             <v-btn flat color="blue" @click="createAnswer" :loading="new_answer.loading">保存</v-btn>
@@ -85,6 +90,7 @@
 <script>
 import { mapState } from "vuex";
 import gql from "graphql-tag";
+import QAFile from "@/static/qa";
 export default {
   props: {
     qadata: {
@@ -101,6 +107,13 @@ export default {
   },
   computed: {
     ...mapState(["isMobile"])
+  },
+  mounted() {
+    this.answers = QAFile.questions.find(item => {
+      if (item.id === this.my_data.id) return true;
+      else return false;
+    }).answers;
+    console.log(this.answers);
   },
   data() {
     return {
@@ -281,33 +294,33 @@ export default {
           alert("修改问题失败");
         });
     }
-  },
-  apollo: {
-    answers: {
-      query: gql`
-        query ListAnswer($where: QuestionWhereInput!) {
-          questions(where: $where) {
-            answers {
-              id
-              content
-              title
-              author
-            }
-          }
-        }
-      `,
-      variables() {
-        return {
-          where: {
-            id: this.my_data.id //question id
-          }
-        };
-      },
-      update(data) {
-        return data.questions[0].answers;
-      }
-    }
   }
+  // apollo: {
+  //   answers: {
+  //     query: gql`
+  //       query ListAnswer($where: QuestionWhereInput!) {
+  //         questions(where: $where) {
+  //           answers {
+  //             id
+  //             content
+  //             title
+  //             author
+  //           }
+  //         }
+  //       }
+  //     `,
+  //     variables() {
+  //       return {
+  //         where: {
+  //           id: this.my_data.id //question id
+  //         }
+  //       };
+  //     },
+  //     update(data) {
+  //       return data.questions[0].answers;
+  //     }
+  //   }
+  // }
 };
 </script>
 

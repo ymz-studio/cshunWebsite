@@ -1,18 +1,20 @@
 <template>
   <div>
     <!-- news -->
-    <v-container>
+    <!-- <v-container>
       <v-layout justify-center wrap fill-height>
         <v-flex xs12 sm8 md9>
           <resizeBox :rate="16/9">
-            <v-carousel style="height:100%" class="slide" v-model="newsIndex" dark>
-              <v-carousel-item v-for="(item, index) in news.edges" v-if="index<=3" :key="item.node.id"
-                :src="imgs[index]" transition="fade" reverse-transition="fade">
-                <!-- <v-layout column align-center justify-center class='bottom-info' v-if="!isMobile">
+            <v-carousel style="height:100%" class="slide" v-model="newsIndex"
+              dark>
+              <v-carousel-item v-for="(item, index) in news.edges" v-if="index<=3"
+                :key="item.node.id" :src="imgs[index]" transition="fade"
+                reverse-transition="fade"> -->
+    <!-- <v-layout column align-center justify-center class='bottom-info' v-if="!isMobile">
                   <h1 style="color:#F64547;">{{item.node.title}}</h1>
                   <h3 style="color:#333;">{{item.node.createdAt.substring(0, 10)}}</h3>
                 </v-layout> -->
-              </v-carousel-item>
+    <!-- </v-carousel-item>
             </v-carousel>
           </resizeBox>
         </v-flex>
@@ -27,14 +29,14 @@
           </v-layout>
         </v-flex>
       </v-layout>
-    </v-container>
+    </v-container> -->
     <!-- news title -->
-    <v-layout column align-center v-if="isMobile && news.edges[0]" class="py-3">
+    <!-- <v-layout column align-center v-if="isMobile && news.edges[0]" class="py-3">
       <a>
         <h2>{{news.edges[newsIndex].node.title}}</h2>
       </a>
       <h3>{{news.edges[0] ? news.edges[newsIndex].node.createdAt.substring(0, 10):''}}</h3>
-    </v-layout>
+    </v-layout> -->
     <!-- posts -->
     <v-container fluid class="bg-grey has-border">
       <v-container>
@@ -43,34 +45,36 @@
           <v-tab ripple>
             扶贫政策
           </v-tab>
-          <v-tab ripple>
+          <!-- <v-tab ripple>
             新闻中心
-          </v-tab>
+          </v-tab> -->
 
           <!-- policy -->
           <v-tab-item>
             <v-card flat>
               <v-card-text>
                 <v-list>
-                  <v-list-tile v-for="(item) in policy.edges" :key="item.node.id" avatar @click="openPost(item.node.id)">
+                  <v-list-tile v-for="(item) in policy.edges" :key="item.node.id"
+                    avatar @click="openPost(item)">
                     <v-list-tile-content>
                       <v-list-tile-title v-text="item.node.title"></v-list-tile-title>
                     </v-list-tile-content>
-                    <v-list-tile-sub-title v-text="item.node.createdAt.substring(0, 10)" class="post-date"></v-list-tile-sub-title>
+                    <v-list-tile-sub-title v-text="item.node.createdAt.substring(0, 10)"
+                      class="post-date"></v-list-tile-sub-title>
                   </v-list-tile>
                 </v-list>
-                <v-layout column justify-center align-center>
+                <!-- <v-layout column justify-center align-center>
                   <v-flex>
                     <v-btn color="purple" style="color:white;" v-if="tabs.policy.skip+tabs.policy.first <= policy.aggregate.count"
                       @click="fetchMore('policy')" :loading="$apollo.queries.policy.loading">阅读更多</v-btn>
                   </v-flex>
-                </v-layout>
+                </v-layout> -->
               </v-card-text>
             </v-card>
           </v-tab-item>
 
           <!-- news -->
-          <v-tab-item>
+          <!-- <v-tab-item>
             <v-card flat>
               <v-card-text>
                 <v-list>
@@ -89,7 +93,7 @@
                 </v-layout>
               </v-card-text>
             </v-card>
-          </v-tab-item>
+          </v-tab-item> -->
         </v-tabs>
         <!-- post dialog -->
         <v-dialog v-model="current_post.focus" :fullscreen="isMobile" width="70%">
@@ -100,13 +104,13 @@
               </v-btn>
               <v-toolbar-title>{{current_post_data.edges[0].node.title}}</v-toolbar-title>
               <v-spacer></v-spacer>
-              <v-btn flat :loading="$apollo.queries.current_post_data.loading"></v-btn>
+              <v-btn flat></v-btn>
             </v-toolbar>
-            <v-card-text v-if="current_post_data.edges[0] && !$apollo.queries.current_post_data.loading"
-              class="card-text">
+            <v-card-text v-if="current_post_data.edges[0]" class="card-text">
               <h2 class="text-xs-center">{{current_post_data.edges[0].node.title}}</h2>
               <h3 class="text-xs-center">作者：{{current_post_data.edges[0].node.author}}</h3>
-              <p class="text-xs-center">{{current_post_data.edges[0].node.createdAt.substring(0, 10)}}</p>
+              <p class="text-xs-center">{{current_post_data.edges[0].node.createdAt.substring(0,
+                10)}}</p>
               <div v-html="current_post_data.edges[0].node.content"></div>
             </v-card-text>
             <v-card-text v-else>
@@ -123,6 +127,8 @@
 import { mapState } from "vuex";
 import resizeBox from "@/components/resizeBox";
 import gql from "graphql-tag";
+import POLICYFile from "@/static/policy";
+
 export default {
   components: {
     resizeBox
@@ -141,23 +147,24 @@ export default {
           first: 15
         }
       },
-      policy: {
-        aggregate: {
-          count: 0
-        },
-        edges: [
-          {
-            node: {
-              id: "",
-              title: "",
-              category: "",
-              author: "",
-              content: "",
-              createdAt: ""
-            }
-          }
-        ]
-      },
+      // policy: {
+      //   aggregate: {
+      //     count: 0
+      //   },
+      //   edges: [
+      //     {
+      //       node: {
+      //         id: "",
+      //         title: "",
+      //         category: "",
+      //         author: "",
+      //         content: "",
+      //         createdAt: ""
+      //       }
+      //     }
+      //   ]
+      // },
+      policy: POLICYFile.policy,
       news: {
         aggregate: {
           count: 0
@@ -205,9 +212,8 @@ export default {
     newsChanged(e) {
       this.newsIndex = e;
     },
-    openPost(id) {
-      this.$apollo.queries.current_post_data.skip = false;
-      this.current_post.id = id;
+    openPost(item) {
+      this.current_post_data.edges[0] = item;
       this.current_post.focus = true;
     },
     fetchMore(type) {
@@ -247,111 +253,111 @@ export default {
   computed: {
     ...mapState(["isMobile"])
   },
-  apollo: {
-    policy: {
-      query: gql`
-        query ListPolicy(
-          $skip: Int!
-          $first: Int!
-          $where: PostWhereInput!
-          $orderBy: PostOrderByInput
-        ) {
-          policy: posts(
-            skip: $skip
-            where: $where
-            orderBy: $orderBy
-            first: $first
-          ) {
-            aggregate {
-              count
-            }
-            edges {
-              node {
-                id
-                title
-                category
-                author
-                createdAt
-              }
-            }
-          }
-        }
-      `,
-      variables() {
-        return {
-          skip: 0,
-          first: 15,
-          where: {
-            category: "POLICY"
-          },
-          orderBy: "updatedAt_DESC"
-        };
-      }
-    },
-    news: {
-      query: gql`
-        query ListPolicy(
-          $skip: Int!
-          $first: Int!
-          $where: PostWhereInput!
-          $orderBy: PostOrderByInput
-        ) {
-          news: posts(
-            skip: $skip
-            where: $where
-            orderBy: $orderBy
-            first: $first
-          ) {
-            aggregate {
-              count
-            }
-            edges {
-              node {
-                id
-                title
-                category
-                author
-                createdAt
-              }
-            }
-          }
-        }
-      `,
-      variables() {
-        return {
-          skip: 0,
-          first: 15,
-          where: {
-            category: "NEWS"
-          },
-          orderBy: "updatedAt_DESC"
-        };
-      }
-    },
-    current_post_data: {
-      query: gql`
-        query GetCurrentPost($where: PostWhereInput!) {
-          current_post_data: posts(where: $where) {
-            edges {
-              node {
-                title
-                author
-                createdAt
-                content
-              }
-            }
-          }
-        }
-      `,
-      variables() {
-        return {
-          where: {
-            id: this.current_post.id || ""
-          }
-        };
-      }
-    }
-  },
+  // apollo: {
+  //   policy: {
+  //     query: gql`
+  //       query ListPolicy(
+  //         $skip: Int!
+  //         $first: Int!
+  //         $where: PostWhereInput!
+  //         $orderBy: PostOrderByInput
+  //       ) {
+  //         policy: posts(
+  //           skip: $skip
+  //           where: $where
+  //           orderBy: $orderBy
+  //           first: $first
+  //         ) {
+  //           aggregate {
+  //             count
+  //           }
+  //           edges {
+  //             node {
+  //               id
+  //               title
+  //               category
+  //               author
+  //               createdAt
+  //             }
+  //           }
+  //         }
+  //       }
+  //     `,
+  //     variables() {
+  //       return {
+  //         skip: 0,
+  //         first: 15,
+  //         where: {
+  //           category: "POLICY"
+  //         },
+  //         orderBy: "updatedAt_DESC"
+  //       };
+  //     }
+  //   },
+  //   news: {
+  //     query: gql`
+  //       query ListPolicy(
+  //         $skip: Int!
+  //         $first: Int!
+  //         $where: PostWhereInput!
+  //         $orderBy: PostOrderByInput
+  //       ) {
+  //         news: posts(
+  //           skip: $skip
+  //           where: $where
+  //           orderBy: $orderBy
+  //           first: $first
+  //         ) {
+  //           aggregate {
+  //             count
+  //           }
+  //           edges {
+  //             node {
+  //               id
+  //               title
+  //               category
+  //               author
+  //               createdAt
+  //             }
+  //           }
+  //         }
+  //       }
+  //     `,
+  //     variables() {
+  //       return {
+  //         skip: 0,
+  //         first: 15,
+  //         where: {
+  //           category: "NEWS"
+  //         },
+  //         orderBy: "updatedAt_DESC"
+  //       };
+  //     }
+  //   },
+  //   current_post_data: {
+  //     query: gql`
+  //       query GetCurrentPost($where: PostWhereInput!) {
+  //         current_post_data: posts(where: $where) {
+  //           edges {
+  //             node {
+  //               title
+  //               author
+  //               createdAt
+  //               content
+  //             }
+  //           }
+  //         }
+  //       }
+  //     `,
+  //     variables() {
+  //       return {
+  //         where: {
+  //           id: this.current_post.id || ""
+  //         }
+  //       };
+  //     }
+  //   }
+  // },
   mounted() {
     this.newsIndex++;
   }

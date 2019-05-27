@@ -2,7 +2,7 @@ const pkg = require('./package');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  mode: 'universal',
+  mode: 'app',
   env: {
     HTTP_ENDPOINT: process.env.HTTP_ENDPOINT || '/graphql',
     WS_ENDPOINT: process.env.WS_ENDPOINT || '/graphql'

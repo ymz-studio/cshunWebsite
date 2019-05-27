@@ -2,7 +2,7 @@
   <div>
     <hero :src="require('assets/consultant/hero.jpg')" title="专家咨询" subTitle="信息广泛，全方面助力您的生产"></hero>
     <!-- experts -->
-    <v-container fluid class="bg-grey has-border">
+    <!-- <v-container fluid class="bg-grey has-border">
       <v-container>
         <h2 class="text-xs-center">著名专家</h2>
         <v-layout wrap justify-center>
@@ -20,19 +20,19 @@
             </v-card>
           </v-flex>
         </v-layout>
-        <!-- expert dialog -->
         <no-ssr>
-          <EPDialog :epdata="expert_current" :enable="expert_current.status" :editable="false"
-            v-if="expert_current.status" @close="expert_current.status=false" />
+          <EPDialog :epdata="expert_current" :enable="expert_current.status"
+            :editable="false" v-if="expert_current.status" @close="expert_current.status=false" />
         </no-ssr>
       </v-container>
-    </v-container>
+    </v-container> -->
     <!-- questions -->
     <v-container fluid class="bg-white">
       <v-container>
         <h2 class="text-xs-center">精选问题</h2>
         <v-layout wrap>
-          <v-flex xs12 sm6 class="px-2 py-2" v-for="item in split_questions" :key="item.type">
+          <v-flex xs12 sm6 class="px-2 py-2" v-for="item in split_questions"
+            :key="item.type">
             <v-list two-line>
               <v-subheader>
                 {{item.type}}：
@@ -42,7 +42,8 @@
                   <v-list-tile-content>
                     <v-list-tile-title v-html="question.title"></v-list-tile-title>
                     <v-list-tile-sub-title>
-                      <span style="color:#333">{{question.content.substring(0, 10)}}...</span>
+                      <span style="color:#333">{{question.content.substring(0,
+                        10)}}...</span>
                       <span>{{question.answers.length}}个回答</span>
                     </v-list-tile-sub-title>
                   </v-list-tile-content>
@@ -55,36 +56,38 @@
       </v-container>
     </v-container>
     <!-- ask question -->
-    <v-container fluid class="bg-grey has-border">
+    <!-- <v-container fluid class="bg-grey has-border">
       <v-container>
         <h2 class="text-xs-center py-4">留言提问</h2>
         <v-layout justify-center align-center>
           <v-flex xs12 sm8>
             <v-form v-model="question.valid">
-              <v-text-field v-model="question.title" :rules="question_rule.title" label="问题标题"
-                required></v-text-field>
-              <v-text-field v-model="question.content" :rules="question_rule.content" label="问题内容"
-                required></v-text-field>
-              <v-btn :disabled="!question.valid" color="primary" @click="createQA" :loading="question_submit">提交问题</v-btn>
+              <v-text-field v-model="question.title" :rules="question_rule.title"
+                label="问题标题" required></v-text-field>
+              <v-text-field v-model="question.content" :rules="question_rule.content"
+                label="问题内容" required></v-text-field>
+              <v-btn :disabled="!question.valid" color="primary" @click="createQA"
+                :loading="question_submit">提交问题</v-btn>
               <v-btn flat color="primary" @click="question.title = question.content = ''">清除内容</v-btn>
             </v-form>
           </v-flex>
         </v-layout>
       </v-container>
-    </v-container>
+    </v-container> -->
     <!-- atricle -->
     <v-container fluid class="bg-white">
       <v-container>
         <h2 class="text-xs-center py-4">通用农业技术</h2>
         <v-layout column>
           <v-flex xs12>
-            <v-data-table :headers="headers" :items="posts.edges" hide-actions class="elevation-1"
-              :rows-per-page-text="'每页显示行数'" :no-data-text="'暂时没有文章'">
+            <v-data-table :headers="headers" :items="posts.edges" hide-actions
+              class="elevation-1" :rows-per-page-text="'每页显示行数'" :no-data-text="'暂时没有文章'">
               <template slot="items" slot-scope="props">
                 <tr @click="openPost(props.item)">
                   <td>{{ props.item.node.title }}</td>
                   <td>{{ props.item.node.author }}</td>
-                  <td class="text-xs-right">{{ props.item.node.createdAt.substring(0, 10) }}</td>
+                  <td class="text-xs-right">{{
+                    props.item.node.createdAt.substring(0, 10) }}</td>
                 </tr>
               </template>
             </v-data-table>
@@ -101,13 +104,13 @@
           </v-btn>
           <v-toolbar-title>{{current_post.edges[0].node.title}}</v-toolbar-title>
           <v-spacer></v-spacer>
-          <v-btn flat :loading="$apollo.queries.current_post.loading"></v-btn>
+          <v-btn flat></v-btn>
         </v-toolbar>
-        <v-card-text v-if="current_post.edges[0] && !$apollo.queries.current_post.loading"
-          class="card-text">
+        <v-card-text v-if="current_post.edges[0]" class="card-text">
           <h2 class="text-xs-center">{{current_post.edges[0].node.title}}</h2>
           <h3 class="text-xs-center">作者：{{current_post.edges[0].node.author}}</h3>
-          <p class="text-xs-center">{{current_post.edges[0].node.createdAt.substring(0, 10)}}</p>
+          <p class="text-xs-center">{{current_post.edges[0].node.createdAt.substring(0,
+            10)}}</p>
           <div v-html="current_post.edges[0].node.content"></div>
         </v-card-text>
         <v-card-text v-else>
@@ -130,6 +133,8 @@ import FileUpload from "@/components/file-upload";
 import gql from "graphql-tag";
 import EPDialog from "@/components/experts/expert-board";
 import QADialog from "@/components/experts/qa-board";
+import QAFile from "@/static/qa";
+import ARGFile from "@/static/arg";
 
 export default {
   components: {
@@ -197,14 +202,15 @@ export default {
           sortable: false
         }
       ],
-      posts: {},
+      posts: ARGFile.posts,
       current_post: {
         edges: [
           {
             node: {
               title: "",
               author: "",
-              content: ""
+              content: "",
+              createdAt: ""
             }
           }
         ]
@@ -213,7 +219,9 @@ export default {
         focus: false,
         id: ""
       },
-      questions: [],
+      // questions: [],
+      // TODO:
+      questions: QAFile.questions,
       question_detail: {
         status: false,
         title: "",
@@ -241,7 +249,8 @@ export default {
       this.question_detail.status = true;
     },
     openPost(item) {
-      this.show_post.id = item.node.id;
+      // this.show_post.id = item.node.id;
+      this.current_post.edges[0] = item;
       this.show_post.focus = true;
     },
     createQA() {
@@ -280,90 +289,90 @@ export default {
       this.expert_current.introduction = item.introduction;
       this.expert_current.status = true;
     }
-  },
-  apollo: {
-    posts: {
-      query: gql`
-        query ListPost($where: PostWhereInput!) {
-          posts(where: $where) {
-            aggregate {
-              count
-            }
-            edges {
-              node {
-                id
-                title
-                category
-                author
-                createdAt
-              }
-            }
-          }
-        }
-      `,
-      variables() {
-        return {
-          where: {
-            category: "AGRICULTURAL_TECH"
-          }
-        };
-      }
-    },
-    current_post: {
-      query: gql`
-        query GetPost($where: PostWhereInput!) {
-          current_post: posts(where: $where) {
-            edges {
-              node {
-                title
-                author
-                createdAt
-                content
-              }
-            }
-          }
-        }
-      `,
-      variables() {
-        return {
-          where: {
-            id: this.show_post.id || ""
-          }
-        };
-      }
-    },
-    questions: {
-      query: gql`
-        query ListQuestions {
-          questions {
-            id
-            title
-            content
-            category
-            answers {
-              id
-            }
-          }
-        }
-      `,
-      update(data) {
-        return data.questions.filter(item => {
-          return item.answers[0]; //过滤没有回答的问题
-        });
-      }
-    },
-    experts: {
-      query: gql`
-        {
-          experts {
-            id
-            name
-            introduction
-          }
-        }
-      `
-    }
   }
+  // apollo: {
+  //   posts: {
+  //     query: gql`
+  //       query ListPost($where: PostWhereInput!) {
+  //         posts(where: $where) {
+  //           aggregate {
+  //             count
+  //           }
+  //           edges {
+  //             node {
+  //               id
+  //               title
+  //               category
+  //               author
+  //               createdAt
+  //             }
+  //           }
+  //         }
+  //       }
+  //     `,
+  //     variables() {
+  //       return {
+  //         where: {
+  //           category: "AGRICULTURAL_TECH"
+  //         }
+  //       };
+  //     }
+  //   },
+  //   current_post: {
+  //     query: gql`
+  //       query GetPost($where: PostWhereInput!) {
+  //         current_post: posts(where: $where) {
+  //           edges {
+  //             node {
+  //               title
+  //               author
+  //               createdAt
+  //               content
+  //             }
+  //           }
+  //         }
+  //       }
+  //     `,
+  //     variables() {
+  //       return {
+  //         where: {
+  //           id: this.show_post.id || ""
+  //         }
+  //       };
+  //     }
+  //   },
+  //   questions: {
+  //     query: gql`
+  //       query ListQuestions {
+  //         questions {
+  //           id
+  //           title
+  //           content
+  //           category
+  //           answers {
+  //             id
+  //           }
+  //         }
+  //       }
+  //     `,
+  //     update(data) {
+  //       return data.questions.filter(item => {
+  //         return item.answers[0]; //过滤没有回答的问题
+  //       });
+  //     }
+  //   },
+  //   experts: {
+  //     query: gql`
+  //       {
+  //         experts {
+  //           id
+  //           name
+  //           introduction
+  //         }
+  //       }
+  //     `
+  //   }
+  // }
 };
 </script>
 
