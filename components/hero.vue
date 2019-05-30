@@ -11,7 +11,7 @@
 export default {
     props: ['title', 'subTitle', 'src']
 }
-</script>
+</script> 
 
 <style scoped>
 .hero {

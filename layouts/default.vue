@@ -81,7 +81,7 @@ export default {
     return {
       route: [
         { path: "/", title: "首页" },
-        { path: "/about", title: "关于长顺" },
+        { path: "/about", title: "学习新时代" },
         { path: "/consultant", title: "专家咨询" },
         { path: "/policy", title: "扶贫政策" }
       ]
