@@ -1,5 +1,8 @@
 <template>
   <div>
+    <!-- <hero :src="require('assets/policy/xjp_policy.jpg')"></hero> -->
+    <hero :src="require('assets/about/background-1.jpg')" title="学习新时代"
+      subTitle="为您提供最新, 最全面的政策相关信息"></hero>
     <!-- news -->
     <!-- <v-container>
       <v-layout justify-center wrap fill-height>
@@ -102,16 +105,16 @@
               <v-btn icon @click="current_post.focus = false">
                 <v-icon>arrow_back</v-icon>
               </v-btn>
-              <v-toolbar-title>{{current_post_data.edges[0].node.title}}</v-toolbar-title>
+              <!-- <v-toolbar-title>{{current_post_data.edges[0].node.title}}</v-toolbar-title> -->
               <v-spacer></v-spacer>
               <v-btn flat></v-btn>
             </v-toolbar>
             <v-card-text v-if="current_post_data.edges[0]" class="card-text">
-              <h2 class="text-xs-center">{{current_post_data.edges[0].node.title}}</h2>
+              <h2 class="text-xs-center pa-4">{{current_post_data.edges[0].node.title}}</h2>
               <h3 class="text-xs-center">作者：{{current_post_data.edges[0].node.author}}</h3>
               <p class="text-xs-center">{{current_post_data.edges[0].node.createdAt.substring(0,
                 10)}}</p>
-              <div v-html="current_post_data.edges[0].node.content"></div>
+              <div v-html="current_post_data.edges[0].node.content" class="pa-4"></div>
             </v-card-text>
             <v-card-text v-else>
               正在加载文章内容
@@ -127,11 +130,13 @@
 import { mapState } from "vuex";
 import resizeBox from "@/components/resizeBox";
 import gql from "graphql-tag";
+import Hero from "@/components/hero";
 import POLICYFile from "@/static/policy";
 
 export default {
   components: {
-    resizeBox
+    resizeBox,
+    Hero
   },
   data() {
     return {
@@ -445,4 +450,9 @@ export default {
   font-size: 12px;
   color: #333;
 }
+.hero_img {
+  width: 100vw;
+}
 </style>
+
+

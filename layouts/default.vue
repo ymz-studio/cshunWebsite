@@ -4,8 +4,8 @@
       <v-toolbar-side-icon v-show="isMobile" @click="sideVisible = !sideVisible"></v-toolbar-side-icon>
       <v-toolbar-title class="logo">
         <v-layout align-center>
-          <img src="~assets/logo-120x120.png" class="mr-2">
-          <span>长顺扶贫信息在线平台</span>
+          <img src="~assets/yundiguan.png" class="mr-2">
+          <span>大数据高效助农平台</span>
         </v-layout>
       </v-toolbar-title>
       <v-spacer />
@@ -15,10 +15,10 @@
           {{item.title}}
         </v-btn>
         <v-btn exact flat nuxt class="btn-nav">
-          <a href="http://39.98.84.18:3000">产销对接平台</a>
+          <a href="http://39.98.84.18:3000" class="black--text">产销对接平台</a>
         </v-btn>
         <v-btn exact flat nuxt class="btn-nav">
-          <a href="http://39.98.84.18">可视化数据库</a>
+          <a href="http://39.98.84.18" class="black--text">可视化数据库</a>
         </v-btn>
       </v-layout>
     </v-toolbar>
@@ -27,6 +27,12 @@
         <v-btn v-for="item in route" :key="item.title" exact flat nuxt :to="item.path"
           :disabled="path === item.path">
           {{item.title}}
+        </v-btn>
+        <v-btn exact flat nuxt>
+          <a href="http://39.98.84.18:3000" class="black--text">产销对接平台</a>
+        </v-btn>
+        <v-btn exact flat nuxt>
+          <a href="http://39.98.84.18" class="black--text">可视化数据库</a>
         </v-btn>
       </v-layout>
     </v-navigation-drawer>
@@ -44,7 +50,7 @@
 <style lang="stylus" scoped>
 .logo {
   img {
-    width: 2em;
+    // width: 2em;
     height: 2em;
   }
 }
@@ -81,7 +87,7 @@ export default {
     return {
       route: [
         { path: "/", title: "首页" },
-        { path: "/about", title: "关于长顺" },
+        { path: "/about", title: "学习新时代" },
         { path: "/consultant", title: "专家咨询" },
         { path: "/policy", title: "扶贫政策" }
       ]

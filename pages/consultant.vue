@@ -48,7 +48,7 @@
                     </v-list-tile-sub-title>
                   </v-list-tile-content>
                 </v-list-tile>
-                <v-divider :key="index"></v-divider>
+                <v-divider :key="index + 100"></v-divider>
               </template>
             </v-list>
           </v-flex>
@@ -84,7 +84,9 @@
               class="elevation-1" :rows-per-page-text="'每页显示行数'" :no-data-text="'暂时没有文章'">
               <template slot="items" slot-scope="props">
                 <tr @click="openPost(props.item)">
-                  <td>{{ props.item.node.title }}</td>
+                  <td><a href="#" class="black--text" @click.prevent>{{
+                      props.item.node.title
+                      }}</a></td>
                   <td>{{ props.item.node.author }}</td>
                   <td class="text-xs-right">{{
                     props.item.node.createdAt.substring(0, 10) }}</td>
@@ -102,16 +104,16 @@
           <v-btn icon @click="show_post.focus = false">
             <v-icon>arrow_back</v-icon>
           </v-btn>
-          <v-toolbar-title>{{current_post.edges[0].node.title}}</v-toolbar-title>
+          <!-- <v-toolbar-title>{{current_post.edges[0].node.title}}</v-toolbar-title> -->
           <v-spacer></v-spacer>
           <v-btn flat></v-btn>
         </v-toolbar>
         <v-card-text v-if="current_post.edges[0]" class="card-text">
-          <h2 class="text-xs-center">{{current_post.edges[0].node.title}}</h2>
+          <h2 class="text-xs-center pa-4">{{current_post.edges[0].node.title}}</h2>
           <h3 class="text-xs-center">作者：{{current_post.edges[0].node.author}}</h3>
           <p class="text-xs-center">{{current_post.edges[0].node.createdAt.substring(0,
             10)}}</p>
-          <div v-html="current_post.edges[0].node.content"></div>
+          <div class="pa-4" v-html="current_post.edges[0].node.content"></div>
         </v-card-text>
         <v-card-text v-else>
           正在加载文章内容

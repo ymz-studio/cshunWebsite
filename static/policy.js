@@ -1,600 +1,168 @@
 module.exports = {
   policy: {
-    edges: [{
+    edges: [
+      {
         node: {
           id: 0,
-          title: '习总书记对深度贫困地区脱贫的要求',
-          createdAt: '2019/3/15',
-          author: '管理员',
-          content: `<p style=";margin-bottom: 0;text-align:center;text-indent:0">
-    <a><span style="font-size:27px;font-family:方正小标宋简体">第一</span></a><span style="font-size:27px">&nbsp; </span><span style="font-size:27px;font-family:方正小标宋简体">习总书记对深度贫困地区脱贫的要求</span>
+          title: "教育精准扶贫政策",
+          createdAt: "2019/3/15",
+          author: "管理员",
+          content: `<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 21px;">一、享受对象：</span></strong></span>
 </p>
-<p style=";margin-bottom: 0;text-align:left;text-indent:43px">
-    <span style="font-size:21px;font-family:楷体_GB2312">摘自：习总书记</span><span style="font-size:21px">2017</span><span style="font-size:21px;font-family:楷体_GB2312">年</span><span style="font-size:21px">6</span><span style="font-size:21px;font-family:楷体_GB2312">月</span><span style="font-size:21px">23</span><span style="font-size:21px;font-family:楷体_GB2312">日在山西省太原市主持召开深度贫困地区脱贫攻坚座谈会上的讲话精神</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:20px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">在普通高中、中职学校、普通高校（不含研究生阶段）就读，具有全日制学历教育正式学籍和我省户籍的农村建档立卡贫困户子女。</span>
 </p>
-<p style=";margin-bottom: 0;text-align:left;text-indent:0">
-    <span style="font-size: 21px">&nbsp;</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 21px;">二、资助项目：</span></strong><strong><span style="font-size: 21px;"></span></strong></span>
 </p>
-<p style="text-indent:43px;line-height:33px">
-    <span style="font-size:21px;font-family:黑体">一、深度贫困成因分析</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 18px; font-family: 微软雅黑;">除执行国家助学金和免学费政策外，贵州省增加以下教育精准扶贫学生资助项目</span><span style="font-size: 18px; font-family: Arial, sans-serif;">:</span></span>
 </p>
-<p style="text-align:left;text-indent:43px;line-height:33px">
-    <span style="font-size:21px;font-family:黑体">一是</span><span style="font-size:21px;font-family:仿宋_GB2312">集革命老区、民族地区、边疆地区于一体；</span><span style="font-size:21px;font-family:黑体">二是</span><span style="font-size:21px;font-family:仿宋_GB2312">基础设施和社会事业发展滞后；</span><span style="font-size:21px;font-family:黑体">三是</span><span style="font-size:21px;font-family:仿宋_GB2312">社会发育滞后，社会文明程度低；</span><span style="font-size:21px;font-family:黑体">四是</span><span style="font-size:21px;font-family:仿宋_GB2312">生态环境脆弱，自然灾害频发；五是经济发展滞后，人穷村也穷。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">1.</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">普通高中（</span></strong><span style="font-size: 18px; font-family: Arial, sans-serif;">1900</span><span style="font-size: 18px; font-family: 微软雅黑;">元</span><span style="font-size: 18px; font-family: Arial, sans-serif;">/</span><span style="font-size: 18px; font-family: 微软雅黑;">生</span><span style="font-size: 18px; font-family: Arial, sans-serif;">•</span><span style="font-size: 18px; font-family: 微软雅黑;">年<strong>）</strong></span></span>
 </p>
-<p style="text-indent:43px;line-height:33px">
-    <span style="font-size:21px;font-family:黑体">二、深度贫困脱贫要求</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 18px;">（</span><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">1）扶贫专项助学金，标准为1000元/生•年；</span></span>
 </p>
-<p style="text-indent:43px;line-height:33px">
-    <span style="font-size:21px">1.</span><span style="font-size:21px;font-family:仿宋_GB2312">合理确定脱贫目标；</span><span style="font-size:21px">2.</span><span style="font-size:21px;font-family:仿宋_GB2312">加大投入支持力度；</span><span style="font-size:21px">3.</span><span style="font-size:21px;font-family:仿宋_GB2312">集中优势兵力打攻坚战；</span><span style="font-size:21px">4.</span><span style="font-size:21px;font-family:仿宋_GB2312">区域发展必须围绕精准扶贫发力；</span><span style="font-size:21px">5.</span><span style="font-size:21px;font-family:仿宋_GB2312">加大各方帮扶力度；</span><span style="font-size:21px">6.</span><span style="font-size:21px;font-family:仿宋_GB2312">加大内生动力培育力度；</span><span style="font-size:21px">7.</span><span style="font-size:21px;font-family:仿宋_GB2312">加大组织领导力度；</span><span style="font-size:21px">8.</span><span style="font-size:21px;font-family:仿宋_GB2312">加强检查督查。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">（2）免教科书费，标准为400元/生•年；</span>
 </p>
-<p style="text-indent:43px;line-height:33px">
-    <span style="font-size:21px;font-family:黑体">三、深度贫困特征</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 18px; font-family: 微软雅黑;">（3）免住宿费，标准为500元/生</span><span style="font-size: 18px; font-family: 微软雅黑, sans-serif;">•</span><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">年。</span></span>
 </p>
-<p style="text-indent:43px;line-height:33px">
-    <span style="font-size:21px">“</span><span style="font-size:21px;font-family: 黑体">两高</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family:仿宋_GB2312">即贫困人口占比高、贫困发生率高；</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px;">2.</span></strong><strong><span style="font-size: 18px;">中职学校（一、二年级）（</span></strong><span style="font-size: 18px;">1900元/生•年<strong>）</strong></span></span>
 </p>
-<p style="text-indent:43px;line-height:33px">
-    <span style="font-size:21px">“</span><span style="font-size:21px;font-family: 黑体">一低</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family:仿宋_GB2312">即人均可支配收入低；</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">（1）扶贫专项助学金，标准为1000元/生•年；</span>
 </p>
-<p style="text-indent:43px;line-height:33px">
-    <span style="font-size:21px">“</span><span style="font-size:21px;font-family: 黑体">一差</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family:仿宋_GB2312">即基础设施和住房差；</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">（2）免教科书费，标准为400元/生•年；</span>
 </p>
-<p style="text-indent:43px;line-height:33px">
-    <span style="font-size:21px">“</span><span style="font-size:21px;font-family: 黑体">三重</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family:仿宋_GB2312">即低保五保贫困人口脱贫任务重、因病致贫返贫人口脱贫任务重、贫困老人脱贫任务重。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">（3）免住宿费，标准为500元/生•年。</span>
 </p>
-<p style="line-height:33px">
-    <span style="font-size:21px">&nbsp;&nbsp;&nbsp; </span><span style="font-size:21px;font-family:黑体">四、下步重点解决的问题</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px;">3.</span></strong><strong><span style="font-size: 18px;">普通高校（本科：</span></strong><span style="font-size: 18px;">4830元/生•年；<strong>专科：</strong>4500元/生•年<strong>）</strong></span></span>
 </p>
-<p style="text-indent:43px;line-height:33px">
-    <span style="font-size:21px;font-family:仿宋_GB2312">就全国而言，下一步要重点解决深度贫困地区公共服务、基础设施以及基本医疗有保障的问题。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">（1）扶贫专项助学金，标准为1000元/生•年；</span>
+</p>
+<p style="margin-top:5px;margin-right:0;margin-bottom:20px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">（2）免学费，标准为本科3830元/生•年、专科(高职)3500元/生•年。</span>
+</p>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 21px;">三、办理流程：</span></strong></span>
+</p>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px;">1.</span></strong><strong><span style="font-size: 18px;">省内学校：</span></strong><span style="font-size: 18px;">已获得过资助的农村建档立卡贫困学生，入学报到时直接按资助标准免除国家免学费和贵州省教育精准扶贫学生资助免学费、教科书费、住宿费资助项目的费用。农村建档立卡一年级贫困新生凭县级扶贫部门发放的具有二维码标识的“贵州省贫困户登记卡”和录取通知书，入学报到时直接按资助标准免除国家免学费和贵州省教育精准扶贫学生资助免学费、教科书费、住宿费资助项目的费用。扶贫专项助学金资助项目由学校在每年秋季学期开学后一个月内，通过学生资助卡发放。</span></span>
+</p>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px;">2.</span></strong><strong><span style="font-size: 18px;">省外学校：</span></strong><span style="font-size: 18px;">已获得过资助的农村建档立卡贫困学生凭就读学校盖章的申请表，农村建档立卡一年级贫困新生凭县级扶贫部门发放的具有二维码标识的“贵州省贫困户登记卡”和录取学校盖章的申请表，在每年秋季学期开学后一个月内，到户籍所在地县级教育局（人力资源社会保障局）申请，通过涉农补贴“一卡通”或“一折通”发放资助资金。</span></span>
 </p>
 <p>
     <br/>
-</p>`
+</p>
+`
         }
       },
       {
         node: {
           id: 1,
-          title: '我省对打赢深度贫困地区脱贫攻坚战的要求',
-          createdAt: '2019/3/15',
-          author: '管理员',
-          content: `<p style="text-align:center;line-height:40px">
-    <a><span style="font-size:27px;font-family:方正小标宋简体">第二</span></a> <span style="font-size:27px;font-family:方正小标宋简体">我省对打赢深度贫困地区脱贫攻坚战的要求</span>
+          title: "我省对打赢深度贫困地区脱贫攻坚战的要求",
+          createdAt: "2019/3/15",
+          author: "管理员",
+          content: `<p style="margin: 5px 0px; text-align: left;">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 21px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;·2016</span></strong><strong><span style="font-size: 21px;">年</span></strong><strong><span style="font-size: 21px;">9</span></strong><strong><span style="font-size: 21px;">月</span></strong><strong><span style="font-size: 21px;">20</span></strong><strong><span style="font-size: 21px;">日（省委、省政府确定极贫乡镇）</span></strong></span>
 </p>
-<p style=";margin-bottom:0;text-indent:0">
-    &nbsp;
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:47px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">省委办公厅省政府办公厅关于印发《贵州省极贫乡（镇）定点包干脱贫攻坚工作方案》（黔委厅字〔2016〕60号）</span>
 </p>
-<p style=";margin-bottom:0;text-indent:0;line-height:40px">
-    &nbsp;&nbsp; &nbsp;&nbsp;
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:47px">
+    <span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">黔南州：长顺县代化镇、平塘县大塘镇</span>
 </p>
-<p style="text-indent:43px;line-height:47px">
-    <strong><span style="font-size:21px">·2016</span></strong><strong><span style="font-size: 21px;font-family:仿宋_GB2312">年</span></strong><strong><span style="font-size:21px">9</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">月</span></strong><strong><span style="font-size:21px">20</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">日（省委、省政府确定极贫乡镇）</span></strong>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:47px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">·2016</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">年</span></strong><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">10</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">月（成立工作指挥部）</span></strong></span>
 </p>
-<p style="text-indent:43px;line-height:47px">
-    <span style="font-size:21px;font-family:仿宋_GB2312">省委办公厅</span> <span style="font-size:21px;font-family:仿宋_GB2312">省政府办公厅关于印发《贵州省极贫乡（镇）定点包干脱贫攻坚工作方案》（黔委厅字〔</span><span style="font-size:21px">2016</span><span style="font-size:21px;font-family:仿宋_GB2312">〕</span><span style="font-size:21px">60</span><span style="font-size:21px;font-family:仿宋_GB2312">号）</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:47px">
+    <span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">指挥长（省委常委、贵阳市委书）、常务副指挥长（省机关事务管理局局长），印发《长顺县代化镇脱贫攻坚指挥部工作职责》</span>
 </p>
-<p style="text-indent:43px;line-height:47px">
-    <span style="font-size:21px;font-family:仿宋_GB2312">黔南州：长顺县代化镇、平塘县大塘镇</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:47px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">·2016</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">年</span></strong><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">12</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">月（方案编制并通过）</span></strong></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:47px">
-    <strong><span style="font-size:21px">·2016</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">年</span></strong><strong><span style="font-size:21px">10</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">月（成立工作指挥部）</span></strong>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:47px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 18px; font-family: Arial, sans-serif;">1.</span><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">《黔南州长顺县代化镇定点包干脱贫攻坚实施方案</span><span style="font-size: 18px; font-family: Arial, sans-serif;">(2016—2020</span><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">年</span><span style="font-size: 18px; font-family: Arial, sans-serif;">)</span><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">》</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:47px">
-    <span style="font-size:21px;font-family:仿宋_GB2312">指挥长（省委常委、贵阳市委书）、常务副指挥长（省机关事务管理局局长），印发《长顺县代化镇脱贫攻坚指挥部工作职责》</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:47px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 18px; font-family: Arial, sans-serif;">2.</span><span style="font-size: 18px; font-family: 微软雅黑;">《长顺县代化镇定点包干脱贫攻坚子基金实施方案</span><span style="font-size: 18px; font-family: Arial, sans-serif;">(2016—2018</span><span style="font-size: 18px; font-family: 微软雅黑;">年</span><span style="font-size: 18px; font-family: Arial, sans-serif;">)</span><span style="font-size: 18px; font-family: 微软雅黑;">》</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:47px">
-    <strong><span style="font-size:21px">·2016</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">年</span></strong><strong><span style="font-size:21px">12</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">月（方案编制并通过）</span></strong>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:47px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 18px; font-family: Arial, sans-serif;">&nbsp;</span><span style="font-size: 18px; font-family: 微软雅黑;">《实施方案》共实施项目</span><span style="font-size: 18px; font-family: &quot;Times New Roman&quot;, serif;">191</span><span style="font-size: 18px; font-family: 微软雅黑;">项，总投资规模</span><span style="font-size: 18px; font-family: &quot;Times New Roman&quot;, serif;">10.581</span><span style="font-size: 18px; font-family: 微软雅黑;">亿元</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:47px">
-    <span style="font-size:21px">1.</span><span style="font-size:21px;font-family:仿宋_GB2312">《黔南州长顺县代化镇定点包干脱贫攻坚实施方案（</span><span style="font-size:21px">2016—2020</span><span style="font-size:21px;font-family:仿宋_GB2312">年）》</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:48px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 18px; font-family: Arial, sans-serif;">3.</span><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">《代化镇脱贫攻坚问责暂行办法》、《代化镇脱贫攻坚工作考核办法》、《代化镇小城镇建设实施规划》《代化镇春季攻势行动方案》</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:47px">
-    <span style="font-size:21px">2.</span><span style="font-size:21px;font-family:仿宋_GB2312">《长顺县代化镇定点包干脱贫攻坚子基金实施方案</span><span style="font-size:21px">(2016—2018</span><span style="font-size:21px;font-family:仿宋_GB2312">年</span><span style="font-size:21px">)</span><span style="font-size:21px;font-family:仿宋_GB2312">》</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:48px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">·2017</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">年</span></strong><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">1</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">月</span></strong><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">-10</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">月（春季攻势、大比武、秋季攻势）</span></strong></span>
 </p>
-<p style=";margin-bottom: 0;text-align:center;text-indent:43px;line-height:47px">
-    <span style="font-size:21px;font-family:仿宋_GB2312">《实施方案》共实施项目</span><span style="font-size:21px">191</span><span style="font-size:21px;font-family:仿宋_GB2312">项，总投资规模</span><span style="font-size:21px">10.581</span><span style="font-size:21px;font-family:仿宋_GB2312">亿元</span><span style="font-size:21px"><br/> </span><span style="font-size:19px;font-family:黑体">代化镇</span><span style="font-size:19px">10.581</span><span style="font-size:19px;font-family:黑体">亿元基金</span> <span style="font-size:19px;font-family:黑体">按项目类型划分投资规模统计表</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:48px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">·2017</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">年</span></strong><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">8</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">月（全省深度贫困地区脱贫攻坚工作推进大会）</span></strong></span>
 </p>
-<p>
-    <strong> </strong>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:43px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">8月6日至8月7日，全省深度贫困地区脱贫攻坚工作推进大会在贵阳召开，会议明确我省深度贫困地区分为深度贫困县、极贫乡镇和深度贫困村三个层次。根据定性定量划分，全省列出深度贫困县14个、极度贫困乡镇20个、深度贫困村2760个。并下发《贵州省深度贫困地区脱贫攻坚行动方案》</span>
 </p>
-<table>
-    <tbody>
-        <tr style=";height:21px" class="firstRow">
-            <td width="205" rowspan="2" style="border-width: 1px; border-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <strong><span style=";font-family:宋体;color:windowtext">项目类型</span></strong>
-                </p>
-            </td>
-            <td width="130" rowspan="2" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-top-color: windowtext; border-right-color: windowtext; border-bottom-color: windowtext; border-left: none; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <strong><span style=";font-family:宋体;color:windowtext">项目个数（项）</span></strong>
-                </p>
-            </td>
-            <td width="156" rowspan="2" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-top-color: windowtext; border-right-color: windowtext; border-bottom-color: windowtext; border-left: none; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <strong><span style=";font-family:宋体;color:windowtext">投资规模</span></strong>
-                </p>
-                <p style="text-align:center">
-                    <strong><span style=";font-family:宋体;color:windowtext">（亿元）</span></strong>
-                </p>
-            </td>
-            <td width="135" rowspan="2" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-top-color: windowtext; border-right-color: windowtext; border-bottom-color: windowtext; border-left: none; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <strong><span style=";font-family:宋体;color:windowtext">占总投资比例</span></strong>
-                </p>
-            </td>
-            <td style="border-width: initial; border-style: none; border-color: initial;" width="0"></td>
-        </tr>
-        <tr style=";height:32px">
-            <td style="border-width: initial; border-style: none; border-color: initial;" width="0"></td>
-        </tr>
-        <tr style=";height:28px">
-            <td width="205" style="border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-color: windowtext; border-bottom-color: windowtext; border-left-color: windowtext; border-top: none; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <strong><span style=";font-family:宋体;color:windowtext">合计</span></strong>
-                </p>
-            </td>
-            <td width="130" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <strong><span style=";color:windowtext">191</span></strong>
-                </p>
-            </td>
-            <td width="156" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <strong><span style=";color:windowtext">10.581</span></strong>
-                </p>
-            </td>
-            <td width="135" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <strong><span style=";color:windowtext">1</span></strong>
-                </p>
-            </td>
-            <td style="border-width: initial; border-style: none; border-color: initial;" width="0"></td>
-        </tr>
-        <tr style=";height:28px">
-            <td width="205" style="border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-color: windowtext; border-bottom-color: windowtext; border-left-color: windowtext; border-top: none; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <span style=";font-family:宋体;color:windowtext">交</span><span style=";color:windowtext">&nbsp; </span><span style=";font-family:宋体;color:windowtext">通</span>
-                </p>
-            </td>
-            <td width="130" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <span style=";color:windowtext">40</span>
-                </p>
-            </td>
-            <td width="156" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <span style=";color:windowtext">0.7828</span>
-                </p>
-            </td>
-            <td width="135" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size:15px">0.074</span>
-                </p>
-            </td>
-            <td style="border-width: initial; border-style: none; border-color: initial;" width="0"></td>
-        </tr>
-        <tr style=";height:28px">
-            <td width="205" style="border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-color: windowtext; border-bottom-color: windowtext; border-left-color: windowtext; border-top: none; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <span style=";font-family:宋体;color:windowtext">水</span><span style=";color:windowtext">&nbsp; </span><span style=";font-family:宋体;color:windowtext">利</span>
-                </p>
-            </td>
-            <td width="130" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <span style=";color:windowtext">19</span>
-                </p>
-            </td>
-            <td width="156" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <span style=";color:windowtext">0.8163</span>
-                </p>
-            </td>
-            <td width="135" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size:15px">0.077</span>
-                </p>
-            </td>
-            <td style="border-width: initial; border-style: none; border-color: initial;" width="0"></td>
-        </tr>
-        <tr style=";height:28px">
-            <td width="205" style="border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-color: windowtext; border-bottom-color: windowtext; border-left-color: windowtext; border-top: none; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <span style=";font-family:宋体;color:windowtext">农村环境整治</span>
-                </p>
-            </td>
-            <td width="130" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <span style=";color:windowtext">75</span>
-                </p>
-            </td>
-            <td width="156" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <span style=";color:windowtext">1.728</span>
-                </p>
-            </td>
-            <td width="135" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size:15px">0.163</span>
-                </p>
-            </td>
-            <td style="border-width: initial; border-style: none; border-color: initial;" width="0"></td>
-        </tr>
-        <tr style=";height:28px">
-            <td width="205" style="border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-color: windowtext; border-bottom-color: windowtext; border-left-color: windowtext; border-top: none; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <span style=";font-family:宋体;color:windowtext">小城镇建设</span>
-                </p>
-            </td>
-            <td width="130" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <span style=";color:windowtext">16</span>
-                </p>
-            </td>
-            <td width="156" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <span style=";color:windowtext">3.917</span>
-                </p>
-            </td>
-            <td width="135" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size:15px">0.370</span>
-                </p>
-            </td>
-            <td style="border-width: initial; border-style: none; border-color: initial;" width="0"></td>
-        </tr>
-        <tr style=";height:28px">
-            <td width="205" style="border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-color: windowtext; border-bottom-color: windowtext; border-left-color: windowtext; border-top: none; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <span style=";font-family:宋体;color:windowtext">公共服务</span>
-                </p>
-            </td>
-            <td width="130" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <span style=";color:windowtext">19</span>
-                </p>
-            </td>
-            <td width="156" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <span style=";color:windowtext">0.5837</span>
-                </p>
-            </td>
-            <td width="135" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size:15px">0.055 </span>
-                </p>
-            </td>
-            <td style="border-width: initial; border-style: none; border-color: initial;" width="0"></td>
-        </tr>
-        <tr style=";height:29px">
-            <td width="205" style="border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-color: windowtext; border-bottom-color: windowtext; border-left-color: windowtext; border-top: none; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <span style=";font-family:宋体;color:windowtext">特色优势产业</span>
-                </p>
-            </td>
-            <td width="130" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <span style=";color:windowtext">22</span>
-                </p>
-            </td>
-            <td width="156" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center">
-                    <span style=";color:windowtext">2.7532</span>
-                </p>
-            </td>
-            <td width="135" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: windowtext; border-right-width: 1px; border-right-color: windowtext; padding: 0px 7px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size:15px">0.26</span>
-                </p>
-            </td>
-            <td style="border-width: initial; border-style: none; border-color: initial;" width="0"></td>
-        </tr>
-    </tbody>
-</table>
-<p style="text-align:center">
-    <span style="font-size:19px">&nbsp;</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:43px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 21px;">——</span><span style="font-size: 21px;">打好</span><span style="font-size: 21px;">“</span><span style="font-size: 21px;">四个硬仗</span><span style="font-size: 21px;">”</span></span>
 </p>
-<p style="text-align:center">
-    <span style="font-size:19px;font-family:黑体">贵州脱贫攻坚投资基金极贫乡（镇）子基金项目投资表</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:43px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 18px; font-family: 微软雅黑;">基础设</span><span style="font-family: Arial, sans-serif;"></span><span style="font-size: 18px; font-family: 微软雅黑;">施建设</span></span>
 </p>
-<p style="text-align:center">
-    <strong><span style=";color:#252525">&nbsp;</span></strong>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:43px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 18px; font-family: 微软雅黑;">产业扶贫</span></span>
 </p>
-<table>
-    <tbody>
-        <tr style=";height:37px" class="firstRow">
-            <td width="63" rowspan="4" style="border-top-width: 1px; border-right-width: 1px; border-left-width: 1px; border-top-color: black; border-right-color: black; border-left-color: black; border-bottom: none; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px;font-family: 宋体">分年度投资计划（万元）</span>
-                </p>
-            </td>
-            <td width="63" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-top-color: black; border-right-color: black; border-bottom-color: black; border-left: none; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <strong><span style="font-size: 13px;font-family: 宋体">年度</span></strong>
-                </p>
-            </td>
-            <td width="54" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-top-color: black; border-right-color: black; border-bottom-color: black; border-left: none; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <strong><span style="font-size: 13px;font-family: 宋体">合</span></strong><strong><span style="font-size: 13px">&nbsp; </span></strong><strong><span style="font-size: 13px;font-family: 宋体">计</span></strong>
-                </p>
-            </td>
-            <td width="65" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-top-color: black; border-right-color: black; border-bottom-color: black; border-left: none; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <strong><span style="font-size: 13px;font-family: 宋体">交通</span></strong>
-                </p>
-            </td>
-            <td width="61" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-top-color: black; border-right-color: black; border-bottom-color: black; border-left: none; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <strong><span style="font-size: 13px;font-family: 宋体">水利</span></strong>
-                </p>
-            </td>
-            <td width="80" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-top-color: black; border-right-color: black; border-bottom-color: black; border-left: none; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <strong><span style="font-size: 13px;font-family: 宋体">农村环境整治</span></strong>
-                </p>
-            </td>
-            <td width="79" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-top-color: black; border-right-color: black; border-bottom-color: black; border-left: none; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <strong><span style="font-size: 13px;font-family: 宋体">小城镇建设</span></strong>
-                </p>
-            </td>
-            <td width="76" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-top-color: black; border-right-color: black; border-bottom-color: black; border-left: none; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <strong><span style="font-size: 13px;font-family: 宋体">公共服务</span></strong>
-                </p>
-            </td>
-            <td width="81" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-top-color: black; border-right-color: black; border-bottom-color: black; border-left: none; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <strong><span style="font-size: 13px;font-family: 宋体">特色优势产业</span></strong>
-                </p>
-            </td>
-        </tr>
-        <tr style=";height:37px">
-            <td width="63" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">2016</span><span style="font-size: 13px;font-family: 宋体">年</span>
-                </p>
-            </td>
-            <td width="54" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">820</span>
-                </p>
-            </td>
-            <td width="65" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">775</span>
-                </p>
-            </td>
-            <td width="61" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">45</span>
-                </p>
-            </td>
-            <td width="80" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">0</span>
-                </p>
-            </td>
-            <td width="79" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">0</span>
-                </p>
-            </td>
-            <td width="76" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">0</span>
-                </p>
-            </td>
-            <td width="81" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">0</span>
-                </p>
-            </td>
-        </tr>
-        <tr style=";height:37px">
-            <td width="63" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">2017</span><span style="font-size: 13px;font-family: 宋体">年</span>
-                </p>
-            </td>
-            <td width="54" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">21477</span>
-                </p>
-            </td>
-            <td width="65" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">5715</span>
-                </p>
-            </td>
-            <td width="61" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">4810</span>
-                </p>
-            </td>
-            <td width="80" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">5582</span>
-                </p>
-            </td>
-            <td width="79" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">3870</span>
-                </p>
-            </td>
-            <td width="76" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">750</span>
-                </p>
-            </td>
-            <td width="81" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">750</span>
-                </p>
-            </td>
-        </tr>
-        <tr style=";height:37px">
-            <td width="63" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">2018</span><span style="font-size: 13px;font-family: 宋体">年</span>
-                </p>
-            </td>
-            <td width="54" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">83513</span>
-                </p>
-            </td>
-            <td width="65" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">1338</span>
-                </p>
-            </td>
-            <td width="61" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">3308</span>
-                </p>
-            </td>
-            <td width="80" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">11698</span>
-                </p>
-            </td>
-            <td width="79" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">35300</span>
-                </p>
-            </td>
-            <td width="76" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">5087</span>
-                </p>
-            </td>
-            <td width="81" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; background: white; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size: 13px">26782</span>
-                </p>
-            </td>
-        </tr>
-        <tr style=";height:37px">
-            <td width="126" colspan="2" style="border-width: 1px; border-color: black; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size:15px;font-family:宋体">总计</span>
-                </p>
-            </td>
-            <td width="54" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size:15px">105810</span>
-                </p>
-            </td>
-            <td width="65" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size:15px">7828</span>
-                </p>
-            </td>
-            <td width="61" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size:15px">8163</span>
-                </p>
-            </td>
-            <td width="80" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size:15px">17280</span>
-                </p>
-            </td>
-            <td width="79" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size:15px">39170</span>
-                </p>
-            </td>
-            <td width="76" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size:15px">5837</span>
-                </p>
-            </td>
-            <td width="81" style="border-top: none; border-left: none; border-bottom-width: 1px; border-bottom-color: black; border-right-width: 1px; border-right-color: black; padding: 1px;">
-                <p style="text-align:center;vertical-align:middle">
-                    <span style="font-size:15px">27532</span>
-                </p>
-            </td>
-        </tr>
-        <tr style=";height:16px">
-            <td width="623" colspan="9" style="padding: 1px;">
-                <p>
-                    <span style="font-size:   13px;font-family:宋体">注：投资只统计极贫乡镇脱贫攻坚子基金，不含部门资金和其他资金。</span>
-                </p>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<p style=";margin-bottom:0;text-indent:53px">
-    <span style="font-size:27px">&nbsp;</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:43px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 18px; font-family: 微软雅黑;">易地扶贫搬迁</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px">
-    <span style="font-size:21px">3.</span><span style="font-size:21px;font-family:仿宋_GB2312">《代化镇脱贫攻坚问责暂行办法》、《代化镇脱贫攻坚工作考核办法》、《代化镇小城镇建设实施规划》《代化镇春季攻势行动方案》</span><span style="font-size:21px">....</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:43px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 18px; font-family: 微软雅黑;">教育医疗住房</span><span style="font-size: 18px; font-family: Arial, sans-serif;">“</span><span style="font-size: 18px; font-family: 微软雅黑;">三保障</span><span style="font-size: 18px; font-family: Arial, sans-serif;">”</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px">
-    <strong><span style="font-size:21px">·2017</span></strong><strong><span style="font-size:21px;font-family:楷体_GB2312">年</span></strong><strong><span style="font-size:21px">1</span></strong><strong><span style="font-size:21px;font-family:楷体_GB2312">月</span></strong><strong><span style="font-size:21px">-10</span></strong><strong><span style="font-size:21px;font-family:楷体_GB2312">月（春季攻势、大比武、秋季攻势）</span></strong>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:43px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 21px; font-family: Arial, sans-serif;">——</span><span style="font-size: 21px; font-family: 微软雅黑;">打好</span><span style="font-size: 21px; font-family: Arial, sans-serif;">“</span><span style="font-size: 21px; font-family: 微软雅黑;">七大战役</span><span style="font-size: 21px; font-family: Arial, sans-serif;">”</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:43px">
-    <strong><span style="font-size:21px">·2017</span></strong><strong><span style="font-size:21px;font-family:楷体_GB2312">年</span></strong><strong><span style="font-size:21px">8</span></strong><strong><span style="font-size:21px;font-family:楷体_GB2312">月（全省深度贫困地区脱贫攻坚工作推进大会）</span></strong>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:43px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 18px; font-family: 微软雅黑;">农村</span><span style="font-size: 18px; font-family: Arial, sans-serif;">“</span><span style="font-size: 18px; font-family: 微软雅黑;">组组通</span><span style="font-size: 18px; font-family: Arial, sans-serif;">”</span><span style="font-size: 18px; font-family: 微软雅黑;">公路建设</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:43px">
-    <span style="font-size:21px">8</span><span style="font-size:21px;font-family:仿宋_GB2312">月</span><span style="font-size:21px">6</span><span style="font-size:21px;font-family:仿宋_GB2312">日至</span><span style="font-size:21px">8</span><span style="font-size:21px;font-family:仿宋_GB2312">月</span><span style="font-size:21px">7</span><span style="font-size:21px;font-family:仿宋_GB2312">日，全省深度贫困地区脱贫攻坚工作推进大会在贵阳召开，会议明确我省深度贫困地区分为深度贫困县、极贫乡镇和深度贫困村三个层次。根据定性定量划分，全省列出深度贫困县</span><span style="font-size:21px">14</span><span style="font-size:21px;font-family:仿宋_GB2312">个、极度贫困乡镇</span><span style="font-size:21px">20</span><span style="font-size:21px;font-family:仿宋_GB2312">个、深度贫困村</span><span style="font-size:21px">2760</span><span style="font-size:21px;font-family:仿宋_GB2312">个。并下发</span><span style="font-size:21px;font-family:黑体">《贵州省深度贫困地区脱贫攻坚行动方案》</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:43px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 18px; font-family: 微软雅黑;">产业扶贫三年行动计划</span></span>
 </p>
-<p style="text-indent:43px;line-height:43px">
-    <span style="font-size:21px">——</span><span style="font-size:21px;font-family:黑体">打好</span><span style="font-size:21px">“</span><span style="font-size:21px;font-family:黑体">四个硬仗</span><span style="font-size:21px">”</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:43px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 18px; font-family: 微软雅黑;">易地扶贫搬迁</span></span>
 </p>
-<p style="text-indent:43px;line-height:43px">
-    <span style="font-size:21px;font-family:仿宋_GB2312">基础设施建设、</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:43px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 18px; font-family: 微软雅黑;">农村危房改造和住房保障</span></span>
 </p>
-<p style="text-indent:43px;line-height:43px">
-    <span style="font-size:21px;font-family:仿宋_GB2312">产业扶贫、</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:43px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 18px; font-family: 微软雅黑;">贫困劳动力全员培训促进就业脱贫</span></span>
 </p>
-<p style="text-indent:43px;line-height:43px">
-    <span style="font-size:21px;font-family:仿宋_GB2312">易地扶贫搬迁、</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:43px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 18px; font-family: 微软雅黑;">健康扶贫</span></span>
 </p>
-<p style="text-indent:43px;line-height:43px">
-    <span style="font-size:21px;font-family:仿宋_GB2312">教育医疗住房</span><span style="font-size:21px">“</span><span style="font-size:21px;font-family:仿宋_GB2312">三保障</span><span style="font-size:21px">”</span>
-</p>
-<p style="text-indent:43px;line-height:43px">
-    <span style="font-size:21px">——</span><span style="font-size:21px;font-family:黑体">打好</span><span style="font-size:21px">“</span><span style="font-size:21px;font-family:黑体">七大战役</span><span style="font-size:21px">”</span>
-</p>
-<p style="text-indent:43px;line-height:43px">
-    <span style="font-size:21px">1.</span><span style="font-size:21px;font-family:仿宋_GB2312">农村</span><span style="font-size:21px">“</span><span style="font-size:21px;font-family:仿宋_GB2312">组组通</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family:仿宋_GB2312">公路建设</span>
-</p>
-<p style="text-indent:43px;line-height:43px">
-    <span style="font-size:21px">2.</span><span style="font-size:21px;font-family:仿宋_GB2312">产业扶贫三年行动计划</span>
-</p>
-<p style="text-indent:43px;line-height:43px">
-    <span style="font-size:21px">3.</span><span style="font-size:21px;font-family:仿宋_GB2312">易地扶贫搬迁</span>
-</p>
-<p style="text-indent:43px;line-height:43px">
-    <span style="font-size:21px">4.</span><span style="font-size:21px;font-family:仿宋_GB2312">农村危房改造和住房保障</span>
-</p>
-<p style="text-indent:43px;line-height:43px">
-    <span style="font-size:21px">5.</span><span style="font-size:21px;font-family:仿宋_GB2312">贫困劳动力全员培训促进就业脱贫</span>
-</p>
-<p style="text-indent:43px;line-height:43px">
-    <span style="font-size:21px">6.</span><span style="font-size:21px;font-family:仿宋_GB2312">健康扶贫</span>
-</p>
-<p style="text-indent:43px;line-height:43px">
-    <span style="font-size:21px">7.</span><span style="font-size:21px;font-family:仿宋_GB2312">旅游扶贫。</span>
-</p>
-<p>
-    <span style="font-size:27px;font-family:&#39;Times New Roman&#39;,serif"><br/></span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:43px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 18px; font-family:微软雅黑;">旅游扶贫</span></span>
 </p>
 <p>
     <br/>
-</p>`
+</p>
+`
         }
       },
       {
         node: {
           id: 2,
-          title: '长顺县贫困（深度贫困）基本情况',
-          createdAt: '2019/3/15',
-          author: '管理员',
+          title: "长顺县贫困（深度贫困）基本情况",
+          createdAt: "2019/3/15",
+          author: "管理员",
           content: `<p style="text-indent:43px;line-height:41px">
     <span style="font-size:21px;font-family:黑体">一、贫困情况</span>
 </p>
@@ -2490,153 +2058,171 @@ module.exports = {
       {
         node: {
           id: 3,
-          title: '脱贫户“脱贫”、贫困村“退出”、贫困乡镇“摘帽”标准',
-          createdAt: '2019/3/15',
-          author: '管理员',
-          content: `<p style="text-indent:43px;line-height:35px;text-autospace:none;vertical-align:middle">
-    <strong><span style="font-size:21px;font-family:仿宋_GB2312">（一）贫困户</span></strong><strong><span style="font-size:21px">“</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">脱贫</span></strong><strong><span style="font-size:21px">”</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">标准：</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">实现</span><span style="font-size:21px">“</span><span style="font-size:21px;font-family:仿宋_GB2312">一达标、两不愁、三保障</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family:仿宋_GB2312">。</span>
+          title: "脱贫户“脱贫”、贫困村“退出”、贫困乡镇“摘帽”标准",
+          createdAt: "2019/3/15",
+          author: "管理员",
+          content: `<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 21px;">（一）贫困户</span></strong><strong><span style="font-size: 21px;">“</span></strong><strong><span style="font-size: 21px;">脱贫</span></strong><strong><span style="font-size: 21px;">”</span></strong><strong><span style="font-size: 21px;">标准</span></strong></span>
 </p>
-<p style="text-indent:43px;line-height:35px">
-    <strong><span style="font-size: 21px;font-family:仿宋_GB2312">七种不能脱：</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">一是</span></strong><span style="font-size:21px;font-family: 仿宋_GB2312">收入不达标的不能脱贫（</span><span style="font-size:21px">2017</span><span style="font-size:21px;font-family: 仿宋_GB2312">年预测</span><span style="font-size:21px">3335</span><span style="font-size:21px;font-family: 仿宋_GB2312">元）；<strong>二是</strong>饮水安全得不到保障的不能脱贫；<strong>三是</strong>教育达不到保障的不能脱贫，即：贫困户子女因贫造成辍学的不能脱贫，贫困户子女因为贫困未能完成</span><span style="font-size:21px">“</span><span style="font-size:21px;font-family:仿宋_GB2312">普九</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family:仿宋_GB2312">教育或</span><span style="font-size:21px">“</span><span style="font-size:21px;font-family:仿宋_GB2312">普九</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family:仿宋_GB2312">阶段外（含大学、本（专）科、高中、高职、中职学业阶段）未获得教育资助的不能脱贫；<strong>四是</strong>医疗得不到保障的不能脱贫，即：没有落实</span><span style="font-size:21px">“</span><span style="font-size:21px;font-family:仿宋_GB2312">四重</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family:仿宋_GB2312">医疗保障的患病贫困户不能脱贫；<strong>五是</strong>住房无保障的不能脱，即：无房户及住建部登记的</span><span style="font-size:21px">C</span><span style="font-size:21px;font-family:仿宋_GB2312">级、</span><span style="font-size:21px">D</span><span style="font-size:21px;font-family:仿宋_GB2312">级危房户不能脱贫，且危房改造户建筑面积不能低于人均</span><span style="font-size:21px">13</span><span style="font-size:21px;font-family:仿宋_GB2312">平方米，是危房且纳入易地扶贫搬迁但当年没有实际搬迁的不能脱贫；<strong>六是</strong>当年识别、因灾返贫致贫的不能脱贫；<strong>七是</strong>未落实帮扶措施的不能脱贫，即：对当年拟脱贫的贫困户未落实帮扶措施的（帮扶措施至少</span><span style="font-size:21px">1</span><span style="font-size:21px;font-family:仿宋_GB2312">次以上）不能脱贫。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:35px;vertical-align:middle">
+    <span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">实现“一达标、两不愁、三保障”。</span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size: 21px;font-family:仿宋_GB2312">（二）贫困村</span></strong><strong><span style="font-size: 21px">“</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">退出</span></strong><strong><span style="font-size:21px">”</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">标准</span></strong>
+<p style="margin-top:5px;margin-right:0;margin-bottom:20px;margin-left: 0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family:微软雅黑;">七种不能脱：一是</span></strong><span style="font-size: 18px; font-family: 微软雅黑;">收入不达标的不能脱贫（2017年预测3335元）；<strong>二是</strong>饮水安全得不到保障的不能脱贫；<strong>三是</strong>教育达不到保障的不能脱贫，即：贫困户子女因贫造成辍学的不能脱贫，贫困户子女因为贫困未能完成“普九”教育或“普九”阶段外（含大学、本（专）科、高中、高职、中职学业阶段）未获得教育资助的不能脱贫；<strong>四是</strong>医疗得不到保障的不能脱贫，即：没有落实“四重”医疗保障的患病贫困户不能脱贫；<strong>五是</strong>住房无保障的不能脱，即：无房户及住建部登记的C级、D级危房户不能脱贫，且危房改造户建筑面积不能低于人均13平方米，是危房且纳入易地扶贫搬迁但当年没有实际搬迁的不能脱贫；<strong>六是</strong>当年识别、因灾返贫致贫的不能脱贫；<strong>七是</strong>未落实帮扶措施的不能脱贫，即：对当年拟脱贫的贫困户未落实帮扶措施的（帮扶措施至少1次以上）不能脱贫。</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <span style="font-size:21px">1.</span><span style="font-size:21px;font-family:仿宋_GB2312">根据贫困发生率下降到</span><span style="font-size:21px">3%</span><span style="font-size:21px;font-family:仿宋_GB2312">；</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 21px; font-family: 微软雅黑;">（二）贫困村</span></strong><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">“</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">退出</span></strong><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">”</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">标准</span></strong></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <span style="font-size:21px">2.</span><span style="font-size:21px;font-family:仿宋_GB2312">村级集体经济累计完成达</span><span style="font-size:21px">3</span><span style="font-size:21px;font-family:仿宋_GB2312">万元以上并在上一年的基础上增长</span><span style="font-size:21px">10%</span><span style="font-size:21px;font-family:仿宋_GB2312">以上；</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:35px">
+    <span style="font-size: 18px; font-family: 微软雅黑;">1.根据贫困发生率下降到3%；</span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <span style="font-size:21px">3.</span><span style="font-size:21px;font-family:仿宋_GB2312">要有</span><span style="font-size:21px">1-2</span><span style="font-size:21px;font-family:仿宋_GB2312">个主导产业（主导产业覆盖贫困户</span><span style="font-size:21px">60%</span><span style="font-size:21px;font-family:仿宋_GB2312">以上）</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:35px">
+    <span style="font-size: 18px; font-family: 微软雅黑;">2.村级集体经济累计完成达3万元以上并在上一年的基础上增长10%以上；</span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <span style="font-size:21px">4.</span><span style="font-size:21px;font-family:仿宋_GB2312">基础设施得到较大改善（计划出列村通组道路硬化率达</span><span style="font-size:21px">100%</span><span style="font-size:21px;font-family: 仿宋_GB2312">，全村户户吃上安全自来水，全村看不得危房、破烂房，村委会通宽带网络）；</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:35px">
+    <span style="font-size: 18px; font-family: 微软雅黑;">3.要有1-2个主导产业（主导产业覆盖贫困户60%以上）</span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <span style="font-size:21px">5.</span><span style="font-size:21px;font-family:仿宋_GB2312">基本公共服务要得到较大提升（村级卫生室正常开展工作，要有基本的药品，切实解决群众看病难的问题；村级办公服务窗口满足群众办事的需要，要实现坐班制）。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:35px">
+    <span style="font-size: 18px; font-family: 微软雅黑;">4.基础设施得到较大改善（计划出列村通组道路硬化率达100%，全村户户吃上安全自来水，全村看不得危房、破烂房，村委会通宽带网络）；</span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size: 21px;font-family:仿宋_GB2312">（三）贫困乡镇</span></strong><strong><span style="font-size: 21px">“</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">摘帽</span></strong><strong><span style="font-size:21px">”</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">标准</span></strong>
+<p style="margin-top:5px;margin-right:0;margin-bottom:20px;margin-left: 0;text-indent:43px;line-height:35px">
+    <span style="font-size: 18px; font-family: 微软雅黑;">5.基本公共服务要得到较大提升（村级卫生室正常开展工作，要有基本的药品，切实解决群众看病难的问题；村级办公服务窗口满足群众办事的需要，要实现坐班制）。</span>
 </p>
-<p style="text-indent:43px;line-height:35px">
-    <span style="font-size:21px">1.</span><span style="font-size:21px;font-family:仿宋_GB2312">贫困发生率下降</span><span style="font-size:21px">4.3</span><span style="font-size:21px;font-family:仿宋_GB2312">个百分点以上；</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 21px; font-family: 微软雅黑;">（三）贫困乡镇</span></strong><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">“</span></strong><strong><span style="font-size: 21px; font-family: 仿宋_GB2312;">摘帽</span></strong><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">”</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">标准</span></strong></span>
 </p>
-<p style="text-indent:41px;line-height:35px">
-    <span style="font-size:21px;letter-spacing:-1px">2.</span><span style="font-size:21px;font-family:仿宋_GB2312;letter-spacing:-1px">农村居民可支配收入达到全省平均水平。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:35px">
+    <span style="font-size: 18px; font-family: 微软雅黑;">1.贫困发生率下降4.3个百分点以上；</span>
+</p>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:41px;line-height:35px">
+    <span style="font-size: 18px; font-family: 微软雅黑;">2.农村居民可支配收入达到全省平均水平。</span>
 </p>
 <p>
     <br/>
-</p>`
+</p>
+`
         }
       },
       {
         node: {
           id: 4,
-          title: '脱贫户“脱贫”、贫困村“退出”、贫困乡镇“摘帽”流程',
-          createdAt: '2019/3/15',
-          author: '管理员',
-          content: `<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size: 21px;font-family:仿宋_GB2312">（一）贫困人口</span></strong><strong><span style="font-size: 21px">“</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">脱贫</span></strong><strong><span style="font-size:21px">”</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">程序</span></strong>
+          title: "脱贫户“脱贫”、贫困村“退出”、贫困乡镇“摘帽”流程",
+          createdAt: "2019/3/15",
+          author: "管理员",
+          content: `<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 21px;">（一）贫困人口</span></strong><strong><span style="font-size: 21px;">“</span></strong><strong><span style="font-size: 21px;">脱贫</span></strong><strong><span style="font-size: 21px;">”</span></strong><strong><span style="font-size: 21px;">程序</span></strong></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size:21px">1.</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">村民小组提名。</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">村民小组根据对贫困户的帮扶措施落实情况和帮扶效果，结合贫困户脱贫认定标准，向所在村民委员会提出拟脱贫认定贫困户名单。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px;">1.</span></strong><strong><span style="font-size: 18px;">村民小组提名。</span></strong><span style="font-size: 18px;">村民小组根据对贫困户的帮扶措施落实情况和帮扶效果，结合贫困户脱贫认定标准，向所在村民委员会提出拟脱贫认定贫困户名单。</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size:21px">2.</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">村</span></strong><strong><span style="font-size:21px">“</span></strong><strong><span style="font-size:21px;font-family: 仿宋_GB2312">两委</span></strong><strong><span style="font-size:21px">”</span></strong><strong><span style="font-size:21px;font-family: 仿宋_GB2312">和驻村工作队核实。</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">根据村民小组提出的拟脱贫认定贫困户名单，由村支</span><span style="font-size:21px">“</span><span style="font-size:21px;font-family:仿宋_GB2312">两委</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family:仿宋_GB2312">、村</span><span style="font-size:21px">“</span><span style="font-size:21px;font-family:仿宋_GB2312">第一书记</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family:仿宋_GB2312">、扶贫工作队</span><span style="font-size:21px">(</span><span style="font-size:21px;font-family:仿宋_GB2312">组</span><span style="font-size:21px">)</span><span style="font-size:21px;font-family:仿宋_GB2312">、驻村干部和村民代表共同初审确定全村拟脱贫认定贫困户名单，并组成</span><span style="font-size:21px">5-7</span><span style="font-size:21px;font-family:仿宋_GB2312">人<span style="letter-spacing:-1px">的入户调查组开展入户调查（每组必须有</span></span><span style="font-size:21px;letter-spacing:-1px">1-2</span><span style="font-size:21px;font-family:仿宋_GB2312;letter-spacing:-1px">名村民代表），对每个拟脱贫认定贫困户进行人均可支配收入调查和</span><span style="font-size: 21px;letter-spacing:-1px">“</span><span style="font-size:21px;font-family:仿宋_GB2312;letter-spacing:-1px">四看法</span><span style="font-size:21px;letter-spacing:-1px">”</span><span style="font-size:21px;font-family:仿宋_GB2312;letter-spacing: -1px">综合评估。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px;">2.</span></strong><strong><span style="font-size: 18px;">村</span></strong><strong><span style="font-size: 18px;">“</span></strong><strong><span style="font-size: 18px;">两委</span></strong><strong><span style="font-size: 18px;">”</span></strong><strong><span style="font-size: 18px;">和驻村工作队核实。</span></strong><span style="font-size: 18px;">根据村民小组提出的拟脱贫认定贫困户名单，由村支</span><span style="font-size: 18px;">“</span><span style="font-size: 18px;">两委</span><span style="font-size: 18px;">”</span><span style="font-size: 18px;">、村</span><span style="font-size: 18px;">“</span><span style="font-size: 18px;">第一书记</span><span style="font-size: 18px;">”</span><span style="font-size: 18px;">、扶贫工作队</span><span style="font-size: 18px;">(</span><span style="font-size: 18px;">组</span><span style="font-size: 18px;">)</span><span style="font-size: 18px;">、驻村干部和村民代表共同初审确定全村拟脱贫认定贫困户名单，并组成</span><span style="font-size: 18px;">5-7</span><span style="font-size: 18px;">人<span style="letter-spacing: -1px;">的入户调查组开展入户调查（每组必须有</span></span><span style="font-size: 18px; letter-spacing: -1px;">1-2</span><span style="font-size: 18px; letter-spacing: -1px;">名村民代表），对每个拟脱贫认定贫困户进行人均可支配收入调查和</span><span style="font-size: 18px; letter-spacing: -1px;">“</span><span style="font-size: 18px; letter-spacing: -1px;">四看法</span><span style="font-size: 18px; letter-spacing: -1px;">”</span><span style="font-size: 18px; letter-spacing: -1px;">综合评估。</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size:21px">3.</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">拟退出贫困户认可。</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">经村支</span><span style="font-size:21px">“</span><span style="font-size:21px;font-family:仿宋_GB2312">两委</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family:仿宋_GB2312">入户核查，拟退出贫困户达到当年的退出标准，同意按程序退出。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px;">3.</span></strong><strong><span style="font-size: 18px;">拟退出贫困户认可。</span></strong><span style="font-size: 18px;">经村支</span><span style="font-size: 18px;">“</span><span style="font-size: 18px;">两委</span><span style="font-size: 18px;">”</span><span style="font-size: 18px;">入户核查，拟退出贫困户达到当年的退出标准，同意按程序退出。</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size:21px">4.</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">在村内公示无异议后公告退出。</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">由村民委员会召开村民代表大会对每个拟退出贫困户及入户调查情况进行评议，对评议结果进行公示。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">4.</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">在村内公示无异议后公告退出。</span></strong><span style="font-size: 18px; font-family: 微软雅黑;">由村民委员会召开村民代表大会对每个拟退出贫困户及入户调查情况进行评议，对评议结果进行公示。</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size:21px">5.</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">报乡镇人民政府核准。</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">乡镇人民政府组织扶贫工作站等单位对村支</span><span style="font-size:21px">“</span><span style="font-size:21px;font-family:仿宋_GB2312">两委</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family:仿宋_GB2312">上报的贫困户退出认定名单及材料进行核查，核查中须按</span><span style="font-size:21px">3-5%</span><span style="font-size:21px;font-family: 仿宋_GB2312">的比例对拟脱贫认定贫困户进行抽查。由乡镇人民政府核准，报县级扶贫开发领导小组备案。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">5.</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">报乡镇人民政府核准。</span></strong><span style="font-size: 18px; font-family: 微软雅黑;">乡镇人民政府组织扶贫工作站等单位对村支</span><span style="font-size: 18px; font-family: Arial, sans-serif;">“</span><span style="font-size: 18px; font-family: 微软雅黑;">两委</span><span style="font-size: 18px; font-family: Arial, sans-serif;">”</span><span style="font-size: 18px; font-family: 微软雅黑;">上报的贫困户退出认定名单及材料进行核查，核查中须按</span><span style="font-size: 18px; font-family: Arial, sans-serif;">3-5%</span><span style="font-size: 18px; font-family: 微软雅黑;">的比例对拟脱贫认定贫困户进行抽查。由乡镇人民政府核准，报县级扶贫开发领导小组备案。</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size:21px">6.</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">签字背书确认并在建档立卡贫困人口中销号。</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">由贫困户所在乡镇党委和政府主要负责人，乡镇扶贫工作站主要负责人，村党支部书记和村委会主任，村</span><span style="font-size:21px">“</span><span style="font-size:21px;font-family:仿宋_GB2312">第一书记</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family:仿宋_GB2312">，驻村工作队（组）主要负责人，贫困户签字背书确认退出。同时在</span><span style="font-size:21px">“</span><span style="font-size:21px;font-family:仿宋_GB2312">扶贫云</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family:仿宋_GB2312">建档立卡系统中标识。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">6.</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">签字背书确认并在建档立卡贫困人口中销号。</span></strong><span style="font-size: 18px; font-family: 微软雅黑;">由贫困户所在乡镇党委和政府主要负责人，乡镇扶贫工作站主要负责人，村党支部书记和村委会主任，村</span><span style="font-size: 18px; font-family: Arial, sans-serif;">“</span><span style="font-size: 18px; font-family: 微软雅黑;">第一书记</span><span style="font-size: 18px; font-family: Arial, sans-serif;">”</span><span style="font-size: 18px; font-family: 微软雅黑;">，驻村工作队（组）主要负责人，贫困户签字背书确认退出。同时在</span><span style="font-size: 18px; font-family: Arial, sans-serif;">“</span><span style="font-size: 18px; font-family: 微软雅黑;">扶贫云</span><span style="font-size: 18px; font-family: Arial, sans-serif;">”</span><span style="font-size: 18px; font-family:微软雅黑;">建档立卡系统中标识。</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <span style="font-size:21px;font-family:仿宋_GB2312">签字日期的逻辑关系：应严格按照公示不低于</span><span style="font-size:21px">7</span><span style="font-size:21px;font-family:仿宋_GB2312">天的工作程序开展工作，即贫困户签字确认退出，村级核查后进行</span><span style="font-size:21px">7</span><span style="font-size:21px;font-family:仿宋_GB2312">天公示（公示期间村级签字），报乡镇抽查后进行乡镇级公示</span><span style="font-size:21px">7</span><span style="font-size:21px;font-family:仿宋_GB2312">天（乡镇级签字），报县公告</span><span style="font-size:21px">7</span><span style="font-size:21px;font-family:仿宋_GB2312">天后批复确认。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:20px;margin-left: 0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 18px; font-family: 微软雅黑;">签字日期的逻辑关系：应严格按照公示不低于</span><span style="font-size: 18px; font-family: Arial, sans-serif;">7</span><span style="font-size: 18px; font-family: 微软雅黑;">天的工作程序开展工作，即贫困户签字确认退出，村级核查后进行</span><span style="font-size: 18px; font-family: Arial, sans-serif;">7</span><span style="font-size: 18px; font-family: 微软雅黑;">天公示（公示期间村级签字），报乡镇抽查后进行乡镇级公示</span><span style="font-size: 18px; font-family: Arial, sans-serif;">7</span><span style="font-size: 18px; font-family: 微软雅黑;">天（乡镇级签字），报县公告</span><span style="font-size: 18px; font-family: Arial, sans-serif;">7</span><span style="font-size: 18px; font-family: 微软雅黑;">天后批复确认。</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size: 21px;font-family:仿宋_GB2312">（二）贫困村</span></strong><strong><span style="font-size: 21px">“</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">退出</span></strong><strong><span style="font-size:21px">”</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">程序</span></strong>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 21px; font-family: 微软雅黑;">（二）贫困村</span></strong><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">“</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">退出</span></strong><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">”</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">程序</span></strong></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size:21px">1.</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">贫困村申请。</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">按照国家和省定贫困村退出标准，统筹考虑村内基础设施、基本公共服务、产业发展、集体经济收入等综合因素，贫困村开展自查，提出贫困村退出申请。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">1.</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">贫困村申请。</span></strong><span style="font-size: 18px; font-family: 微软雅黑;">按照国家和省定贫困村退出标准，统筹考虑村内基础设施、基本公共服务、产业发展、集体经济收入等综合因素，贫困村开展自查，提出贫困村退出申请。</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size:21px">2.</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">乡镇审批。</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">乡镇人民政府组织对达到退出标准的贫困村进行审核认定。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">2.</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">乡镇审批。</span></strong><span style="font-size: 18px; font-family: 微软雅黑;">乡镇人民政府组织对达到退出标准的贫困村进行审核认定。</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size:21px">3.</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">县级核准。</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">乡镇审核认定后，报县级扶贫开发领导小组核准。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">3.</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">县级核准。</span></strong><span style="font-size: 18px; font-family: 微软雅黑;">乡镇审核认定后，报县级扶贫开发领导小组核准。</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size:21px">4.</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">签字背书。</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">联系贫困村的县和乡镇领导，乡镇扶贫工作站负责人，村党支部书记和村委会主任，村</span><span style="font-size:21px">“</span><span style="font-size:21px;font-family:仿宋_GB2312">第一书记</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family:仿宋_GB2312">，驻村工作队（组）主要负责人签字背书确认退出。同时在</span><span style="font-size:21px">“</span><span style="font-size:21px;font-family:仿宋_GB2312">扶贫云</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family:仿宋_GB2312">建档立卡系统中标识确认。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">4.</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">签字背书。</span></strong><span style="font-size: 18px; font-family: 微软雅黑;">联系贫困村的县和乡镇领导，乡镇扶贫工作站负责人，村党支部书记和村委会主任，村</span><span style="font-size: 18px; font-family: Arial, sans-serif;">“</span><span style="font-size: 18px; font-family: 微软雅黑;">第一书记</span><span style="font-size: 18px; font-family: Arial, sans-serif;">”</span><span style="font-size: 18px; font-family: 微软雅黑;">，驻村工作队（组）主要负责人签字背书确认退出。同时在</span><span style="font-size: 18px; font-family: Arial, sans-serif;">“</span><span style="font-size: 18px; font-family: 仿宋_GB2312;">扶贫云</span><span style="font-size: 18px; font-family: Arial, sans-serif;">”</span><span style="font-size: 18px; font-family: 微软雅黑;">建档立卡系统中标识确认。</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size:21px">5.</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">省州级备案。</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">经乡镇人民政府批复认定退出的贫困村，以县为单位上报州扶贫开发领导小组备案，州汇总后，以州为单位上报省扶贫开发领导小组备案。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">5.</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">省州级备案。</span></strong><span style="font-size: 18px; font-family:微软雅黑;">经乡镇人民政府批复认定退出的贫困村，以县为单位上报州扶贫开发领导小组备案，州汇总后，以州为单位上报省扶贫开发领导小组备案。</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:41px;line-height:35px">
-    <span style="font-size:21px;font-family:仿宋_GB2312;letter-spacing: -0">签字日期的逻辑关系：应严格按照公示不低于</span><span style="font-size:21px;letter-spacing:-0">7</span><span style="font-size:21px;font-family:仿宋_GB2312;letter-spacing:-0">天的工作程序开展工作，村</span><span style="font-size:21px;letter-spacing:-0">→</span><span style="font-size:21px;font-family:仿宋_GB2312;letter-spacing:-0">镇乡</span><span style="font-size:21px;letter-spacing:-0">→</span><span style="font-size:21px;font-family:仿宋_GB2312;letter-spacing:-0">县三级签字认定时间应分别间隔</span><span style="font-size:21px;letter-spacing:-0">7</span><span style="font-size:21px;font-family:仿宋_GB2312;letter-spacing:-0">天。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:20px;margin-left: 0;text-indent:41px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 18px; font-family: 微软雅黑;">签字日期的逻辑关系：应严格按照公示不低于</span><span style="font-size: 18px; font-family: Arial, sans-serif;">7</span><span style="font-size: 18px; font-family: 微软雅黑;">天的工作程序开展工作，村</span><span style="font-size: 18px; font-family: Arial, sans-serif;">→</span><span style="font-size: 18px; font-family: 微软雅黑;">镇乡</span><span style="font-size: 18px; font-family: Arial, sans-serif;">→</span><span style="font-size: 18px; font-family: 微软雅黑;">县三级签字认定时间应分别间隔</span><span style="font-size: 18px; font-family: Arial, sans-serif;">7</span><span style="font-size: 18px; font-family: 微软雅黑;">天。</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size: 21px;font-family:仿宋_GB2312">（三）贫困乡镇</span></strong><strong><span style="font-size: 21px">“</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">摘帽</span></strong><strong><span style="font-size:21px">”</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">程序</span></strong>
+<p style="margin-top:5px;margin-right:0;margin-bottom:0;margin-left: 0;margin-bottom:0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 21px; font-family: 微软雅黑;">（三）贫困乡镇</span></strong><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">“</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">摘帽</span></strong><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">”</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">程序</span></strong></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size:21px">1.</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">乡镇申请。</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">根据省定贫困乡镇退出标准，乡镇人民政府组织开展自查，向所在县级扶贫开发领导小组提出退出申请。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">1.</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">乡镇申请。</span></strong><span style="font-size: 18px; font-family: 微软雅黑;">根据省定贫困乡镇退出标准，乡镇人民政府组织开展自查，向所在县级扶贫开发领导小组提出退出申请。</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size:21px">2.</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">县级审核认定。</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">县级扶贫开发领导小组组织县级相关部门人员对拟退出贫困乡镇进行审核并公示，公示无异议后，公告退出。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">2.</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">县级审核认定。</span></strong><span style="font-size: 18px; font-family: 微软雅黑;">县级扶贫开发领导小组组织县级相关部门人员对拟退出贫困乡镇进行审核并公示，公示无异议后，公告退出。</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size:21px">3.</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">签字背书。</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">联系贫困乡镇的州和县领导，县扶贫局主要负责人，乡镇党委和政府主要负责人，乡镇扶贫工作站主要负责人签字背书确认。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">3.</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">签字背书。</span></strong><span style="font-size: 18px; font-family: 微软雅黑;">联系贫困乡镇的州和县领导，县扶贫局主要负责人，乡镇党委和政府主要负责人，乡镇扶贫工作站主要负责人签字背书确认。</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <strong><span style="font-size:21px">4.</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">省州备案。</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">经县级扶贫开发领导小组审批认定退出的贫困乡镇，以州级扶贫开发领导小组为单位汇总后报省级扶贫开发领导小组备案。</span>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">4.</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">省州备案。</span></strong><span style="font-size: 18px; font-family: 微软雅黑;">经县级扶贫开发领导小组审批认定退出的贫困乡镇，以州级扶贫开发领导小组为单位汇总后报省级扶贫开发领导小组备案。</span></span>
 </p>
-<p style=";margin-bottom:0;text-indent:43px;line-height:35px">
-    <span style="font-size:21px;font-family:仿宋_GB2312">签字背书时间：镇乡公示时间为</span><span style="font-size:21px">7</span><span style="font-size:21px;font-family:仿宋_GB2312">天，县级公告为</span><span style="font-size:21px">7</span><span style="font-size:21px;font-family:仿宋_GB2312">天，每一级签字时间间隔最低为</span><span style="font-size:21px">7</span><span style="font-size:21px;font-family:仿宋_GB2312">天。</span>
+<p style="margin: 5px 0px 0px; text-indent: 43px; line-height: 35px;">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 18px; font-family: 微软雅黑;">签字背书时间：镇乡公示时间为</span><span style="font-size: 18px; font-family: Arial, sans-serif;">7</span><span style="font-size: 18px; font-family: 微软雅黑;">天，县级公告为</span><span style="font-size: 18px; font-family: Arial, sans-serif;">7</span><span style="font-size: 18px; font-family: 微软雅黑;">天，每一级签字时间间隔最低为</span><span style="font-size: 18px; font-family: Arial, sans-serif;">7</span><span style="font-size: 18px; font-family: 微软雅黑;">天。</span></span>
 </p>
-<p>
-    <br/>
-</p>`
+`
         }
       },
       {
         node: {
           id: 5,
-          title: '评估验收标准',
-          createdAt: '2019/3/15',
-          author: '管理员',
-          content: `<p>
+          title: "评估验收标准",
+          createdAt: "2019/3/15",
+          author: "管理员",
+          content: `<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0">
+    <strong><span style="font-size: 18px;font-family: Arial, sans-serif">&nbsp; &nbsp;</span></strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px;">&nbsp;</span></strong><strong><span style="font-size: 21px;">在“一达标”上：</span></strong></span>
+</p>
+<p style="margin-top:5px;margin-right:0;margin-bottom:25px;margin-left: 0;line-height:32px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 18px; font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 18px; font-family: &quot;MS Gothic&quot;;"></span><span style="font-size: 18px; font-family: 微软雅黑;">要把产业帮扶、务工情况和农产品价格、成本、收益摸清楚，帮助群众全面算清收入账，确保稳定增收并超过贫困线（</span><span style="font-size: 18px; font-family: 微软雅黑;">2017年预计为3335元）。</span></span>
+</p>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">&nbsp;&nbsp;</span></strong><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">&nbsp;&nbsp;</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">在“两不愁”上</span></strong><strong><span style="font-size: 21px; font-family: &quot;MS Gothic&quot;;"></span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">：</span></strong></span>
+</p>
+<p style="margin-top:5px;margin-right:0;margin-bottom:25px;margin-left: 0;line-height:32px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 18px; font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 18px; font-family: &quot;MS Gothic&quot;;"></span><span style="font-size: 18px; font-family: 微软雅黑;">要做到米缸里随时装满大米，解决贫困户饮水困难、安全问题；衣柜里随时有四季衣服。</span></span>
+</p>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 18px; font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;</span><strong><span style="font-size: 21px; font-family: 微软雅黑;">在“三保障”上：</span></strong></span>
+</p>
+<p style="margin-top:5px;margin-right:0;margin-bottom:25px;margin-left: 0;line-height:32px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 18px; font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 18px; font-family: &quot;MS Gothic&quot;;"></span><span style="font-size: 18px; font-family: 微软雅黑;">一是必须全面消除烂房和破房，对漏雨的房屋都要有整治措施，确保检查验收前入住安全住房；二是必须确保每个学生都能上学，坚决防止因学致贫、因贫辍学，对贫困家庭辍学学生要做好劝返工作；三是实现建档立卡贫困人口参合率达</span><span style="font-size: 18px; font-family: 仿宋_GB2312;">100%，<span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">并落实“四重医疗保障”，患重大疾病病人得到救治，报销比例达到政策要求。</span></span></span>
+</p>
+<p style="margin-top:5px;margin-right:0;margin-bottom:10px;margin-left: 0">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;</span></strong><strong><span style="font-size: 21px; font-family: &quot;MS Gothic&quot;;"></span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">在</span></strong><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">“</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">两率一度</span></strong><strong><span style="font-size: 21px; font-family: Arial, sans-serif;">”</span></strong><strong><span style="font-size: 21px; font-family: 微软雅黑;">上：</span></strong></span>
+</p>
+<p style="margin: 5px 0px 10px; text-indent: 43px; line-height: 35px;">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">1.</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">错评率或漏评率不大于</span></strong><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">1%</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">，</span></strong><span style="font-size: 18px; font-family: 微软雅黑;">即：不该纳入的坚决一户不纳入，该纳入的一户不漏。</span></span>
+</p>
+<p style="margin: 5px 0px 10px; text-indent: 43px; line-height: 35px;">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">2.</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">错退率不大于</span></strong><strong><span style="font-size: 18px; font-family: Arial, sans-serif;">2%</span></strong><strong><span style="font-size: 18px; font-family: 微软雅黑;">。</span></strong><span style="font-size: 18px; font-family: 微软雅黑;">凡出现下列情况之一的，视为<strong>错退</strong>：家庭年人均纯收入低于国家扶贫标准（</span><span style="font-size: 18px; font-family: Arial, sans-serif;">2017</span><span style="font-size: 18px; font-family: 微软雅黑;">年预计为</span><span style="font-size: 18px; font-family: Arial, sans-serif;">3335</span><span style="font-size: 18px; font-family: 微软雅黑;">元）、现住房为危房或无住房的、家中有义</span></span><span style="font-size: 18px;font-family: 微软雅黑">务教育阶段学生因贫辍学的、饮水不安全或未达到国家要求的、当年识别当年脱贫的。凡出现下列情况的，视为</span><strong><span style="font-size: 18px;font-family: Arial, sans-serif">“</span></strong><strong><span style="font-size: 18px;font-family: 微软雅黑">被脱贫</span></strong><strong><span style="font-size: 18px;font-family: Arial, sans-serif">”</span></strong><span style="font-size: 18px;font-family: 仿宋_GB2312">：<span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">贫困户不知道已脱贫的、不清楚脱贫程序和脱贫标准的、不同意脱贫的、没有得到任何帮扶或参与项目未受益的。</span></span>
+</p>
+<p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0;text-indent:43px;line-height:35px">
+    <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong><span style="font-size: 18px;">3.</span></strong><strong><span style="font-size: 18px;">帮扶认可度或满意度必须达</span></strong><strong><span style="font-size: 18px;">90%</span></strong><strong><span style="font-size: 18px;">以上。</span></strong></span><span style="font-size: 18px;font-family: 微软雅黑">凡出现下列情况之一的，视为<strong>不满意</strong>的情况：不知道帮扶责任人或驻村干部（含第一书记）是谁的（没有安排第一书记或驻村干部的村，只询问帮扶责任人情况）；帮扶措施没有与贫困户商量制定的；没有帮扶计划或帮扶计划与致贫原因不符的；没有实施任何帮扶项目的；帮扶措施没有效果的。工作中要重点关注贫困户收入有无明显变化，退出是否认可，对工作成效是否满意，对帮扶干部是否满意。</span>
+</p>
+<p>
     <br/>
 </p>
-<p style="text-indent:43px;line-height:35px">
-    <span style="font-size:21px;font-family:仿宋_GB2312">在</span><strong><span style="font-size:21px">“</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">一达标</span></strong><strong><span style="font-size:21px">”</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">上，要把产业帮扶、务工情况和农产品价格、成本、收益摸清楚，帮助群众全面算清收入账，确保稳定增收并超过贫困线（</span><span style="font-size:21px">2017</span><span style="font-size:21px;font-family: 仿宋_GB2312">年预计为</span><span style="font-size:21px">3335</span><span style="font-size:21px;font-family: 仿宋_GB2312">元）。在</span><span style="font-size:21px">“</span><strong><span style="font-size:21px;font-family:仿宋_GB2312">两不愁</span></strong><strong><span style="font-size:21px">”</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">上，要做到米缸里随时装满大米，解决贫困户饮水困难、安全问题；衣柜里随时有四季衣服。在</span><strong><span style="font-size:21px">“</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">三保障</span></strong><strong><span style="font-size:21px">”</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">上，</span><strong><span style="font-size:21px;font-family:仿宋_GB2312">一是</span></strong><span style="font-size:21px;font-family: 仿宋_GB2312">必须全面消除烂房和破房，对漏雨的房屋都要有整治措施，确保检查验收前入住安全住房；<strong>二是</strong>必须确保每个学生都能上学，坚决防止因学致贫、因贫辍学，对贫困家庭辍学学生要做好劝返工作；<strong>三是</strong>实现建档立卡贫困人口参合率达</span><span style="font-size:21px">100%</span><span style="font-size:21px;font-family: 仿宋_GB2312">，并落实</span><span style="font-size:21px">“</span><span style="font-size:21px;font-family:仿宋_GB2312">四重医疗保障</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family:仿宋_GB2312">，患重大疾病病人得到救治，报销比例达到政策要求。</span>
-</p>
-<p style="text-indent:43px;line-height:35px">
-    <strong><span style="font-size: 21px;font-family:仿宋_GB2312">在</span></strong><strong><span style="font-size:21px">“</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">两率一度</span></strong><strong><span style="font-size:21px">”</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">上：</span></strong>
-</p>
-<p style="text-indent:43px;line-height:35px">
-    <strong><span style="font-size:21px">1.</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">错评率或漏评率不大于</span></strong><strong><span style="font-size:21px">1%</span></strong><strong><span style="font-size:21px;font-family: 仿宋_GB2312">，</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">即：不该纳入的坚决一户不纳入，该纳入的一户不漏。</span>
-</p>
-<p style="text-indent:43px;line-height:35px">
-    <strong><span style="font-size:21px">2.</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">错退率不大于</span></strong><strong><span style="font-size:21px">2%</span></strong><strong><span style="font-size:21px;font-family: 仿宋_GB2312">。</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">凡出现下列情况之一的，视为<strong>错退</strong>：家庭年人均纯收入低于国家扶贫标准（</span><span style="font-size:21px">2017</span><span style="font-size:21px;font-family: 仿宋_GB2312">年预计为</span><span style="font-size:21px">3335</span><span style="font-size:21px;font-family: 仿宋_GB2312">元）、现住房为危房或无住房的、家中有义务教育阶段学生因贫辍学的、饮水不安全或未达到国家要求的、当年识别当年脱贫的。凡出现下列情况的，视为</span><strong><span style="font-size:21px">“</span></strong><strong><span style="font-size:21px;font-family: 仿宋_GB2312">被脱贫</span></strong><strong><span style="font-size:21px">”</span></strong><span style="font-size:21px;font-family: 仿宋_GB2312">：贫困户不知道已脱贫的、不清楚脱贫程序和脱贫标准的、不同意脱贫的、没有得到任何帮扶或参与项目未受益的。</span>
-</p>
-<p style="text-indent: 43px; line-height: 35px;">
-    <strong><span style="font-size:21px">3.</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">帮扶认可度或满意度必须达</span></strong><strong><span style="font-size:21px">90%</span></strong><strong><span style="font-size:21px;font-family:仿宋_GB2312">以上。</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">凡出现下列情况之一的，视为<strong>不满意</strong>的情况：不知道帮扶责任人或驻村干部（含第一书记）是谁的（没有安排第一书记或驻村干部的村，只询问帮扶责任人情况）；帮扶措施没有与贫困户商量制定的；没有帮扶计划或帮扶计划与致贫原因不符的；没有实施任何帮扶项目的；帮扶措施没有效果的。工作中要重点关注贫困户收入有无明显变化，退出是否认可，对工作成效是否满意，对帮扶干部是否满意。</span>
-</p>`
+`
         }
       },
       {
         node: {
           id: 6,
-          title: '易地搬迁扶贫政策',
-          createdAt: '2019/3/15',
-          author: '管理员',
+          title: "易地搬迁扶贫政策",
+          createdAt: "2019/3/15",
+          author: "管理员",
           content: `<p style="text-indent:43px;line-height:35px;text-autospace:none;vertical-align:middle">
     <strong><span style="font-size:21px;font-family:仿宋_GB2312">搬迁对象和规模：</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">搬迁对象主要是居住在</span><span style="font-size:21px">“</span><span style="font-size:21px;font-family:仿宋_GB2312">一方水土养不起一方人</span><span style="font-size:21px">”</span><span style="font-size:21px;font-family: 仿宋_GB2312">地区的农村建档立卡贫困人口。对贫困发生率</span><span style="font-size: 21px">50%</span><span style="font-size:21px;font-family:仿宋_GB2312">以上、</span><span style="font-size:21px">50</span><span style="font-size: 21px;font-family:仿宋_GB2312">户以下的自然村寨优先实施整体搬迁。</span>
 </p>
@@ -2657,9 +2243,9 @@ module.exports = {
       {
         node: {
           id: 7,
-          title: '教育精准扶贫政策',
-          createdAt: '2019/3/15',
-          author: '管理员',
+          title: "教育精准扶贫政策",
+          createdAt: "2019/3/15",
+          author: "管理员",
           content: `<p style="text-indent:43px;line-height:35px;text-autospace:none;vertical-align:middle">
     <strong><span style="font-size:21px;font-family:仿宋_GB2312">享受对象：</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">在普通高中、中职学校、普通高校（不含研究生阶段）就读，具有全日制学历教育正式学籍和我省户籍的农村建档立卡贫困户子女。</span>
 </p>
@@ -2716,9 +2302,9 @@ module.exports = {
       {
         node: {
           id: 8,
-          title: '医疗救助扶贫政策',
-          createdAt: '2019/3/15',
-          author: '管理员',
+          title: "医疗救助扶贫政策",
+          createdAt: "2019/3/15",
+          author: "管理员",
           content: `<p style="text-indent:43px;line-height:35px;text-autospace:none;vertical-align:middle">
     <strong><span style="font-size:21px;font-family:仿宋_GB2312">保障对象：</span></strong><span style="font-size:21px;font-family:仿宋_GB2312">全县农村建档立卡贫困人口</span>
 </p>
@@ -2765,7 +2351,7 @@ module.exports = {
     <br/>
 </p>`
         }
-      },
+      }
     ]
   }
-}
+};
