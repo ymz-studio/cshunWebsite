@@ -19,7 +19,7 @@ export default {
     return {
       items: [
         {
-          src: require("assets/index/xjp_front.jpg"),
+          src: require("assets/index/xjp.jpg"),
           title: "",
           color: "#000",
           url: "/about",
