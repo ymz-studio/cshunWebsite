@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <hero :src="require('assets/policy/xjp_policy.jpg')"></hero> -->
-    <hero :src="require('assets/about/background-1.jpg')" title="学习新时代"
+    <hero :src="require('assets/about/background-1.jpg')" title="扶贫政策"
       subTitle="为您提供最新, 最全面的政策相关信息"></hero>
     <!-- news -->
     <!-- <v-container>
